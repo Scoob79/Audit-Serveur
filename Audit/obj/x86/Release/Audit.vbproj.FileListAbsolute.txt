@@ -1,0 +1,12 @@
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\WindowsApplication1.Resources.resources
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\Audit.vbproj.GenerateResource.Cache
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\bin\Release\Audit.exe
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\bin\Release\Audit.pdb
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\bin\Release\Audit.xml
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\WindowsApplication1.Licence.resources
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\WindowsApplication1.Form2.resources
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\WindowsApplication1.Principale.resources
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\WindowsApplication1.Form3.resources
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\Audit.exe
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\Audit.xml
+D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Release\Audit.pdb

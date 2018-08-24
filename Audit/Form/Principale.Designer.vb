@@ -24,119 +24,57 @@ Partial Class Principale
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principale))
-        Me.STRATEGIE = New System.Windows.Forms.TabPage()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.Label25 = New System.Windows.Forms.Label()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.Label29 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.GROUPES = New System.Windows.Forms.TabPage()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.UTILISATEURS = New System.Windows.Forms.TabPage()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LOGICIELS = New System.Windows.Forms.TabPage()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
-        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AProposToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LicenceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.SurveillanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ActiverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ListBox4 = New System.Windows.Forms.ListBox()
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SERVICES = New System.Windows.Forms.TabPage()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.PILOTES = New System.Windows.Forms.TabPage()
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.MAJ = New System.Windows.Forms.TabPage()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.NsLabel35 = New WindowsApplication1.NSLabel()
+        Me.NsOnOffBox1 = New WindowsApplication1.NSOnOffBox()
+        Me.NsButton2 = New WindowsApplication1.NSButton()
+        Me.NsButton1 = New WindowsApplication1.NSButton()
+        Me.NsTabControl2 = New WindowsApplication1.NSTabControl()
+        Me.TabPage17 = New System.Windows.Forms.TabPage()
+        Me.ComboBox2 = New WindowsApplication1.NSComboBox()
+        Me.NsTabControl1 = New WindowsApplication1.NSTabControl()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.CARTEMERE = New System.Windows.Forms.TabPage()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.POSTE = New System.Windows.Forms.TabPage()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.TabControl2 = New System.Windows.Forms.TabControl()
-        Me.PROCESSEUR = New System.Windows.Forms.TabPage()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.MEMOIRE = New System.Windows.Forms.TabPage()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.HDD = New System.Windows.Forms.TabPage()
+        Me.TextBox8 = New WindowsApplication1.NSTextBox()
+        Me.TextBox7 = New WindowsApplication1.NSTextBox()
+        Me.TextBox6 = New WindowsApplication1.NSTextBox()
+        Me.TextBox5 = New WindowsApplication1.NSTextBox()
+        Me.TextBox4 = New WindowsApplication1.NSTextBox()
+        Me.TextBox3 = New WindowsApplication1.NSTextBox()
+        Me.TextBox2 = New WindowsApplication1.NSTextBox()
+        Me.TextBox1 = New WindowsApplication1.NSTextBox()
+        Me.NsLabel8 = New WindowsApplication1.NSLabel()
+        Me.NsLabel7 = New WindowsApplication1.NSLabel()
+        Me.NsLabel4 = New WindowsApplication1.NSLabel()
+        Me.NsLabel5 = New WindowsApplication1.NSLabel()
+        Me.NsLabel6 = New WindowsApplication1.NSLabel()
+        Me.NsLabel3 = New WindowsApplication1.NSLabel()
+        Me.NsLabel2 = New WindowsApplication1.NSLabel()
+        Me.NsLabel1 = New WindowsApplication1.NSLabel()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.TextBox9 = New WindowsApplication1.NSTextBox()
+        Me.TextBox10 = New WindowsApplication1.NSTextBox()
+        Me.TextBox11 = New WindowsApplication1.NSTextBox()
+        Me.NsLabel9 = New WindowsApplication1.NSLabel()
+        Me.NsLabel10 = New WindowsApplication1.NSLabel()
+        Me.NsLabel11 = New WindowsApplication1.NSLabel()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.TextBox16 = New WindowsApplication1.NSTextBox()
+        Me.TextBox15 = New WindowsApplication1.NSTextBox()
+        Me.TextBox12 = New WindowsApplication1.NSTextBox()
+        Me.TextBox13 = New WindowsApplication1.NSTextBox()
+        Me.TextBox14 = New WindowsApplication1.NSTextBox()
+        Me.NsLabel12 = New WindowsApplication1.NSLabel()
+        Me.NsLabel13 = New WindowsApplication1.NSLabel()
+        Me.NsLabel14 = New WindowsApplication1.NSLabel()
+        Me.NsLabel15 = New WindowsApplication1.NSLabel()
+        Me.NsLabel16 = New WindowsApplication1.NSLabel()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.TextBox17 = New WindowsApplication1.NSTextBox()
+        Me.NsLabel17 = New WindowsApplication1.NSLabel()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -144,219 +82,111 @@ Partial Class Principale
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RESEAU = New System.Windows.Forms.TabPage()
+        Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.NsLabel18 = New WindowsApplication1.NSLabel()
+        Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.NsLabel19 = New WindowsApplication1.NSLabel()
+        Me.TabPage12 = New System.Windows.Forms.TabPage()
+        Me.TextBox26 = New WindowsApplication1.NSTextBox()
+        Me.NsLabel28 = New WindowsApplication1.NSLabel()
+        Me.TextBox18 = New WindowsApplication1.NSTextBox()
+        Me.TextBox19 = New WindowsApplication1.NSTextBox()
+        Me.TextBox20 = New WindowsApplication1.NSTextBox()
+        Me.TextBox21 = New WindowsApplication1.NSTextBox()
+        Me.TextBox22 = New WindowsApplication1.NSTextBox()
+        Me.TextBox23 = New WindowsApplication1.NSTextBox()
+        Me.TextBox24 = New WindowsApplication1.NSTextBox()
+        Me.TextBox25 = New WindowsApplication1.NSTextBox()
+        Me.NsLabel20 = New WindowsApplication1.NSLabel()
+        Me.NsLabel21 = New WindowsApplication1.NSLabel()
+        Me.NsLabel22 = New WindowsApplication1.NSLabel()
+        Me.NsLabel23 = New WindowsApplication1.NSLabel()
+        Me.NsLabel24 = New WindowsApplication1.NSLabel()
+        Me.NsLabel25 = New WindowsApplication1.NSLabel()
+        Me.NsLabel26 = New WindowsApplication1.NSLabel()
+        Me.NsLabel27 = New WindowsApplication1.NSLabel()
+        Me.TabPage13 = New System.Windows.Forms.TabPage()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.NsLabel29 = New WindowsApplication1.NSLabel()
+        Me.TabPage14 = New System.Windows.Forms.TabPage()
+        Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.NsLabel30 = New WindowsApplication1.NSLabel()
+        Me.TabPage15 = New System.Windows.Forms.TabPage()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TabPage16 = New System.Windows.Forms.TabPage()
+        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NsLabel34 = New WindowsApplication1.NSLabel()
+        Me.ComboBox1 = New WindowsApplication1.NSComboBox()
+        Me.NsLabel33 = New WindowsApplication1.NSLabel()
+        Me.TabPage18 = New System.Windows.Forms.TabPage()
+        Me.ComboBox3 = New WindowsApplication1.NSComboBox()
+        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.NsLabel32 = New WindowsApplication1.NSLabel()
+        Me.NsLabel31 = New WindowsApplication1.NSLabel()
+        Me.TabPage19 = New System.Windows.Forms.TabPage()
         Me.DataGridView6 = New System.Windows.Forms.DataGridView()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.STRATEGIE.SuspendLayout()
-        Me.GROUPES.SuspendLayout()
-        Me.UTILISATEURS.SuspendLayout()
-        Me.LOGICIELS.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
-        Me.SERVICES.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PILOTES.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MAJ.SuspendLayout()
+        Me.NsTheme1 = New WindowsApplication1.NSTheme()
+        Me.NsButton3 = New WindowsApplication1.NSButton()
+        Me.NsLabel36 = New WindowsApplication1.NSLabel()
+        Me.NsTabControl2.SuspendLayout()
+        Me.TabPage17.SuspendLayout()
+        Me.NsTabControl1.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CARTEMERE.SuspendLayout()
-        Me.POSTE.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabControl2.SuspendLayout()
-        Me.PROCESSEUR.SuspendLayout()
-        Me.MEMOIRE.SuspendLayout()
-        Me.HDD.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
+        Me.TabPage8.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RESEAU.SuspendLayout()
+        Me.TabPage9.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
+        Me.TabPage10.SuspendLayout()
+        Me.TabPage11.SuspendLayout()
+        Me.TabPage12.SuspendLayout()
+        Me.TabPage13.SuspendLayout()
+        Me.TabPage14.SuspendLayout()
+        Me.TabPage15.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage16.SuspendLayout()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage18.SuspendLayout()
+        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage19.SuspendLayout()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NsTheme1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'STRATEGIE
-        '
-        Me.STRATEGIE.Controls.Add(Me.TextBox26)
-        Me.STRATEGIE.Controls.Add(Me.Label30)
-        Me.STRATEGIE.Controls.Add(Me.TextBox18)
-        Me.STRATEGIE.Controls.Add(Me.Label22)
-        Me.STRATEGIE.Controls.Add(Me.TextBox19)
-        Me.STRATEGIE.Controls.Add(Me.Label23)
-        Me.STRATEGIE.Controls.Add(Me.TextBox20)
-        Me.STRATEGIE.Controls.Add(Me.Label24)
-        Me.STRATEGIE.Controls.Add(Me.TextBox21)
-        Me.STRATEGIE.Controls.Add(Me.Label25)
-        Me.STRATEGIE.Controls.Add(Me.TextBox22)
-        Me.STRATEGIE.Controls.Add(Me.Label26)
-        Me.STRATEGIE.Controls.Add(Me.TextBox23)
-        Me.STRATEGIE.Controls.Add(Me.Label27)
-        Me.STRATEGIE.Controls.Add(Me.TextBox24)
-        Me.STRATEGIE.Controls.Add(Me.Label28)
-        Me.STRATEGIE.Controls.Add(Me.TextBox25)
-        Me.STRATEGIE.Controls.Add(Me.Label29)
-        Me.STRATEGIE.Location = New System.Drawing.Point(4, 22)
-        Me.STRATEGIE.Name = "STRATEGIE"
-        Me.STRATEGIE.Size = New System.Drawing.Size(953, 274)
-        Me.STRATEGIE.TabIndex = 8
-        Me.STRATEGIE.Text = "STRATEGIE"
-        Me.STRATEGIE.UseVisualStyleBackColor = True
-        '
-        'TextBox26
-        '
-        Me.TextBox26.Location = New System.Drawing.Point(204, 231)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox26.TabIndex = 33
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(20, 231)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(73, 13)
-        Me.Label30.TabIndex = 32
-        Me.Label30.Text = "Rôle du poste"
-        '
-        'TextBox18
-        '
-        Me.TextBox18.Location = New System.Drawing.Point(204, 205)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox18.TabIndex = 31
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(20, 205)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(181, 13)
-        Me.Label22.TabIndex = 30
-        Me.Label22.Text = "Fenêtre d'observation du vérrouillage"
-        '
-        'TextBox19
-        '
-        Me.TextBox19.Location = New System.Drawing.Point(204, 179)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox19.TabIndex = 29
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(20, 179)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(108, 13)
-        Me.Label23.TabIndex = 28
-        Me.Label23.Text = "Durée du vérrouillage"
-        '
-        'TextBox20
-        '
-        Me.TextBox20.Location = New System.Drawing.Point(204, 153)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox20.TabIndex = 27
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(20, 153)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(102, 13)
-        Me.Label24.TabIndex = 26
-        Me.Label24.Text = "Seuil du vérrouillage"
-        '
-        'TextBox21
-        '
-        Me.TextBox21.Location = New System.Drawing.Point(204, 127)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox21.TabIndex = 25
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(20, 127)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(169, 13)
-        Me.Label25.TabIndex = 24
-        Me.Label25.Text = "Nombre de mot de passe anterieur"
-        '
-        'TextBox22
-        '
-        Me.TextBox22.Location = New System.Drawing.Point(204, 101)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox22.TabIndex = 23
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(20, 101)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(170, 13)
-        Me.Label26.TabIndex = 22
-        Me.Label26.Text = "Longueur minimal du mot de passe"
-        '
-        'TextBox23
-        '
-        Me.TextBox23.Location = New System.Drawing.Point(204, 75)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox23.TabIndex = 21
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(20, 75)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(134, 13)
-        Me.Label27.TabIndex = 20
-        Me.Label27.Text = "Mot de passe vie maximale"
-        '
-        'TextBox24
-        '
-        Me.TextBox24.Location = New System.Drawing.Point(204, 49)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox24.TabIndex = 19
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(20, 49)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(131, 13)
-        Me.Label28.TabIndex = 18
-        Me.Label28.Text = "Mot de passe vie minimale"
-        '
-        'TextBox25
-        '
-        Me.TextBox25.Location = New System.Drawing.Point(204, 23)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox25.TabIndex = 17
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(20, 23)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(53, 13)
-        Me.Label29.TabIndex = 16
-        Me.Label29.Text = "Expiration"
         '
         'ImageList1
         '
@@ -376,850 +206,630 @@ Partial Class Principale
         Me.ImageList1.Images.SetKeyName(11, "Win Serveur.jpg")
         Me.ImageList1.Images.SetKeyName(12, "Win XP.png")
         '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(20, 23)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(90, 13)
-        Me.Label21.TabIndex = 16
-        Me.Label21.Text = "Liste des groupes"
-        '
-        'ListBox2
-        '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(204, 23)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(521, 199)
-        Me.ListBox2.TabIndex = 17
-        '
-        'GROUPES
-        '
-        Me.GROUPES.Controls.Add(Me.ListBox2)
-        Me.GROUPES.Controls.Add(Me.Label21)
-        Me.GROUPES.Location = New System.Drawing.Point(4, 22)
-        Me.GROUPES.Name = "GROUPES"
-        Me.GROUPES.Size = New System.Drawing.Size(953, 274)
-        Me.GROUPES.TabIndex = 7
-        Me.GROUPES.Text = "GROUPES"
-        Me.GROUPES.UseVisualStyleBackColor = True
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(20, 23)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(101, 13)
-        Me.Label20.TabIndex = 14
-        Me.Label20.Text = "Liste des utilisateurs"
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Masque sous réseau"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "DHCP"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(204, 23)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(521, 199)
-        Me.ListBox1.TabIndex = 15
-        '
-        'UTILISATEURS
-        '
-        Me.UTILISATEURS.Controls.Add(Me.ListBox1)
-        Me.UTILISATEURS.Controls.Add(Me.Label20)
-        Me.UTILISATEURS.Location = New System.Drawing.Point(4, 22)
-        Me.UTILISATEURS.Name = "UTILISATEURS"
-        Me.UTILISATEURS.Size = New System.Drawing.Size(953, 274)
-        Me.UTILISATEURS.TabIndex = 6
-        Me.UTILISATEURS.Text = "UTILISATEURS"
-        Me.UTILISATEURS.UseVisualStyleBackColor = True
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "@DHCP"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        '
-        'Column10
-        '
-        Me.Column10.HeaderText = "@DNS"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
-        '
-        'LOGICIELS
-        '
-        Me.LOGICIELS.Controls.Add(Me.ListBox3)
-        Me.LOGICIELS.Controls.Add(Me.Label31)
-        Me.LOGICIELS.Location = New System.Drawing.Point(4, 22)
-        Me.LOGICIELS.Name = "LOGICIELS"
-        Me.LOGICIELS.Size = New System.Drawing.Size(953, 274)
-        Me.LOGICIELS.TabIndex = 9
-        Me.LOGICIELS.Text = "LOGICIELS"
-        Me.LOGICIELS.UseVisualStyleBackColor = True
-        '
-        'ListBox3
-        '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(204, 23)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(521, 199)
-        Me.ListBox3.TabIndex = 17
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(20, 23)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(78, 13)
-        Me.Label31.TabIndex = 16
-        Me.Label31.Text = "Liste Utilisateur"
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.Label34)
-        Me.TabPage2.Controls.Add(Me.DateTimePicker1)
-        Me.TabPage2.Controls.Add(Me.DataGridView5)
-        Me.TabPage2.Controls.Add(Me.ComboBox3)
-        Me.TabPage2.Controls.Add(Me.Label33)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(996, 436)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Comparaison"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(9, 49)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(59, 13)
-        Me.Label34.TabIndex = 14
-        Me.Label34.Text = "En date du"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(138, 43)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 13
-        '
-        'DataGridView5
-        '
-        Me.DataGridView5.AllowUserToAddRows = False
-        Me.DataGridView5.AllowUserToDeleteRows = False
-        Me.DataGridView5.AllowUserToOrderColumns = True
-        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column12})
-        Me.DataGridView5.Location = New System.Drawing.Point(12, 69)
-        Me.DataGridView5.Name = "DataGridView5"
-        Me.DataGridView5.ReadOnly = True
-        Me.DataGridView5.Size = New System.Drawing.Size(963, 350)
-        Me.DataGridView5.TabIndex = 12
-        '
-        'Column12
-        '
-        Me.Column12.HeaderText = "Champ"
-        Me.Column12.Name = "Column12"
-        Me.Column12.ReadOnly = True
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(138, 15)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(181, 21)
-        Me.ComboBox3.TabIndex = 1
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(9, 18)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(123, 13)
-        Me.Label33.TabIndex = 0
-        Me.Label33.Text = "Elément de comparaison"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(105, 12)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(205, 21)
-        Me.ComboBox1.TabIndex = 6
-        '
-        'DataGridViewTextBoxColumn22
-        '
-        Me.DataGridViewTextBoxColumn22.HeaderText = "Installé par"
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        Me.DataGridViewTextBoxColumn22.ReadOnly = True
-        Me.DataGridViewTextBoxColumn22.Width = 150
-        '
-        'DataGridViewTextBoxColumn23
-        '
-        Me.DataGridViewTextBoxColumn23.HeaderText = "Date d'installation"
-        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
-        Me.DataGridViewTextBoxColumn23.ReadOnly = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(17, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Nom du serveur"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AProposToolStripMenuItem, Me.LicenceToolStripMenuItem})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(24, 20)
-        Me.ToolStripMenuItem1.Text = "?"
-        '
-        'AProposToolStripMenuItem
-        '
-        Me.AProposToolStripMenuItem.Name = "AProposToolStripMenuItem"
-        Me.AProposToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
-        Me.AProposToolStripMenuItem.Text = "A propos"
-        '
-        'LicenceToolStripMenuItem
-        '
-        Me.LicenceToolStripMenuItem.Name = "LicenceToolStripMenuItem"
-        Me.LicenceToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
-        Me.LicenceToolStripMenuItem.Text = "Licence"
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.SurveillanceToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1030, 24)
-        Me.MenuStrip1.TabIndex = 3
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'SurveillanceToolStripMenuItem
-        '
-        Me.SurveillanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActiverToolStripMenuItem})
-        Me.SurveillanceToolStripMenuItem.Name = "SurveillanceToolStripMenuItem"
-        Me.SurveillanceToolStripMenuItem.Size = New System.Drawing.Size(82, 20)
-        Me.SurveillanceToolStripMenuItem.Text = "Surveillance"
-        '
-        'ActiverToolStripMenuItem
-        '
-        Me.ActiverToolStripMenuItem.Name = "ActiverToolStripMenuItem"
-        Me.ActiverToolStripMenuItem.Size = New System.Drawing.Size(111, 22)
-        Me.ActiverToolStripMenuItem.Text = "Activer"
-        '
-        'DataGridViewTextBoxColumn20
-        '
-        Me.DataGridViewTextBoxColumn20.HeaderText = "N° de KB"
-        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
-        Me.DataGridViewTextBoxColumn20.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn19
-        '
-        Me.DataGridViewTextBoxColumn19.HeaderText = "Description"
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.ReadOnly = True
-        '
-        'ListBox4
-        '
-        Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(204, 23)
-        Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(521, 199)
-        Me.ListBox4.TabIndex = 17
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.HeaderText = "Poste"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.ReadOnly = True
-        '
-        'SERVICES
-        '
-        Me.SERVICES.Controls.Add(Me.DataGridView3)
-        Me.SERVICES.Location = New System.Drawing.Point(4, 22)
-        Me.SERVICES.Name = "SERVICES"
-        Me.SERVICES.Size = New System.Drawing.Size(953, 274)
-        Me.SERVICES.TabIndex = 11
-        Me.SERVICES.Text = "SERVICES"
-        Me.SERVICES.UseVisualStyleBackColor = True
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.AllowUserToAddRows = False
-        Me.DataGridView3.AllowUserToDeleteRows = False
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11})
-        Me.DataGridView3.Location = New System.Drawing.Point(20, 23)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.ReadOnly = True
-        Me.DataGridView3.Size = New System.Drawing.Size(914, 209)
-        Me.DataGridView3.TabIndex = 2
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Nom"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 150
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Descritpion"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Width = 400
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Statut"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Etat"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Code Sortie"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.ReadOnly = True
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(20, 23)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(78, 13)
-        Me.Label32.TabIndex = 16
-        Me.Label32.Text = "Liste Utilisateur"
-        '
-        'PILOTES
-        '
-        Me.PILOTES.Controls.Add(Me.ListBox4)
-        Me.PILOTES.Controls.Add(Me.Label32)
-        Me.PILOTES.Location = New System.Drawing.Point(4, 22)
-        Me.PILOTES.Name = "PILOTES"
-        Me.PILOTES.Size = New System.Drawing.Size(953, 274)
-        Me.PILOTES.TabIndex = 10
-        Me.PILOTES.Text = "PILOTES"
-        Me.PILOTES.UseVisualStyleBackColor = True
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.HeaderText = "Nom"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        Me.DataGridViewTextBoxColumn17.ReadOnly = True
-        Me.DataGridViewTextBoxColumn17.Width = 300
-        '
-        'DataGridView4
-        '
-        Me.DataGridView4.AllowUserToAddRows = False
-        Me.DataGridView4.AllowUserToDeleteRows = False
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23})
-        Me.DataGridView4.Location = New System.Drawing.Point(20, 23)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.ReadOnly = True
-        Me.DataGridView4.Size = New System.Drawing.Size(914, 209)
-        Me.DataGridView4.TabIndex = 2
-        '
-        'MAJ
-        '
-        Me.MAJ.Controls.Add(Me.DataGridView4)
-        Me.MAJ.Location = New System.Drawing.Point(4, 22)
-        Me.MAJ.Name = "MAJ"
-        Me.MAJ.Size = New System.Drawing.Size(953, 274)
-        Me.MAJ.TabIndex = 12
-        Me.MAJ.Text = "MAJ"
-        Me.MAJ.UseVisualStyleBackColor = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "@IP"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'NsLabel35
+        '
+        Me.NsLabel35.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel35.Location = New System.Drawing.Point(139, 28)
+        Me.NsLabel35.Name = "NsLabel35"
+        Me.NsLabel35.Size = New System.Drawing.Size(87, 23)
+        Me.NsLabel35.TabIndex = 9
+        Me.NsLabel35.Text = "NsLabel35"
+        Me.NsLabel35.Value1 = "Surveillance"
+        Me.NsLabel35.Value2 = ""
+        '
+        'NsOnOffBox1
+        '
+        Me.NsOnOffBox1.Checked = False
+        Me.NsOnOffBox1.Location = New System.Drawing.Point(232, 26)
+        Me.NsOnOffBox1.MaximumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox1.MinimumSize = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox1.Name = "NsOnOffBox1"
+        Me.NsOnOffBox1.Size = New System.Drawing.Size(56, 24)
+        Me.NsOnOffBox1.TabIndex = 8
+        Me.NsOnOffBox1.Text = "NsOnOffBox1"
+        '
+        'NsButton2
+        '
+        Me.NsButton2.Location = New System.Drawing.Point(78, 27)
+        Me.NsButton2.Name = "NsButton2"
+        Me.NsButton2.Size = New System.Drawing.Size(54, 23)
+        Me.NsButton2.TabIndex = 7
+        Me.NsButton2.Text = "Licence"
+        '
+        'NsButton1
+        '
+        Me.NsButton1.Location = New System.Drawing.Point(13, 28)
+        Me.NsButton1.Name = "NsButton1"
+        Me.NsButton1.Size = New System.Drawing.Size(59, 23)
+        Me.NsButton1.TabIndex = 6
+        Me.NsButton1.Text = "A Propos"
+        '
+        'NsTabControl2
+        '
+        Me.NsTabControl2.Alignment = System.Windows.Forms.TabAlignment.Left
+        Me.NsTabControl2.Controls.Add(Me.TabPage17)
+        Me.NsTabControl2.Controls.Add(Me.TabPage18)
+        Me.NsTabControl2.Controls.Add(Me.TabPage19)
+        Me.NsTabControl2.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
+        Me.NsTabControl2.HotTrack = True
+        Me.NsTabControl2.ItemSize = New System.Drawing.Size(28, 115)
+        Me.NsTabControl2.Location = New System.Drawing.Point(12, 68)
+        Me.NsTabControl2.Multiline = True
+        Me.NsTabControl2.Name = "NsTabControl2"
+        Me.NsTabControl2.SelectedIndex = 0
+        Me.NsTabControl2.Size = New System.Drawing.Size(1167, 462)
+        Me.NsTabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.NsTabControl2.TabIndex = 5
+        '
+        'TabPage17
+        '
+        Me.TabPage17.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage17.Controls.Add(Me.ComboBox2)
+        Me.TabPage17.Controls.Add(Me.NsTabControl1)
+        Me.TabPage17.Controls.Add(Me.NsLabel34)
+        Me.TabPage17.Controls.Add(Me.ComboBox1)
+        Me.TabPage17.Controls.Add(Me.NsLabel33)
+        Me.TabPage17.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage17.Name = "TabPage17"
+        Me.TabPage17.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage17.Size = New System.Drawing.Size(1044, 454)
+        Me.TabPage17.TabIndex = 0
+        Me.TabPage17.Text = "Audit"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.ForeColor = System.Drawing.Color.White
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(399, 12)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(224, 21)
+        Me.ComboBox2.TabIndex = 4
+        '
+        'NsTabControl1
+        '
+        Me.NsTabControl1.Alignment = System.Windows.Forms.TabAlignment.Left
+        Me.NsTabControl1.Controls.Add(Me.TabPage4)
+        Me.NsTabControl1.Controls.Add(Me.TabPage5)
+        Me.NsTabControl1.Controls.Add(Me.TabPage6)
+        Me.NsTabControl1.Controls.Add(Me.TabPage7)
+        Me.NsTabControl1.Controls.Add(Me.TabPage8)
+        Me.NsTabControl1.Controls.Add(Me.TabPage9)
+        Me.NsTabControl1.Controls.Add(Me.TabPage10)
+        Me.NsTabControl1.Controls.Add(Me.TabPage11)
+        Me.NsTabControl1.Controls.Add(Me.TabPage12)
+        Me.NsTabControl1.Controls.Add(Me.TabPage13)
+        Me.NsTabControl1.Controls.Add(Me.TabPage14)
+        Me.NsTabControl1.Controls.Add(Me.TabPage15)
+        Me.NsTabControl1.Controls.Add(Me.TabPage16)
+        Me.NsTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
+        Me.NsTabControl1.ItemSize = New System.Drawing.Size(28, 115)
+        Me.NsTabControl1.Location = New System.Drawing.Point(12, 41)
+        Me.NsTabControl1.Multiline = True
+        Me.NsTabControl1.Name = "NsTabControl1"
+        Me.NsTabControl1.SelectedIndex = 0
+        Me.NsTabControl1.Size = New System.Drawing.Size(1015, 373)
+        Me.NsTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
+        Me.NsTabControl1.TabIndex = 4
+        '
+        'TabPage4
+        '
+        Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage4.Controls.Add(Me.PictureBox1)
+        Me.TabPage4.Controls.Add(Me.TextBox8)
+        Me.TabPage4.Controls.Add(Me.TextBox7)
+        Me.TabPage4.Controls.Add(Me.TextBox6)
+        Me.TabPage4.Controls.Add(Me.TextBox5)
+        Me.TabPage4.Controls.Add(Me.TextBox4)
+        Me.TabPage4.Controls.Add(Me.TextBox3)
+        Me.TabPage4.Controls.Add(Me.TextBox2)
+        Me.TabPage4.Controls.Add(Me.TextBox1)
+        Me.TabPage4.Controls.Add(Me.NsLabel8)
+        Me.TabPage4.Controls.Add(Me.NsLabel7)
+        Me.TabPage4.Controls.Add(Me.NsLabel4)
+        Me.TabPage4.Controls.Add(Me.NsLabel5)
+        Me.TabPage4.Controls.Add(Me.NsLabel6)
+        Me.TabPage4.Controls.Add(Me.NsLabel3)
+        Me.TabPage4.Controls.Add(Me.NsLabel2)
+        Me.TabPage4.Controls.Add(Me.NsLabel1)
+        Me.TabPage4.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage4.TabIndex = 0
+        Me.TabPage4.Text = "POSTE"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(731, 23)
+        Me.PictureBox1.Location = New System.Drawing.Point(688, 18)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(200, 200)
-        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.Size = New System.Drawing.Size(193, 182)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
         '
         'TextBox8
         '
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(204, 205)
+        Me.TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox8.Location = New System.Drawing.Point(271, 177)
+        Me.TextBox8.MaxLength = 32767
+        Me.TextBox8.Multiline = False
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(521, 20)
+        Me.TextBox8.ReadOnly = False
+        Me.TextBox8.Size = New System.Drawing.Size(405, 23)
         Me.TextBox8.TabIndex = 15
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(20, 205)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(42, 13)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "Modèle"
+        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox8.UseSystemPasswordChar = False
         '
         'TextBox7
         '
-        Me.TextBox7.Enabled = False
-        Me.TextBox7.Location = New System.Drawing.Point(204, 179)
+        Me.TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox7.Location = New System.Drawing.Point(271, 154)
+        Me.TextBox7.MaxLength = 32767
+        Me.TextBox7.Multiline = False
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox7.TabIndex = 13
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Vitesse Max"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(20, 179)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(57, 13)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "Fabriquant"
+        Me.TextBox7.ReadOnly = False
+        Me.TextBox7.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox7.TabIndex = 14
+        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox7.UseSystemPasswordChar = False
         '
         'TextBox6
         '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Location = New System.Drawing.Point(204, 153)
+        Me.TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox6.Location = New System.Drawing.Point(271, 131)
+        Me.TextBox6.MaxLength = 32767
+        Me.TextBox6.Multiline = False
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox6.TabIndex = 11
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Enabled = False
-        Me.TextBox9.Location = New System.Drawing.Point(204, 75)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox9.TabIndex = 11
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 153)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(181, 13)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = "Numéro du dernier SP Mineur installé"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(20, 75)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(57, 13)
-        Me.Label11.TabIndex = 10
-        Me.Label11.Text = "Fabriquant"
-        '
-        'CARTEMERE
-        '
-        Me.CARTEMERE.Controls.Add(Me.TextBox9)
-        Me.CARTEMERE.Controls.Add(Me.Label11)
-        Me.CARTEMERE.Controls.Add(Me.TextBox10)
-        Me.CARTEMERE.Controls.Add(Me.Label12)
-        Me.CARTEMERE.Controls.Add(Me.TextBox11)
-        Me.CARTEMERE.Controls.Add(Me.Label13)
-        Me.CARTEMERE.Location = New System.Drawing.Point(4, 22)
-        Me.CARTEMERE.Name = "CARTEMERE"
-        Me.CARTEMERE.Padding = New System.Windows.Forms.Padding(3)
-        Me.CARTEMERE.Size = New System.Drawing.Size(953, 274)
-        Me.CARTEMERE.TabIndex = 1
-        Me.CARTEMERE.Text = "CARTE-MERE"
-        Me.CARTEMERE.UseVisualStyleBackColor = True
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Enabled = False
-        Me.TextBox10.Location = New System.Drawing.Point(204, 49)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox10.TabIndex = 9
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(20, 49)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(42, 13)
-        Me.Label12.TabIndex = 8
-        Me.Label12.Text = "Modèle"
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Enabled = False
-        Me.TextBox11.Location = New System.Drawing.Point(204, 23)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox11.TabIndex = 7
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(20, 23)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(108, 13)
-        Me.Label13.TabIndex = 6
-        Me.Label13.Text = "Nom de la carte mère"
-        '
-        'POSTE
-        '
-        Me.POSTE.Controls.Add(Me.PictureBox1)
-        Me.POSTE.Controls.Add(Me.TextBox8)
-        Me.POSTE.Controls.Add(Me.Label9)
-        Me.POSTE.Controls.Add(Me.TextBox7)
-        Me.POSTE.Controls.Add(Me.Label8)
-        Me.POSTE.Controls.Add(Me.TextBox6)
-        Me.POSTE.Controls.Add(Me.Label7)
-        Me.POSTE.Controls.Add(Me.TextBox5)
-        Me.POSTE.Controls.Add(Me.Label6)
-        Me.POSTE.Controls.Add(Me.TextBox4)
-        Me.POSTE.Controls.Add(Me.Label5)
-        Me.POSTE.Controls.Add(Me.TextBox3)
-        Me.POSTE.Controls.Add(Me.Label4)
-        Me.POSTE.Controls.Add(Me.TextBox2)
-        Me.POSTE.Controls.Add(Me.Label3)
-        Me.POSTE.Controls.Add(Me.TextBox1)
-        Me.POSTE.Controls.Add(Me.Label2)
-        Me.POSTE.Location = New System.Drawing.Point(4, 22)
-        Me.POSTE.Name = "POSTE"
-        Me.POSTE.Padding = New System.Windows.Forms.Padding(3)
-        Me.POSTE.Size = New System.Drawing.Size(953, 274)
-        Me.POSTE.TabIndex = 0
-        Me.POSTE.Text = "POSTE"
-        Me.POSTE.UseVisualStyleBackColor = True
+        Me.TextBox6.ReadOnly = False
+        Me.TextBox6.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox6.TabIndex = 13
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox6.UseSystemPasswordChar = False
         '
         'TextBox5
         '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(204, 127)
+        Me.TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox5.Location = New System.Drawing.Point(271, 108)
+        Me.TextBox5.MaxLength = 32767
+        Me.TextBox5.Multiline = False
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox5.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 127)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(181, 13)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Numéro du dernier SP Majeur installé"
+        Me.TextBox5.ReadOnly = False
+        Me.TextBox5.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox5.TabIndex = 12
+        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox5.UseSystemPasswordChar = False
         '
         'TextBox4
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(204, 101)
+        Me.TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox4.Location = New System.Drawing.Point(271, 85)
+        Me.TextBox4.MaxLength = 32767
+        Me.TextBox4.Multiline = False
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox4.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(20, 101)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 13)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Version"
+        Me.TextBox4.ReadOnly = False
+        Me.TextBox4.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox4.TabIndex = 11
+        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox4.UseSystemPasswordChar = False
         '
         'TextBox3
         '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(204, 75)
+        Me.TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox3.Location = New System.Drawing.Point(271, 64)
+        Me.TextBox3.MaxLength = 32767
+        Me.TextBox3.Multiline = False
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox3.TabIndex = 5
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(20, 75)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(111, 13)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Système d'exploitation"
+        Me.TextBox3.ReadOnly = False
+        Me.TextBox3.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox3.TabIndex = 10
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox3.UseSystemPasswordChar = False
         '
         'TextBox2
         '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(204, 49)
+        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox2.Location = New System.Drawing.Point(271, 41)
+        Me.TextBox2.MaxLength = 32767
+        Me.TextBox2.Multiline = False
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox2.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 49)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(104, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Description du poste"
+        Me.TextBox2.ReadOnly = False
+        Me.TextBox2.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox2.TabIndex = 9
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox2.UseSystemPasswordChar = False
         '
         'TextBox1
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(204, 23)
+        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox1.Location = New System.Drawing.Point(271, 18)
+        Me.TextBox1.MaxLength = 32767
+        Me.TextBox1.Multiline = False
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.TextBox1.ReadOnly = False
+        Me.TextBox1.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox1.TabIndex = 8
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox1.UseSystemPasswordChar = False
         '
-        'Label2
+        'NsLabel8
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(20, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(73, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Nom du poste"
+        Me.NsLabel8.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel8.Location = New System.Drawing.Point(6, 154)
+        Me.NsLabel8.Name = "NsLabel8"
+        Me.NsLabel8.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel8.TabIndex = 7
+        Me.NsLabel8.Text = "NsLabel8"
+        Me.NsLabel8.Value1 = "Fabriquant"
+        Me.NsLabel8.Value2 = " "
         '
-        'TabControl1
+        'NsLabel7
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(14, 27)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1004, 462)
-        Me.TabControl1.TabIndex = 2
+        Me.NsLabel7.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel7.Location = New System.Drawing.Point(6, 177)
+        Me.NsLabel7.Name = "NsLabel7"
+        Me.NsLabel7.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel7.TabIndex = 6
+        Me.NsLabel7.Text = "NsLabel7"
+        Me.NsLabel7.Value1 = "Modèle"
+        Me.NsLabel7.Value2 = " "
         '
-        'TabPage1
+        'NsLabel4
         '
-        Me.TabPage1.Controls.Add(Me.Label10)
-        Me.TabPage1.Controls.Add(Me.ComboBox2)
-        Me.TabPage1.Controls.Add(Me.TabControl2)
-        Me.TabPage1.Controls.Add(Me.ComboBox1)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(996, 436)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Audit"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.NsLabel4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel4.Location = New System.Drawing.Point(6, 131)
+        Me.NsLabel4.Name = "NsLabel4"
+        Me.NsLabel4.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel4.TabIndex = 5
+        Me.NsLabel4.Text = "NsLabel4"
+        Me.NsLabel4.Value1 = "Numéro du dernier SP Mineur installé"
+        Me.NsLabel4.Value2 = " "
         '
-        'Label10
+        'NsLabel5
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(317, 15)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(31, 13)
-        Me.Label10.TabIndex = 10
-        Me.Label10.Text = "Audit"
+        Me.NsLabel5.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel5.Location = New System.Drawing.Point(6, 109)
+        Me.NsLabel5.Name = "NsLabel5"
+        Me.NsLabel5.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel5.TabIndex = 4
+        Me.NsLabel5.Text = "NsLabel5"
+        Me.NsLabel5.Value1 = "Numéro du dernier SP Majeur installé"
+        Me.NsLabel5.Value2 = " "
         '
-        'ComboBox2
+        'NsLabel6
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"CR4GI2N2", "DHCPNMS01CHA", "DHCPNMS01VNX", "FSDATANMS01", "FSNMS01CHA", "NA1VM28", "NA1VM29", "NA1VM41", "NA1VM42", "NA1VM43", "NA1VM44", "NA1VM70", "NA2VM28", "NA2VM29", "NA2VM41", "NA2VM42", "NA2VM43", "NA2VM44", "NA2VM70", "NA3VM28", "NA3VM29", "NA3VM40", "NA3VM41", "NA3VM42", "NA3VM43", "NA3VM44", "NA4VM28", "NA4VM29", "NA4VM46", "NA4VM47", "NA4VM48", "NA4VM49", "NA4VM50", "NA4VM70", "NAPRODR4VM28", "NAPRODR4VM29", "NAPRODR4VM47", "NAPRODR4VM48", "NAPRODR4VM49", "NAPRODR4VM50", "NAPRODR4VM70", "NAR4VM18", "NAR4VM19", "NAR4VM23", "NAVSRVM18", "NAVSRVM19", "NAVSRVM23", "NAVSRVM24", "NAVSRVM70", "NMX-1", "NMX-1B", "NMX-2", "NMX-2B", "NMX-3", "NMX-3B", "SNT1WDSC01", "SNT1WEPO01", "SNT1WMAD01", "SNT1WMAD02", "SNT1WPCTRX01", "SNT1WPCTRX02", "SNT1WPDCN01", "SNT1WPDCN02", "SNT1WPPUB01", "SNT1WPPUB02", "SNT1WPSIIV01", "SNT1WPSIIV02", "SNT1WPSTD01", "SNT1WPSTD02", "SNT1WPSTD03", "SNT1WPVEL01", "SNT1WPVEL02", "SNT1WPVMW01", "SNT1WPVMW02", "SNT1WPVWA01", "SNT1WPVWA02", "SNT1WSVM01", "SNT1WSVM02", "SNT1WSVM03", "SNT1WSVM04", "SNT1WSVM05", "SNT1WSVM06", "SNT1WSVM07", "SNT1WSVM08", "SNT1WVAULT01", "SNT1WVEBKP01", "SNT1WVEEAM01", "SNT1WVEMNG01", "SNT1WWDS01", "SNT1WWSUS01", "SNT2WEPO01", "SNT2WMAD01", "SNT2WMAD02", "SNT2WPSTD01", "SNT2WPSTD02", "SNT2WPVWA01", "SNT2WPVWA02", "SNT2WSVM01", "SNT2WSVM02", "SNT2WSVM03", "SNT2WSVM04", "SNT2WSVM05", "SNT2WSVM06", "SNT2WSVM07", "SNT2WSVM08", "SNT2WVAULT01", "SNT2WVEBKP01", "SNT2WVEEAM01", "SNT2WWDS01", "SNT2WWSUS01", "SQLNMS01CHA", "SQLNMS01VNX", "SRV_BABYLON", "SRV_IBO_2", "TLP1WMAD01", "TLP1WMAD02", "TLP1WSUS01", "TLP2WMAD01", "TLP2WMAD02", "TLP2WSUS01", "TRAFFICA02", "TS1PRODR4", "WADNMS01CH", "WADNMS01V", "WALCYON01CH", "WANDREW2CH", "WAVIAT01CH", "WAVIAT02CH", "WAVIAT03CH", "WAVIAT04CH", "WAVM01C", "WCORIGE01CH", "WDEVAUDITDGAC01", "WFHERDS03V", "WFHERDS04V", "WINEM03V", "WINNGI2K03CH", "WNADC1VM28CH", "WRBNDNFV01CH", "WRBNDNFV01V", "WSONHWI01CH", "WSONHWI02CH", "WSONHWI03CH", "WSONHWI04CH", "WSONHWI05CH", "WSONHWI06CH", "WSONHWI07CH", "WSONHWI08CH", "WSONHWI09CH", "WSONHWI10CH", "WSONHWI11CH", "WSONNOK11CH", "WSONNOK12CH", "WSONNOK13CH", "WSONNOK21CH", "WSONNOK22CH", "WSONNOK31CH", "WSONNOK41CH", "WSONNOK42CH", "WSONNOK43CH", "WSONNOK51CH", "WSONNOK52CH", "WSONPORT05CH", "WSONPORT11CH", "WSONUSTSTV", "WSYNCVM03V", "WSYNCVP02V", "WTSASTR02V", "WTSCS2K01CH", "WTSCS2K01V", "WTSINFIXE01CH", "WTSINFIXE01V", "WTSSONUS01CH", "WU2KCP01C", "WVCDB01V", "WVCNTR01V", "WVEEAM01V", "WVEEAM02C", "WVEEAM124CH", "WXMSM05C", "XANMSCPTLV3001", "XANMSCPTLV3002", "XANMSDADSLV3002", "XANMSDADSLV3003", "XANMSDADSLV3105", "XANMSDADSLV3106", "XANMSDESKTV3001", "XANMSDESKTV3002", "XANMSNETACV3001", "XANMSNETACV3002", "XANMSNETACV3003", "XANMSNETACV3004", "XANMSNETACV3005", "XANMSNETACV3006", "XANMSNETACV3007", "XANMSNETACV3008", "XANMSNETACV3009", "XANMSNETACV3010", "XANMSNETACV3011", "XANMSNETACV3012", "XANMSNETACV3013", "XANMSNETACV3014", "XANMSNETACV3015", "XANMSNETACV3016", "XANMSNETACV3017", "XANMSRADIOV3001", "XANMSRADIOV3002", "XANMSRADIOV3003", "XANMSRWIPSV3005", "XANMSRWIPSV3006", "XANMSRWIPSV3008", "XANMSRWIPSV3009", "XANMSRWIPSV3101", "XANMSRWIPSV3102", "XANMSTRANSV3003", "XANMSTRANSV3004", "XANMSTRANSV3101", "XANMSTRANSV3102", "XANMSTRANSV3103", "XANMSTRANSV3104", "XANMSTRSVV3003", "XANMSTRSVV3004", "XANMSTRSVV3005", "XANMSTRSVV3006", "XANMSTRSVV3007", "XANMSU2000V3001", "XANMSU2000V3002", "XANMSU2000V3003", "XANMSU2000V3004", "XANMSU2000V3005", "XANMSU2000V3006", "XANMSU2000V3007", "XANMSU2000V3008", "XANMSU2000V3009", "XANMSU2000V3010", "XANMSVOIXV3003", "XANMSVOIXV3004", "XDDCNMSV01", "XDDCNMSV02", "XDDCNMSV03", "XDDCNMSV04", "XDSFNMSV01", "XDSFNMSV02"})
-        Me.ComboBox2.Location = New System.Drawing.Point(354, 12)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(205, 21)
-        Me.ComboBox2.TabIndex = 8
+        Me.NsLabel6.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel6.Location = New System.Drawing.Point(6, 86)
+        Me.NsLabel6.Name = "NsLabel6"
+        Me.NsLabel6.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel6.TabIndex = 3
+        Me.NsLabel6.Text = "NsLabel6"
+        Me.NsLabel6.Value1 = "Version"
+        Me.NsLabel6.Value2 = " "
         '
-        'TabControl2
+        'NsLabel3
         '
-        Me.TabControl2.Controls.Add(Me.POSTE)
-        Me.TabControl2.Controls.Add(Me.CARTEMERE)
-        Me.TabControl2.Controls.Add(Me.PROCESSEUR)
-        Me.TabControl2.Controls.Add(Me.MEMOIRE)
-        Me.TabControl2.Controls.Add(Me.HDD)
-        Me.TabControl2.Controls.Add(Me.RESEAU)
-        Me.TabControl2.Controls.Add(Me.UTILISATEURS)
-        Me.TabControl2.Controls.Add(Me.GROUPES)
-        Me.TabControl2.Controls.Add(Me.STRATEGIE)
-        Me.TabControl2.Controls.Add(Me.LOGICIELS)
-        Me.TabControl2.Controls.Add(Me.PILOTES)
-        Me.TabControl2.Controls.Add(Me.SERVICES)
-        Me.TabControl2.Controls.Add(Me.MAJ)
-        Me.TabControl2.Location = New System.Drawing.Point(20, 82)
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(961, 300)
-        Me.TabControl2.TabIndex = 9
+        Me.NsLabel3.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel3.Location = New System.Drawing.Point(6, 64)
+        Me.NsLabel3.Name = "NsLabel3"
+        Me.NsLabel3.Size = New System.Drawing.Size(216, 21)
+        Me.NsLabel3.TabIndex = 2
+        Me.NsLabel3.Text = "NsLabel3"
+        Me.NsLabel3.Value1 = "Système d'exploitation"
+        Me.NsLabel3.Value2 = " "
         '
-        'PROCESSEUR
+        'NsLabel2
         '
-        Me.PROCESSEUR.Controls.Add(Me.TextBox16)
-        Me.PROCESSEUR.Controls.Add(Me.Label18)
-        Me.PROCESSEUR.Controls.Add(Me.TextBox15)
-        Me.PROCESSEUR.Controls.Add(Me.Label17)
-        Me.PROCESSEUR.Controls.Add(Me.TextBox12)
-        Me.PROCESSEUR.Controls.Add(Me.Label14)
-        Me.PROCESSEUR.Controls.Add(Me.TextBox13)
-        Me.PROCESSEUR.Controls.Add(Me.Label15)
-        Me.PROCESSEUR.Controls.Add(Me.TextBox14)
-        Me.PROCESSEUR.Controls.Add(Me.Label16)
-        Me.PROCESSEUR.Location = New System.Drawing.Point(4, 22)
-        Me.PROCESSEUR.Name = "PROCESSEUR"
-        Me.PROCESSEUR.Size = New System.Drawing.Size(953, 274)
-        Me.PROCESSEUR.TabIndex = 2
-        Me.PROCESSEUR.Text = "PROCESSEUR"
-        Me.PROCESSEUR.UseVisualStyleBackColor = True
+        Me.NsLabel2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel2.Location = New System.Drawing.Point(6, 41)
+        Me.NsLabel2.Name = "NsLabel2"
+        Me.NsLabel2.Size = New System.Drawing.Size(216, 17)
+        Me.NsLabel2.TabIndex = 1
+        Me.NsLabel2.Text = "NsLabel2"
+        Me.NsLabel2.Value1 = "Description du poste"
+        Me.NsLabel2.Value2 = " "
+        '
+        'NsLabel1
+        '
+        Me.NsLabel1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel1.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel1.Name = "NsLabel1"
+        Me.NsLabel1.Size = New System.Drawing.Size(127, 17)
+        Me.NsLabel1.TabIndex = 0
+        Me.NsLabel1.Text = "Nom du poste"
+        Me.NsLabel1.Value1 = "Nom du poste"
+        Me.NsLabel1.Value2 = ""
+        '
+        'TabPage5
+        '
+        Me.TabPage5.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage5.Controls.Add(Me.TextBox9)
+        Me.TabPage5.Controls.Add(Me.TextBox10)
+        Me.TabPage5.Controls.Add(Me.TextBox11)
+        Me.TabPage5.Controls.Add(Me.NsLabel9)
+        Me.TabPage5.Controls.Add(Me.NsLabel10)
+        Me.TabPage5.Controls.Add(Me.NsLabel11)
+        Me.TabPage5.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage5.TabIndex = 1
+        Me.TabPage5.Text = "CARTE-MERE"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox9.Location = New System.Drawing.Point(271, 64)
+        Me.TextBox9.MaxLength = 32767
+        Me.TextBox9.Multiline = False
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.ReadOnly = False
+        Me.TextBox9.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox9.TabIndex = 16
+        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox9.UseSystemPasswordChar = False
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox10.Location = New System.Drawing.Point(271, 41)
+        Me.TextBox10.MaxLength = 32767
+        Me.TextBox10.Multiline = False
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = False
+        Me.TextBox10.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox10.TabIndex = 15
+        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox10.UseSystemPasswordChar = False
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox11.Location = New System.Drawing.Point(271, 18)
+        Me.TextBox11.MaxLength = 32767
+        Me.TextBox11.Multiline = False
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = False
+        Me.TextBox11.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox11.TabIndex = 14
+        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox11.UseSystemPasswordChar = False
+        '
+        'NsLabel9
+        '
+        Me.NsLabel9.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel9.Location = New System.Drawing.Point(6, 64)
+        Me.NsLabel9.Name = "NsLabel9"
+        Me.NsLabel9.Size = New System.Drawing.Size(259, 21)
+        Me.NsLabel9.TabIndex = 13
+        Me.NsLabel9.Text = "NsLabel9"
+        Me.NsLabel9.Value1 = "Fabriquant"
+        Me.NsLabel9.Value2 = " "
+        '
+        'NsLabel10
+        '
+        Me.NsLabel10.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel10.Location = New System.Drawing.Point(6, 41)
+        Me.NsLabel10.Name = "NsLabel10"
+        Me.NsLabel10.Size = New System.Drawing.Size(259, 17)
+        Me.NsLabel10.TabIndex = 12
+        Me.NsLabel10.Text = "NsLabel10"
+        Me.NsLabel10.Value1 = "Modèle"
+        Me.NsLabel10.Value2 = " "
+        '
+        'NsLabel11
+        '
+        Me.NsLabel11.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel11.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel11.Name = "NsLabel11"
+        Me.NsLabel11.Size = New System.Drawing.Size(259, 17)
+        Me.NsLabel11.TabIndex = 11
+        Me.NsLabel11.Text = "Nom de la carte mère"
+        Me.NsLabel11.Value1 = "Nom de la carte mère"
+        Me.NsLabel11.Value2 = ""
+        '
+        'TabPage6
+        '
+        Me.TabPage6.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage6.Controls.Add(Me.TextBox16)
+        Me.TabPage6.Controls.Add(Me.TextBox15)
+        Me.TabPage6.Controls.Add(Me.TextBox12)
+        Me.TabPage6.Controls.Add(Me.TextBox13)
+        Me.TabPage6.Controls.Add(Me.TextBox14)
+        Me.TabPage6.Controls.Add(Me.NsLabel12)
+        Me.TabPage6.Controls.Add(Me.NsLabel13)
+        Me.TabPage6.Controls.Add(Me.NsLabel14)
+        Me.TabPage6.Controls.Add(Me.NsLabel15)
+        Me.TabPage6.Controls.Add(Me.NsLabel16)
+        Me.TabPage6.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage6.TabIndex = 2
+        Me.TabPage6.Text = "PROCESSEUR"
         '
         'TextBox16
         '
-        Me.TextBox16.Enabled = False
-        Me.TextBox16.Location = New System.Drawing.Point(204, 127)
+        Me.TextBox16.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox16.Location = New System.Drawing.Point(273, 102)
+        Me.TextBox16.MaxLength = 32767
+        Me.TextBox16.Multiline = False
         Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox16.TabIndex = 21
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(20, 127)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(61, 13)
-        Me.Label18.TabIndex = 20
-        Me.Label18.Text = "Vitesse Min"
+        Me.TextBox16.ReadOnly = False
+        Me.TextBox16.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox16.TabIndex = 22
+        Me.TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox16.UseSystemPasswordChar = False
         '
         'TextBox15
         '
-        Me.TextBox15.Enabled = False
-        Me.TextBox15.Location = New System.Drawing.Point(204, 101)
+        Me.TextBox15.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox15.Location = New System.Drawing.Point(273, 79)
+        Me.TextBox15.MaxLength = 32767
+        Me.TextBox15.Multiline = False
         Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox15.TabIndex = 19
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(20, 101)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(64, 13)
-        Me.Label17.TabIndex = 18
-        Me.Label17.Text = "Vitesse Max"
+        Me.TextBox15.ReadOnly = False
+        Me.TextBox15.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox15.TabIndex = 21
+        Me.TextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox15.UseSystemPasswordChar = False
         '
         'TextBox12
         '
-        Me.TextBox12.Enabled = False
-        Me.TextBox12.Location = New System.Drawing.Point(204, 75)
+        Me.TextBox12.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox12.Location = New System.Drawing.Point(273, 58)
+        Me.TextBox12.MaxLength = 32767
+        Me.TextBox12.Multiline = False
         Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox12.TabIndex = 17
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(20, 75)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(60, 13)
-        Me.Label14.TabIndex = 16
-        Me.Label14.Text = "Description"
+        Me.TextBox12.ReadOnly = False
+        Me.TextBox12.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox12.TabIndex = 20
+        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox12.UseSystemPasswordChar = False
         '
         'TextBox13
         '
-        Me.TextBox13.Enabled = False
-        Me.TextBox13.Location = New System.Drawing.Point(204, 49)
+        Me.TextBox13.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox13.Location = New System.Drawing.Point(273, 35)
+        Me.TextBox13.MaxLength = 32767
+        Me.TextBox13.Multiline = False
         Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox13.TabIndex = 15
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(20, 49)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(29, 13)
-        Me.Label15.TabIndex = 14
-        Me.Label15.Text = "Nom"
+        Me.TextBox13.ReadOnly = False
+        Me.TextBox13.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox13.TabIndex = 19
+        Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox13.UseSystemPasswordChar = False
         '
         'TextBox14
         '
-        Me.TextBox14.Enabled = False
-        Me.TextBox14.Location = New System.Drawing.Point(204, 23)
+        Me.TextBox14.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox14.Location = New System.Drawing.Point(273, 12)
+        Me.TextBox14.MaxLength = 32767
+        Me.TextBox14.Multiline = False
         Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox14.TabIndex = 13
+        Me.TextBox14.ReadOnly = False
+        Me.TextBox14.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox14.TabIndex = 18
+        Me.TextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox14.UseSystemPasswordChar = False
         '
-        'Label16
+        'NsLabel12
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(20, 23)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(31, 13)
-        Me.Label16.TabIndex = 12
-        Me.Label16.Text = "Type"
+        Me.NsLabel12.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel12.Location = New System.Drawing.Point(6, 108)
+        Me.NsLabel12.Name = "NsLabel12"
+        Me.NsLabel12.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel12.TabIndex = 17
+        Me.NsLabel12.Text = "NsLabel12"
+        Me.NsLabel12.Value1 = "Numéro du dernier SP Majeur installé"
+        Me.NsLabel12.Value2 = " "
         '
-        'MEMOIRE
+        'NsLabel13
         '
-        Me.MEMOIRE.Controls.Add(Me.TextBox17)
-        Me.MEMOIRE.Controls.Add(Me.Label19)
-        Me.MEMOIRE.Location = New System.Drawing.Point(4, 22)
-        Me.MEMOIRE.Name = "MEMOIRE"
-        Me.MEMOIRE.Size = New System.Drawing.Size(953, 274)
-        Me.MEMOIRE.TabIndex = 3
-        Me.MEMOIRE.Text = "MEMOIRE"
-        Me.MEMOIRE.UseVisualStyleBackColor = True
+        Me.NsLabel13.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel13.Location = New System.Drawing.Point(6, 85)
+        Me.NsLabel13.Name = "NsLabel13"
+        Me.NsLabel13.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel13.TabIndex = 16
+        Me.NsLabel13.Text = "NsLabel13"
+        Me.NsLabel13.Value1 = "Version"
+        Me.NsLabel13.Value2 = " "
+        '
+        'NsLabel14
+        '
+        Me.NsLabel14.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel14.Location = New System.Drawing.Point(6, 58)
+        Me.NsLabel14.Name = "NsLabel14"
+        Me.NsLabel14.Size = New System.Drawing.Size(216, 21)
+        Me.NsLabel14.TabIndex = 15
+        Me.NsLabel14.Text = "NsLabel14"
+        Me.NsLabel14.Value1 = "Système d'exploitation"
+        Me.NsLabel14.Value2 = " "
+        '
+        'NsLabel15
+        '
+        Me.NsLabel15.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel15.Location = New System.Drawing.Point(6, 41)
+        Me.NsLabel15.Name = "NsLabel15"
+        Me.NsLabel15.Size = New System.Drawing.Size(216, 17)
+        Me.NsLabel15.TabIndex = 14
+        Me.NsLabel15.Text = "NsLabel15"
+        Me.NsLabel15.Value1 = "Description du poste"
+        Me.NsLabel15.Value2 = " "
+        '
+        'NsLabel16
+        '
+        Me.NsLabel16.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel16.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel16.Name = "NsLabel16"
+        Me.NsLabel16.Size = New System.Drawing.Size(127, 17)
+        Me.NsLabel16.TabIndex = 13
+        Me.NsLabel16.Text = "Nom du poste"
+        Me.NsLabel16.Value1 = "Nom du poste"
+        Me.NsLabel16.Value2 = ""
+        '
+        'TabPage7
+        '
+        Me.TabPage7.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage7.Controls.Add(Me.TextBox17)
+        Me.TabPage7.Controls.Add(Me.NsLabel17)
+        Me.TabPage7.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage7.TabIndex = 3
+        Me.TabPage7.Text = "MEMOIRE"
         '
         'TextBox17
         '
-        Me.TextBox17.Enabled = False
-        Me.TextBox17.Location = New System.Drawing.Point(204, 23)
+        Me.TextBox17.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox17.Location = New System.Drawing.Point(273, 12)
+        Me.TextBox17.MaxLength = 32767
+        Me.TextBox17.Multiline = False
         Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(521, 20)
-        Me.TextBox17.TabIndex = 15
+        Me.TextBox17.ReadOnly = False
+        Me.TextBox17.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox17.TabIndex = 20
+        Me.TextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox17.UseSystemPasswordChar = False
         '
-        'Label19
+        'NsLabel17
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(20, 23)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(49, 13)
-        Me.Label19.TabIndex = 14
-        Me.Label19.Text = "Capacité"
+        Me.NsLabel17.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel17.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel17.Name = "NsLabel17"
+        Me.NsLabel17.Size = New System.Drawing.Size(127, 17)
+        Me.NsLabel17.TabIndex = 19
+        Me.NsLabel17.Text = "Nom du poste"
+        Me.NsLabel17.Value1 = "Nom du poste"
+        Me.NsLabel17.Value2 = ""
         '
-        'HDD
+        'TabPage8
         '
-        Me.HDD.Controls.Add(Me.DataGridView1)
-        Me.HDD.Location = New System.Drawing.Point(4, 22)
-        Me.HDD.Name = "HDD"
-        Me.HDD.Size = New System.Drawing.Size(953, 274)
-        Me.HDD.TabIndex = 4
-        Me.HDD.Text = "HDD"
-        Me.HDD.UseVisualStyleBackColor = True
+        Me.TabPage8.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage8.Controls.Add(Me.DataGridView1)
+        Me.TabPage8.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage8.TabIndex = 4
+        Me.TabPage8.Text = "HDD"
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
-        Me.DataGridView1.Location = New System.Drawing.Point(20, 23)
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(914, 209)
+        Me.DataGridView1.Size = New System.Drawing.Size(886, 359)
         Me.DataGridView1.TabIndex = 0
         '
         'Column1
@@ -1262,26 +872,27 @@ Partial Class Principale
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
         '
-        'RESEAU
+        'TabPage9
         '
-        Me.RESEAU.Controls.Add(Me.DataGridView2)
-        Me.RESEAU.Location = New System.Drawing.Point(4, 22)
-        Me.RESEAU.Name = "RESEAU"
-        Me.RESEAU.Size = New System.Drawing.Size(953, 274)
-        Me.RESEAU.TabIndex = 5
-        Me.RESEAU.Text = "RESEAU"
-        Me.RESEAU.UseVisualStyleBackColor = True
+        Me.TabPage9.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage9.Controls.Add(Me.DataGridView2)
+        Me.TabPage9.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage9.Name = "TabPage9"
+        Me.TabPage9.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage9.TabIndex = 5
+        Me.TabPage9.Text = "RESEAU"
         '
         'DataGridView2
         '
         Me.DataGridView2.AllowUserToAddRows = False
         Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
-        Me.DataGridView2.Location = New System.Drawing.Point(20, 23)
+        Me.DataGridView2.Location = New System.Drawing.Point(3, 3)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.Size = New System.Drawing.Size(914, 209)
+        Me.DataGridView2.Size = New System.Drawing.Size(886, 359)
         Me.DataGridView2.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -1308,24 +919,655 @@ Partial Class Principale
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
-        'TabPage3
+        'DataGridViewTextBoxColumn5
         '
-        Me.TabPage3.Controls.Add(Me.DataGridView6)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(996, 436)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Surveillance"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Vitesse Max"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.HeaderText = "@IP"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Masque sous réseau"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "DHCP"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "@DHCP"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        '
+        'Column10
+        '
+        Me.Column10.HeaderText = "@DNS"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
+        '
+        'TabPage10
+        '
+        Me.TabPage10.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage10.Controls.Add(Me.ListBox1)
+        Me.TabPage10.Controls.Add(Me.NsLabel18)
+        Me.TabPage10.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage10.Name = "TabPage10"
+        Me.TabPage10.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage10.TabIndex = 6
+        Me.TabPage10.Text = "UTILISATEURS"
+        '
+        'ListBox1
+        '
+        Me.ListBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(271, 18)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(618, 342)
+        Me.ListBox1.TabIndex = 15
+        '
+        'NsLabel18
+        '
+        Me.NsLabel18.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel18.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel18.Name = "NsLabel18"
+        Me.NsLabel18.Size = New System.Drawing.Size(259, 17)
+        Me.NsLabel18.TabIndex = 15
+        Me.NsLabel18.Text = "Nom de la carte mère"
+        Me.NsLabel18.Value1 = "Liste des utilisateurs"
+        Me.NsLabel18.Value2 = ""
+        '
+        'TabPage11
+        '
+        Me.TabPage11.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage11.Controls.Add(Me.ListBox2)
+        Me.TabPage11.Controls.Add(Me.NsLabel19)
+        Me.TabPage11.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage11.Name = "TabPage11"
+        Me.TabPage11.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage11.TabIndex = 7
+        Me.TabPage11.Text = "GROUPES"
+        '
+        'ListBox2
+        '
+        Me.ListBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(271, 18)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(618, 342)
+        Me.ListBox2.TabIndex = 17
+        '
+        'NsLabel19
+        '
+        Me.NsLabel19.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel19.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel19.Name = "NsLabel19"
+        Me.NsLabel19.Size = New System.Drawing.Size(259, 17)
+        Me.NsLabel19.TabIndex = 17
+        Me.NsLabel19.Text = "Nom de la carte mère"
+        Me.NsLabel19.Value1 = "Liste des groupes"
+        Me.NsLabel19.Value2 = ""
+        '
+        'TabPage12
+        '
+        Me.TabPage12.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage12.Controls.Add(Me.TextBox26)
+        Me.TabPage12.Controls.Add(Me.NsLabel28)
+        Me.TabPage12.Controls.Add(Me.TextBox18)
+        Me.TabPage12.Controls.Add(Me.TextBox19)
+        Me.TabPage12.Controls.Add(Me.TextBox20)
+        Me.TabPage12.Controls.Add(Me.TextBox21)
+        Me.TabPage12.Controls.Add(Me.TextBox22)
+        Me.TabPage12.Controls.Add(Me.TextBox23)
+        Me.TabPage12.Controls.Add(Me.TextBox24)
+        Me.TabPage12.Controls.Add(Me.TextBox25)
+        Me.TabPage12.Controls.Add(Me.NsLabel20)
+        Me.TabPage12.Controls.Add(Me.NsLabel21)
+        Me.TabPage12.Controls.Add(Me.NsLabel22)
+        Me.TabPage12.Controls.Add(Me.NsLabel23)
+        Me.TabPage12.Controls.Add(Me.NsLabel24)
+        Me.TabPage12.Controls.Add(Me.NsLabel25)
+        Me.TabPage12.Controls.Add(Me.NsLabel26)
+        Me.TabPage12.Controls.Add(Me.NsLabel27)
+        Me.TabPage12.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage12.Name = "TabPage12"
+        Me.TabPage12.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage12.TabIndex = 8
+        Me.TabPage12.Text = "STRATEGIE"
+        '
+        'TextBox26
+        '
+        Me.TextBox26.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox26.Location = New System.Drawing.Point(271, 200)
+        Me.TextBox26.MaxLength = 32767
+        Me.TextBox26.Multiline = False
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.ReadOnly = False
+        Me.TextBox26.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox26.TabIndex = 33
+        Me.TextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox26.UseSystemPasswordChar = False
+        '
+        'NsLabel28
+        '
+        Me.NsLabel28.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel28.Location = New System.Drawing.Point(6, 200)
+        Me.NsLabel28.Name = "NsLabel28"
+        Me.NsLabel28.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel28.TabIndex = 32
+        Me.NsLabel28.Text = "NsLabel28"
+        Me.NsLabel28.Value1 = "Rôle du poste"
+        Me.NsLabel28.Value2 = " "
+        '
+        'TextBox18
+        '
+        Me.TextBox18.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox18.Location = New System.Drawing.Point(271, 177)
+        Me.TextBox18.MaxLength = 32767
+        Me.TextBox18.Multiline = False
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.ReadOnly = False
+        Me.TextBox18.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox18.TabIndex = 31
+        Me.TextBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox18.UseSystemPasswordChar = False
+        '
+        'TextBox19
+        '
+        Me.TextBox19.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox19.Location = New System.Drawing.Point(271, 154)
+        Me.TextBox19.MaxLength = 32767
+        Me.TextBox19.Multiline = False
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.ReadOnly = False
+        Me.TextBox19.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox19.TabIndex = 30
+        Me.TextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox19.UseSystemPasswordChar = False
+        '
+        'TextBox20
+        '
+        Me.TextBox20.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox20.Location = New System.Drawing.Point(271, 131)
+        Me.TextBox20.MaxLength = 32767
+        Me.TextBox20.Multiline = False
+        Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.ReadOnly = False
+        Me.TextBox20.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox20.TabIndex = 29
+        Me.TextBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox20.UseSystemPasswordChar = False
+        '
+        'TextBox21
+        '
+        Me.TextBox21.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox21.Location = New System.Drawing.Point(271, 108)
+        Me.TextBox21.MaxLength = 32767
+        Me.TextBox21.Multiline = False
+        Me.TextBox21.Name = "TextBox21"
+        Me.TextBox21.ReadOnly = False
+        Me.TextBox21.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox21.TabIndex = 28
+        Me.TextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox21.UseSystemPasswordChar = False
+        '
+        'TextBox22
+        '
+        Me.TextBox22.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox22.Location = New System.Drawing.Point(271, 85)
+        Me.TextBox22.MaxLength = 32767
+        Me.TextBox22.Multiline = False
+        Me.TextBox22.Name = "TextBox22"
+        Me.TextBox22.ReadOnly = False
+        Me.TextBox22.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox22.TabIndex = 27
+        Me.TextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox22.UseSystemPasswordChar = False
+        '
+        'TextBox23
+        '
+        Me.TextBox23.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox23.Location = New System.Drawing.Point(271, 64)
+        Me.TextBox23.MaxLength = 32767
+        Me.TextBox23.Multiline = False
+        Me.TextBox23.Name = "TextBox23"
+        Me.TextBox23.ReadOnly = False
+        Me.TextBox23.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox23.TabIndex = 26
+        Me.TextBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox23.UseSystemPasswordChar = False
+        '
+        'TextBox24
+        '
+        Me.TextBox24.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox24.Location = New System.Drawing.Point(271, 41)
+        Me.TextBox24.MaxLength = 32767
+        Me.TextBox24.Multiline = False
+        Me.TextBox24.Name = "TextBox24"
+        Me.TextBox24.ReadOnly = False
+        Me.TextBox24.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox24.TabIndex = 25
+        Me.TextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox24.UseSystemPasswordChar = False
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TextBox25.Location = New System.Drawing.Point(271, 18)
+        Me.TextBox25.MaxLength = 32767
+        Me.TextBox25.Multiline = False
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.ReadOnly = False
+        Me.TextBox25.Size = New System.Drawing.Size(405, 23)
+        Me.TextBox25.TabIndex = 24
+        Me.TextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TextBox25.UseSystemPasswordChar = False
+        '
+        'NsLabel20
+        '
+        Me.NsLabel20.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel20.Location = New System.Drawing.Point(6, 154)
+        Me.NsLabel20.Name = "NsLabel20"
+        Me.NsLabel20.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel20.TabIndex = 23
+        Me.NsLabel20.Text = "NsLabel20"
+        Me.NsLabel20.Value1 = "Durée du vérrouillage"
+        Me.NsLabel20.Value2 = " "
+        '
+        'NsLabel21
+        '
+        Me.NsLabel21.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel21.Location = New System.Drawing.Point(6, 177)
+        Me.NsLabel21.Name = "NsLabel21"
+        Me.NsLabel21.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel21.TabIndex = 22
+        Me.NsLabel21.Text = "NsLabel21"
+        Me.NsLabel21.Value1 = "Fenêtre d'observation du vérrouillage"
+        Me.NsLabel21.Value2 = " "
+        '
+        'NsLabel22
+        '
+        Me.NsLabel22.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel22.Location = New System.Drawing.Point(6, 131)
+        Me.NsLabel22.Name = "NsLabel22"
+        Me.NsLabel22.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel22.TabIndex = 21
+        Me.NsLabel22.Text = "NsLabel22"
+        Me.NsLabel22.Value1 = "Seuil du vérrouillage"
+        Me.NsLabel22.Value2 = " "
+        '
+        'NsLabel23
+        '
+        Me.NsLabel23.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel23.Location = New System.Drawing.Point(6, 109)
+        Me.NsLabel23.Name = "NsLabel23"
+        Me.NsLabel23.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel23.TabIndex = 20
+        Me.NsLabel23.Text = "NsLabel23"
+        Me.NsLabel23.Value1 = "Nombre de mot de passe anterieur"
+        Me.NsLabel23.Value2 = " "
+        '
+        'NsLabel24
+        '
+        Me.NsLabel24.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel24.Location = New System.Drawing.Point(6, 86)
+        Me.NsLabel24.Name = "NsLabel24"
+        Me.NsLabel24.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel24.TabIndex = 19
+        Me.NsLabel24.Text = "NsLabel24"
+        Me.NsLabel24.Value1 = "Longueur minimal du mot de passe"
+        Me.NsLabel24.Value2 = " "
+        '
+        'NsLabel25
+        '
+        Me.NsLabel25.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel25.Location = New System.Drawing.Point(6, 64)
+        Me.NsLabel25.Name = "NsLabel25"
+        Me.NsLabel25.Size = New System.Drawing.Size(216, 21)
+        Me.NsLabel25.TabIndex = 18
+        Me.NsLabel25.Text = "NsLabel25"
+        Me.NsLabel25.Value1 = "Mot de passe vie maximale"
+        Me.NsLabel25.Value2 = " "
+        '
+        'NsLabel26
+        '
+        Me.NsLabel26.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel26.Location = New System.Drawing.Point(6, 41)
+        Me.NsLabel26.Name = "NsLabel26"
+        Me.NsLabel26.Size = New System.Drawing.Size(216, 17)
+        Me.NsLabel26.TabIndex = 17
+        Me.NsLabel26.Text = "NsLabel26"
+        Me.NsLabel26.Value1 = "Mot de passe vie minimale"
+        Me.NsLabel26.Value2 = " "
+        '
+        'NsLabel27
+        '
+        Me.NsLabel27.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel27.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel27.Name = "NsLabel27"
+        Me.NsLabel27.Size = New System.Drawing.Size(127, 17)
+        Me.NsLabel27.TabIndex = 16
+        Me.NsLabel27.Text = "Nom du poste"
+        Me.NsLabel27.Value1 = "Expiration"
+        Me.NsLabel27.Value2 = ""
+        '
+        'TabPage13
+        '
+        Me.TabPage13.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage13.Controls.Add(Me.ListBox3)
+        Me.TabPage13.Controls.Add(Me.NsLabel29)
+        Me.TabPage13.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage13.Name = "TabPage13"
+        Me.TabPage13.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage13.TabIndex = 9
+        Me.TabPage13.Text = "LOGICIELS"
+        '
+        'ListBox3
+        '
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Location = New System.Drawing.Point(271, 18)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(618, 342)
+        Me.ListBox3.TabIndex = 17
+        '
+        'NsLabel29
+        '
+        Me.NsLabel29.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel29.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel29.Name = "NsLabel29"
+        Me.NsLabel29.Size = New System.Drawing.Size(259, 17)
+        Me.NsLabel29.TabIndex = 19
+        Me.NsLabel29.Text = "Nom de la carte mère"
+        Me.NsLabel29.Value1 = "Liste des Logiciels"
+        Me.NsLabel29.Value2 = ""
+        '
+        'TabPage14
+        '
+        Me.TabPage14.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage14.Controls.Add(Me.ListBox4)
+        Me.TabPage14.Controls.Add(Me.NsLabel30)
+        Me.TabPage14.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage14.Name = "TabPage14"
+        Me.TabPage14.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage14.TabIndex = 10
+        Me.TabPage14.Text = "PILOTES"
+        '
+        'ListBox4
+        '
+        Me.ListBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ListBox4.FormattingEnabled = True
+        Me.ListBox4.Location = New System.Drawing.Point(271, 18)
+        Me.ListBox4.Name = "ListBox4"
+        Me.ListBox4.Size = New System.Drawing.Size(618, 342)
+        Me.ListBox4.TabIndex = 17
+        '
+        'NsLabel30
+        '
+        Me.NsLabel30.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel30.Location = New System.Drawing.Point(6, 18)
+        Me.NsLabel30.Name = "NsLabel30"
+        Me.NsLabel30.Size = New System.Drawing.Size(259, 17)
+        Me.NsLabel30.TabIndex = 21
+        Me.NsLabel30.Text = "Nom de la carte mère"
+        Me.NsLabel30.Value1 = "Liste des Logiciels"
+        Me.NsLabel30.Value2 = ""
+        '
+        'TabPage15
+        '
+        Me.TabPage15.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage15.Controls.Add(Me.DataGridView3)
+        Me.TabPage15.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage15.Name = "TabPage15"
+        Me.TabPage15.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage15.TabIndex = 11
+        Me.TabPage15.Text = "SERVICES"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.AllowUserToAddRows = False
+        Me.DataGridView3.AllowUserToDeleteRows = False
+        Me.DataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11})
+        Me.DataGridView3.Location = New System.Drawing.Point(3, 3)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.ReadOnly = True
+        Me.DataGridView3.Size = New System.Drawing.Size(886, 359)
+        Me.DataGridView3.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Nom"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Width = 150
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Descritpion"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Width = 400
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Statut"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Etat"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Code Sortie"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        '
+        'TabPage16
+        '
+        Me.TabPage16.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage16.Controls.Add(Me.DataGridView4)
+        Me.TabPage16.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage16.Name = "TabPage16"
+        Me.TabPage16.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage16.TabIndex = 12
+        Me.TabPage16.Text = "MAJ"
+        '
+        'DataGridView4
+        '
+        Me.DataGridView4.AllowUserToAddRows = False
+        Me.DataGridView4.AllowUserToDeleteRows = False
+        Me.DataGridView4.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23})
+        Me.DataGridView4.Location = New System.Drawing.Point(3, 3)
+        Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.ReadOnly = True
+        Me.DataGridView4.Size = New System.Drawing.Size(886, 359)
+        Me.DataGridView4.TabIndex = 4
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.HeaderText = "Nom"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.ReadOnly = True
+        Me.DataGridViewTextBoxColumn17.Width = 300
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.HeaderText = "Poste"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.HeaderText = "Description"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        Me.DataGridViewTextBoxColumn19.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.HeaderText = "N° de KB"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        Me.DataGridViewTextBoxColumn20.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn22
+        '
+        Me.DataGridViewTextBoxColumn22.HeaderText = "Installé par"
+        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
+        Me.DataGridViewTextBoxColumn22.ReadOnly = True
+        Me.DataGridViewTextBoxColumn22.Width = 150
+        '
+        'DataGridViewTextBoxColumn23
+        '
+        Me.DataGridViewTextBoxColumn23.HeaderText = "Date d'installation"
+        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
+        Me.DataGridViewTextBoxColumn23.ReadOnly = True
+        '
+        'NsLabel34
+        '
+        Me.NsLabel34.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel34.Location = New System.Drawing.Point(354, 12)
+        Me.NsLabel34.Name = "NsLabel34"
+        Me.NsLabel34.Size = New System.Drawing.Size(168, 23)
+        Me.NsLabel34.TabIndex = 3
+        Me.NsLabel34.Text = "NsLabel34"
+        Me.NsLabel34.Value1 = "Audit"
+        Me.NsLabel34.Value2 = ""
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.ForeColor = System.Drawing.Color.White
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(124, 12)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(224, 21)
+        Me.ComboBox1.TabIndex = 2
+        '
+        'NsLabel33
+        '
+        Me.NsLabel33.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel33.Location = New System.Drawing.Point(12, 12)
+        Me.NsLabel33.Name = "NsLabel33"
+        Me.NsLabel33.Size = New System.Drawing.Size(168, 23)
+        Me.NsLabel33.TabIndex = 1
+        Me.NsLabel33.Text = "NsLabel33"
+        Me.NsLabel33.Value1 = "Nom du serveur"
+        Me.NsLabel33.Value2 = ""
+        '
+        'TabPage18
+        '
+        Me.TabPage18.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage18.Controls.Add(Me.ComboBox3)
+        Me.TabPage18.Controls.Add(Me.DataGridView5)
+        Me.TabPage18.Controls.Add(Me.DateTimePicker1)
+        Me.TabPage18.Controls.Add(Me.NsLabel32)
+        Me.TabPage18.Controls.Add(Me.NsLabel31)
+        Me.TabPage18.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage18.Name = "TabPage18"
+        Me.TabPage18.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage18.Size = New System.Drawing.Size(1044, 454)
+        Me.TabPage18.TabIndex = 1
+        Me.TabPage18.Text = "Comparaison"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.ForeColor = System.Drawing.Color.White
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(191, 12)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(235, 21)
+        Me.ComboBox3.TabIndex = 2
+        '
+        'DataGridView5
+        '
+        Me.DataGridView5.AllowUserToAddRows = False
+        Me.DataGridView5.AllowUserToDeleteRows = False
+        Me.DataGridView5.AllowUserToOrderColumns = True
+        Me.DataGridView5.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column12})
+        Me.DataGridView5.Location = New System.Drawing.Point(13, 70)
+        Me.DataGridView5.Name = "DataGridView5"
+        Me.DataGridView5.ReadOnly = True
+        Me.DataGridView5.Size = New System.Drawing.Size(1025, 378)
+        Me.DataGridView5.TabIndex = 12
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = "Champ"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(191, 39)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(235, 20)
+        Me.DateTimePicker1.TabIndex = 13
+        '
+        'NsLabel32
+        '
+        Me.NsLabel32.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel32.Location = New System.Drawing.Point(12, 41)
+        Me.NsLabel32.Name = "NsLabel32"
+        Me.NsLabel32.Size = New System.Drawing.Size(168, 23)
+        Me.NsLabel32.TabIndex = 1
+        Me.NsLabel32.Text = "NsLabel32"
+        Me.NsLabel32.Value1 = "Elément de comparaison"
+        Me.NsLabel32.Value2 = ""
+        '
+        'NsLabel31
+        '
+        Me.NsLabel31.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel31.Location = New System.Drawing.Point(12, 12)
+        Me.NsLabel31.Name = "NsLabel31"
+        Me.NsLabel31.Size = New System.Drawing.Size(168, 23)
+        Me.NsLabel31.TabIndex = 0
+        Me.NsLabel31.Text = "NsLabel31"
+        Me.NsLabel31.Value1 = "Elément de comparaison"
+        Me.NsLabel31.Value2 = ""
+        '
+        'TabPage19
+        '
+        Me.TabPage19.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage19.Controls.Add(Me.DataGridView6)
+        Me.TabPage19.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage19.Name = "TabPage19"
+        Me.TabPage19.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage19.Size = New System.Drawing.Size(1044, 454)
+        Me.TabPage19.TabIndex = 2
+        Me.TabPage19.Text = "Surveillance"
         '
         'DataGridView6
         '
+        Me.DataGridView6.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView6.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column11, Me.Column13, Me.Column14, Me.Column15, Me.Column16})
-        Me.DataGridView6.Location = New System.Drawing.Point(6, 6)
+        Me.DataGridView6.Location = New System.Drawing.Point(6, 3)
         Me.DataGridView6.Name = "DataGridView6"
-        Me.DataGridView6.Size = New System.Drawing.Size(984, 424)
+        Me.DataGridView6.Size = New System.Drawing.Size(1032, 445)
         Me.DataGridView6.TabIndex = 0
         '
         'Column11
@@ -1357,172 +1599,109 @@ Partial Class Principale
         Me.Column16.Name = "Column16"
         Me.Column16.ReadOnly = True
         '
-        'Timer1
+        'NsTheme1
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
+        Me.NsTheme1.AccentOffset = 42
+        Me.NsTheme1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.NsTheme1.Colors = New WindowsApplication1.Bloom(-1) {}
+        Me.NsTheme1.Controls.Add(Me.NsButton3)
+        Me.NsTheme1.Controls.Add(Me.NsLabel36)
+        Me.NsTheme1.Customization = ""
+        Me.NsTheme1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.NsTheme1.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.NsTheme1.Image = Nothing
+        Me.NsTheme1.Location = New System.Drawing.Point(0, 0)
+        Me.NsTheme1.Movable = True
+        Me.NsTheme1.Name = "NsTheme1"
+        Me.NsTheme1.NoRounding = False
+        Me.NsTheme1.Sizable = True
+        Me.NsTheme1.Size = New System.Drawing.Size(1184, 542)
+        Me.NsTheme1.SmartBounds = True
+        Me.NsTheme1.StartPosition = System.Windows.Forms.FormStartPosition.Manual
+        Me.NsTheme1.TabIndex = 10
+        Me.NsTheme1.TransparencyKey = System.Drawing.Color.Empty
+        Me.NsTheme1.Transparent = True
+        '
+        'NsButton3
+        '
+        Me.NsButton3.Location = New System.Drawing.Point(1160, 3)
+        Me.NsButton3.Name = "NsButton3"
+        Me.NsButton3.Size = New System.Drawing.Size(21, 22)
+        Me.NsButton3.TabIndex = 12
+        Me.NsButton3.Text = "X"
+        '
+        'NsLabel36
+        '
+        Me.NsLabel36.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel36.Location = New System.Drawing.Point(13, 3)
+        Me.NsLabel36.Name = "NsLabel36"
+        Me.NsLabel36.Size = New System.Drawing.Size(87, 23)
+        Me.NsLabel36.TabIndex = 11
+        Me.NsLabel36.Text = "NsLabel36"
+        Me.NsLabel36.Value1 = "AUDIT"
+        Me.NsLabel36.Value2 = "0.1"
         '
         'Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1030, 502)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.TabControl1)
+        Me.ClientSize = New System.Drawing.Size(1184, 542)
+        Me.Controls.Add(Me.NsLabel35)
+        Me.Controls.Add(Me.NsOnOffBox1)
+        Me.Controls.Add(Me.NsButton2)
+        Me.Controls.Add(Me.NsButton1)
+        Me.Controls.Add(Me.NsTabControl2)
+        Me.Controls.Add(Me.NsTheme1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Principale"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Audit"
-        Me.STRATEGIE.ResumeLayout(False)
-        Me.STRATEGIE.PerformLayout()
-        Me.GROUPES.ResumeLayout(False)
-        Me.GROUPES.PerformLayout()
-        Me.UTILISATEURS.ResumeLayout(False)
-        Me.UTILISATEURS.PerformLayout()
-        Me.LOGICIELS.ResumeLayout(False)
-        Me.LOGICIELS.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.SERVICES.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PILOTES.ResumeLayout(False)
-        Me.PILOTES.PerformLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MAJ.ResumeLayout(False)
+        Me.NsTabControl2.ResumeLayout(False)
+        Me.TabPage17.ResumeLayout(False)
+        Me.NsTabControl1.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CARTEMERE.ResumeLayout(False)
-        Me.CARTEMERE.PerformLayout()
-        Me.POSTE.ResumeLayout(False)
-        Me.POSTE.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.TabControl2.ResumeLayout(False)
-        Me.PROCESSEUR.ResumeLayout(False)
-        Me.PROCESSEUR.PerformLayout()
-        Me.MEMOIRE.ResumeLayout(False)
-        Me.MEMOIRE.PerformLayout()
-        Me.HDD.ResumeLayout(False)
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage7.ResumeLayout(False)
+        Me.TabPage8.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RESEAU.ResumeLayout(False)
+        Me.TabPage9.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage10.ResumeLayout(False)
+        Me.TabPage11.ResumeLayout(False)
+        Me.TabPage12.ResumeLayout(False)
+        Me.TabPage13.ResumeLayout(False)
+        Me.TabPage14.ResumeLayout(False)
+        Me.TabPage15.ResumeLayout(False)
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage16.ResumeLayout(False)
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage18.ResumeLayout(False)
+        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage19.ResumeLayout(False)
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.NsTheme1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents STRATEGIE As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
-    Friend WithEvents Label30 As System.Windows.Forms.Label
-    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
-    Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
-    Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
-    Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents TextBox23 As System.Windows.Forms.TextBox
-    Friend WithEvents Label27 As System.Windows.Forms.Label
-    Friend WithEvents TextBox24 As System.Windows.Forms.TextBox
-    Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
-    Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
-    Friend WithEvents GROUPES As System.Windows.Forms.TabPage
-    Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Column7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
-    Friend WithEvents UTILISATEURS As System.Windows.Forms.TabPage
     Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column10 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents LOGICIELS As System.Windows.Forms.TabPage
-    Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
-    Friend WithEvents Label31 As System.Windows.Forms.Label
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents DataGridView5 As System.Windows.Forms.DataGridView
     Friend WithEvents Column12 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label33 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents DataGridViewTextBoxColumn22 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn23 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AProposToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents DataGridViewTextBoxColumn20 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn19 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
-    Friend WithEvents DataGridViewTextBoxColumn18 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SERVICES As System.Windows.Forms.TabPage
     Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents PILOTES As System.Windows.Forms.TabPage
-    Friend WithEvents DataGridViewTextBoxColumn17 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
-    Friend WithEvents MAJ As System.Windows.Forms.TabPage
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents CARTEMERE As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents POSTE As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Public WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents TabControl2 As System.Windows.Forms.TabControl
-    Friend WithEvents PROCESSEUR As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
-    Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents MEMOIRE As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents HDD As System.Windows.Forms.TabPage
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1530,15 +1709,12 @@ Partial Class Principale
     Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents RESEAU As System.Windows.Forms.TabPage
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
-    Friend WithEvents LicenceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents DataGridView6 As System.Windows.Forms.DataGridView
     Friend WithEvents Column11 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column13 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1546,7 +1722,104 @@ Partial Class Principale
     Friend WithEvents Column15 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column16 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents SurveillanceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ActiverToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents NsTabControl1 As NSTabControl
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents TabPage9 As TabPage
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TextBox8 As NSTextBox
+    Friend WithEvents TextBox7 As NSTextBox
+    Friend WithEvents TextBox6 As NSTextBox
+    Friend WithEvents TextBox5 As NSTextBox
+    Friend WithEvents TextBox4 As NSTextBox
+    Friend WithEvents TextBox3 As NSTextBox
+    Friend WithEvents TextBox2 As NSTextBox
+    Friend WithEvents TextBox1 As NSTextBox
+    Friend WithEvents NsLabel8 As NSLabel
+    Friend WithEvents NsLabel7 As NSLabel
+    Friend WithEvents NsLabel4 As NSLabel
+    Friend WithEvents NsLabel5 As NSLabel
+    Friend WithEvents NsLabel6 As NSLabel
+    Friend WithEvents NsLabel3 As NSLabel
+    Friend WithEvents NsLabel2 As NSLabel
+    Friend WithEvents NsLabel1 As NSLabel
+    Friend WithEvents TextBox9 As NSTextBox
+    Friend WithEvents TextBox10 As NSTextBox
+    Friend WithEvents TextBox11 As NSTextBox
+    Friend WithEvents NsLabel9 As NSLabel
+    Friend WithEvents NsLabel10 As NSLabel
+    Friend WithEvents NsLabel11 As NSLabel
+    Friend WithEvents TextBox16 As NSTextBox
+    Friend WithEvents TextBox15 As NSTextBox
+    Friend WithEvents TextBox12 As NSTextBox
+    Friend WithEvents TextBox13 As NSTextBox
+    Friend WithEvents TextBox14 As NSTextBox
+    Friend WithEvents NsLabel12 As NSLabel
+    Friend WithEvents NsLabel13 As NSLabel
+    Friend WithEvents NsLabel14 As NSLabel
+    Friend WithEvents NsLabel15 As NSLabel
+    Friend WithEvents NsLabel16 As NSLabel
+    Friend WithEvents TextBox17 As NSTextBox
+    Friend WithEvents NsLabel17 As NSLabel
+    Friend WithEvents TabPage10 As TabPage
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents NsLabel18 As NSLabel
+    Friend WithEvents TabPage11 As TabPage
+    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents NsLabel19 As NSLabel
+    Friend WithEvents TabPage12 As TabPage
+    Friend WithEvents TextBox26 As NSTextBox
+    Friend WithEvents NsLabel28 As NSLabel
+    Friend WithEvents TextBox18 As NSTextBox
+    Friend WithEvents TextBox19 As NSTextBox
+    Friend WithEvents TextBox20 As NSTextBox
+    Friend WithEvents TextBox21 As NSTextBox
+    Friend WithEvents TextBox22 As NSTextBox
+    Friend WithEvents TextBox23 As NSTextBox
+    Friend WithEvents TextBox24 As NSTextBox
+    Friend WithEvents TextBox25 As NSTextBox
+    Friend WithEvents NsLabel20 As NSLabel
+    Friend WithEvents NsLabel21 As NSLabel
+    Friend WithEvents NsLabel22 As NSLabel
+    Friend WithEvents NsLabel23 As NSLabel
+    Friend WithEvents NsLabel24 As NSLabel
+    Friend WithEvents NsLabel25 As NSLabel
+    Friend WithEvents NsLabel26 As NSLabel
+    Friend WithEvents NsLabel27 As NSLabel
+    Friend WithEvents TabPage13 As TabPage
+    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents NsLabel29 As NSLabel
+    Friend WithEvents TabPage14 As TabPage
+    Friend WithEvents ListBox4 As ListBox
+    Friend WithEvents NsLabel30 As NSLabel
+    Friend WithEvents TabPage15 As TabPage
+    Friend WithEvents TabPage16 As TabPage
+    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
+    Friend WithEvents NsTabControl2 As NSTabControl
+    Friend WithEvents TabPage17 As TabPage
+    Friend WithEvents ComboBox2 As NSComboBox
+    Friend WithEvents NsLabel34 As NSLabel
+    Friend WithEvents ComboBox1 As NSComboBox
+    Friend WithEvents NsLabel33 As NSLabel
+    Friend WithEvents TabPage18 As TabPage
+    Friend WithEvents ComboBox3 As NSComboBox
+    Friend WithEvents NsLabel32 As NSLabel
+    Friend WithEvents NsLabel31 As NSLabel
+    Friend WithEvents TabPage19 As TabPage
+    Friend WithEvents NsButton1 As NSButton
+    Friend WithEvents NsButton2 As NSButton
+    Friend WithEvents NsOnOffBox1 As NSOnOffBox
+    Friend WithEvents NsLabel35 As NSLabel
+    Friend WithEvents NsTheme1 As NSTheme
+    Friend WithEvents NsButton3 As NSButton
+    Friend WithEvents NsLabel36 As NSLabel
 End Class

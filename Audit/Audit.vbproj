@@ -99,16 +99,17 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDD\BDDDataSet.Designer.vb">
+    <Compile Include="Class\Class1.vb" />
+    <Compile Include="Class\NetWorkSQL.vb" />
+    <Compile Include="Database1DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BDDDataSet.xsd</DependentUpon>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Class\Class1.vb" />
-    <Compile Include="Form\Form4.Designer.vb">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <Compile Include="Form\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form\Form4.vb">
+    <Compile Include="Form\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Licence.Designer.vb">
@@ -134,6 +135,9 @@
     <Compile Include="Form\Principale.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NetSeal.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Recordset.vb" />
     <Compile Include="Form\Splash Screen.Designer.vb">
       <DependentUpon>Splash Screen.vb</DependentUpon>
@@ -153,8 +157,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form\Form4.resx">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <EmbeddedResource Include="Form\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Licence.resx">
       <DependentUpon>Licence.vb</DependentUpon>
@@ -177,16 +181,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="BDD\BDDDataSet.xsc">
-      <DependentUpon>BDDDataSet.xsd</DependentUpon>
+    <None Include="Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </None>
-    <None Include="BDD\BDDDataSet.xsd">
+    <None Include="Database1DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BDDDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>Database1DataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BDD\BDDDataSet.xss">
-      <DependentUpon>BDDDataSet.xsd</DependentUpon>
+    <None Include="Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -241,8 +245,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BDD\BDD.sdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="BDD\BDD.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

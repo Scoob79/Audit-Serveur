@@ -10,6 +10,25 @@ D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Debug
 D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Debug\WindowsApplication1.Licence.resources
 D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Debug\WindowsApplication1.Principale.resources
 D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Debug\WindowsApplication1.Form3.resources
-D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\obj\x86\Debug\WindowsApplication1.Form4.resources
 D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\bin\Debug\Audit.exe.config
 D:\Users\u165147\Documents\Visual Studio 2010\Projects\Audit\Audit\bin\Debug\BDD\BDD.sdf
+D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\Audit.exe.config
+D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\Audit.exe
+D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\Audit.pdb
+D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\Audit.xml
+D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\System.Data.SqlServerCe.dll
+D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\FR\System.Data.SqlServerCe.resources.dll
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.vbprojAssemblyReference.cache
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\WindowsApplication1.Licence.resources
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\WindowsApplication1.Form2.resources
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\WindowsApplication1.Principale.resources
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\WindowsApplication1.Form3.resources
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\WindowsApplication1.Resources.resources
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.vbproj.GenerateResource.cache
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.vbproj.CoreCompileInputs.cache
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.vbproj.CopyComplete
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.exe
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.xml
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.pdb
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\WindowsApplication1.Form1.resources
+D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\BDD\BDD.mdb

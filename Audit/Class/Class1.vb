@@ -4,10 +4,8 @@
 ' IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 ' PARTICULAR PURPOSE.
 '---------------------------------------------------------------------
-Imports System.Drawing
 Imports System.ComponentModel
-Imports System.IO
-Imports System.Net.NetworkInformation
+Imports System.Data.OleDb
 
 Public Class DataGridViewProgressColumn
     Inherits DataGridViewImageColumn
@@ -23,13 +21,13 @@ Public Class DataGridViewProgressCell
     End Sub
     ' Method required to make the Progress Cell consistent with the default Image Cell. 
     ' The default Image Cell assumes an Image as a value, although the value of the Progress Cell is an Integer.
-    Protected Overrides Function GetFormattedValue( _
-        ByVal value As Object, _
-        ByVal rowIndex As Integer, _
-        ByRef cellStyle As DataGridViewCellStyle, _
-        ByVal valueTypeConverter As TypeConverter, _
-        ByVal formattedValueTypeConverter As TypeConverter, _
-        ByVal context As DataGridViewDataErrorContexts _
+    Protected Overrides Function GetFormattedValue(
+        ByVal value As Object,
+        ByVal rowIndex As Integer,
+        ByRef cellStyle As DataGridViewCellStyle,
+        ByVal valueTypeConverter As TypeConverter,
+        ByVal formattedValueTypeConverter As TypeConverter,
+        ByVal context As DataGridViewDataErrorContexts
         ) As Object
         Static emptyImage As Bitmap = New Bitmap(1, 1, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
         GetFormattedValue = emptyImage
@@ -41,8 +39,8 @@ Public Class DataGridViewProgressCell
         Dim backBrush As Brush = New SolidBrush(cellStyle.BackColor)
         Dim foreBrush As Brush = New SolidBrush(cellStyle.ForeColor)
         ' Call the base class method to paint the default cell appearance.
-        MyBase.Paint(g, clipBounds, cellBounds, rowIndex, cellState, _
-            value, formattedValue, errorText, cellStyle, _
+        MyBase.Paint(g, clipBounds, cellBounds, rowIndex, cellState,
+            value, formattedValue, errorText, cellStyle,
             advancedBorderStyle, paintParts)
         If percentage > 0.0 Then
             ' Draw the progress bar and the text
@@ -59,3 +57,7 @@ Public Class DataGridViewProgressCell
     End Sub
 End Class
 
+Public Class DBConnect
+
+
+End Class

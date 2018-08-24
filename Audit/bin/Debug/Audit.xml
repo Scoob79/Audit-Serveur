@@ -6,78 +6,95 @@ Audit
 </name>
 </assembly>
 <members>
-<member name="T:WindowsApplication1.BDDDataSet.PingDataTable">
-	<summary>
-Represents the strongly named DataTable class.
+<member name="T:WindowsApplication1.My.Resources.Resources">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
 </summary>
-</member><member name="T:WindowsApplication1.BDDDataSet.PingRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:WindowsApplication1.BDDDataSet.PingRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:WindowsApplication1.BDDDataSet">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:WindowsApplication1.BDDDataSetTableAdapters.PingTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(WindowsApplication1.BDDDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(WindowsApplication1.BDDDataSet,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(WindowsApplication1.BDDDataSet,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateAll(WindowsApplication1.BDDDataSet)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
-	<summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+<summary>
   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
 </summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
-	<summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+<summary>
   Remplace la propriété CurrentUICulture du thread actuel pour toutes
   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
 </summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.Akka">
-	<summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.Akka">
+<summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.logo">
-	<summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.logo">
+<summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
-</member><member name="T:WindowsApplication1.My.Resources.Resources">
-	<summary>
-  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</member>
+<member name="T:WindowsApplication1.Database1DataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.Database1DataSet.TableDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.Database1DataSet.TableRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.Database1DataSet.TableRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.Database1DataSetTableAdapters.TableTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(WindowsApplication1.Database1DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(WindowsApplication1.Database1DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(WindowsApplication1.Database1DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateAll(WindowsApplication1.Database1DataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
 </summary>
 </member>
 </members>

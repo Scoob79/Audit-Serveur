@@ -36,6 +36,8 @@ Partial Class Principale
         Me.ComboBox2 = New WindowsApplication1.NSComboBox()
         Me.NsTabControl1 = New WindowsApplication1.NSTabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.NsTextBox1 = New WindowsApplication1.NSTextBox()
+        Me.NsLabel37 = New WindowsApplication1.NSLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBox8 = New WindowsApplication1.NSTextBox()
         Me.TextBox7 = New WindowsApplication1.NSTextBox()
@@ -76,12 +78,6 @@ Partial Class Principale
         Me.NsLabel17 = New WindowsApplication1.NSLabel()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -160,6 +156,13 @@ Partial Class Principale
         Me.NsTheme1 = New WindowsApplication1.NSTheme()
         Me.NsButton3 = New WindowsApplication1.NSButton()
         Me.NsLabel36 = New WindowsApplication1.NSLabel()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column17 = New WindowsApplication1.DataGridViewProgressColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NsTabControl2.SuspendLayout()
         Me.TabPage17.SuspendLayout()
         Me.NsTabControl1.SuspendLayout()
@@ -322,6 +325,8 @@ Partial Class Principale
         'TabPage4
         '
         Me.TabPage4.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage4.Controls.Add(Me.NsTextBox1)
+        Me.TabPage4.Controls.Add(Me.NsLabel37)
         Me.TabPage4.Controls.Add(Me.PictureBox1)
         Me.TabPage4.Controls.Add(Me.TextBox8)
         Me.TabPage4.Controls.Add(Me.TextBox7)
@@ -346,6 +351,30 @@ Partial Class Principale
         Me.TabPage4.TabIndex = 0
         Me.TabPage4.Text = "POSTE"
         '
+        'NsTextBox1
+        '
+        Me.NsTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox1.Location = New System.Drawing.Point(271, 108)
+        Me.NsTextBox1.MaxLength = 32767
+        Me.NsTextBox1.Multiline = False
+        Me.NsTextBox1.Name = "NsTextBox1"
+        Me.NsTextBox1.ReadOnly = False
+        Me.NsTextBox1.Size = New System.Drawing.Size(405, 23)
+        Me.NsTextBox1.TabIndex = 19
+        Me.NsTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox1.UseSystemPasswordChar = False
+        '
+        'NsLabel37
+        '
+        Me.NsLabel37.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel37.Location = New System.Drawing.Point(6, 108)
+        Me.NsLabel37.Name = "NsLabel37"
+        Me.NsLabel37.Size = New System.Drawing.Size(342, 17)
+        Me.NsLabel37.TabIndex = 18
+        Me.NsLabel37.Text = "NsLabel37"
+        Me.NsLabel37.Value1 = "Date d'installation"
+        Me.NsLabel37.Value2 = " "
+        '
         'PictureBox1
         '
         Me.PictureBox1.Location = New System.Drawing.Point(688, 18)
@@ -358,7 +387,7 @@ Partial Class Principale
         'TextBox8
         '
         Me.TextBox8.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox8.Location = New System.Drawing.Point(271, 177)
+        Me.TextBox8.Location = New System.Drawing.Point(271, 200)
         Me.TextBox8.MaxLength = 32767
         Me.TextBox8.Multiline = False
         Me.TextBox8.Name = "TextBox8"
@@ -371,7 +400,7 @@ Partial Class Principale
         'TextBox7
         '
         Me.TextBox7.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox7.Location = New System.Drawing.Point(271, 154)
+        Me.TextBox7.Location = New System.Drawing.Point(271, 177)
         Me.TextBox7.MaxLength = 32767
         Me.TextBox7.Multiline = False
         Me.TextBox7.Name = "TextBox7"
@@ -384,7 +413,7 @@ Partial Class Principale
         'TextBox6
         '
         Me.TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox6.Location = New System.Drawing.Point(271, 131)
+        Me.TextBox6.Location = New System.Drawing.Point(271, 154)
         Me.TextBox6.MaxLength = 32767
         Me.TextBox6.Multiline = False
         Me.TextBox6.Name = "TextBox6"
@@ -397,7 +426,7 @@ Partial Class Principale
         'TextBox5
         '
         Me.TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TextBox5.Location = New System.Drawing.Point(271, 108)
+        Me.TextBox5.Location = New System.Drawing.Point(271, 131)
         Me.TextBox5.MaxLength = 32767
         Me.TextBox5.Multiline = False
         Me.TextBox5.Name = "TextBox5"
@@ -462,7 +491,7 @@ Partial Class Principale
         'NsLabel8
         '
         Me.NsLabel8.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.NsLabel8.Location = New System.Drawing.Point(6, 154)
+        Me.NsLabel8.Location = New System.Drawing.Point(6, 177)
         Me.NsLabel8.Name = "NsLabel8"
         Me.NsLabel8.Size = New System.Drawing.Size(342, 17)
         Me.NsLabel8.TabIndex = 7
@@ -473,7 +502,7 @@ Partial Class Principale
         'NsLabel7
         '
         Me.NsLabel7.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.NsLabel7.Location = New System.Drawing.Point(6, 177)
+        Me.NsLabel7.Location = New System.Drawing.Point(6, 200)
         Me.NsLabel7.Name = "NsLabel7"
         Me.NsLabel7.Size = New System.Drawing.Size(342, 17)
         Me.NsLabel7.TabIndex = 6
@@ -484,7 +513,7 @@ Partial Class Principale
         'NsLabel4
         '
         Me.NsLabel4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.NsLabel4.Location = New System.Drawing.Point(6, 131)
+        Me.NsLabel4.Location = New System.Drawing.Point(6, 154)
         Me.NsLabel4.Name = "NsLabel4"
         Me.NsLabel4.Size = New System.Drawing.Size(342, 17)
         Me.NsLabel4.TabIndex = 5
@@ -495,7 +524,7 @@ Partial Class Principale
         'NsLabel5
         '
         Me.NsLabel5.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.NsLabel5.Location = New System.Drawing.Point(6, 109)
+        Me.NsLabel5.Location = New System.Drawing.Point(6, 132)
         Me.NsLabel5.Name = "NsLabel5"
         Me.NsLabel5.Size = New System.Drawing.Size(342, 17)
         Me.NsLabel5.TabIndex = 4
@@ -825,52 +854,12 @@ Partial Class Principale
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column17, Me.Column6})
         Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(886, 359)
         Me.DataGridView1.TabIndex = 0
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Lettre"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 50
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Numéro de Série"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 200
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Type"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 200
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Système de fichier"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Espace Libre"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Espace Total"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
         '
         'TabPage9
         '
@@ -969,6 +958,7 @@ Partial Class Principale
         'ListBox1
         '
         Me.ListBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ListBox1.ForeColor = System.Drawing.Color.White
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(271, 18)
         Me.ListBox1.Name = "ListBox1"
@@ -1000,6 +990,7 @@ Partial Class Principale
         'ListBox2
         '
         Me.ListBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ListBox2.ForeColor = System.Drawing.Color.White
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.Location = New System.Drawing.Point(271, 18)
         Me.ListBox2.Name = "ListBox2"
@@ -1273,6 +1264,8 @@ Partial Class Principale
         '
         'ListBox3
         '
+        Me.ListBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ListBox3.ForeColor = System.Drawing.Color.White
         Me.ListBox3.FormattingEnabled = True
         Me.ListBox3.Location = New System.Drawing.Point(271, 18)
         Me.ListBox3.Name = "ListBox3"
@@ -1304,6 +1297,7 @@ Partial Class Principale
         'ListBox4
         '
         Me.ListBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ListBox4.ForeColor = System.Drawing.Color.White
         Me.ListBox4.FormattingEnabled = True
         Me.ListBox4.Location = New System.Drawing.Point(271, 18)
         Me.ListBox4.Name = "ListBox4"
@@ -1642,6 +1636,52 @@ Partial Class Principale
         Me.NsLabel36.Value1 = "AUDIT"
         Me.NsLabel36.Value2 = "0.1"
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Lettre"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 50
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Numéro de Série"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 200
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Type"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 200
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Système de fichier"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Espace Libre"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'Column17
+        '
+        Me.Column17.HeaderText = "Pourcentage"
+        Me.Column17.Name = "Column17"
+        Me.Column17.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Espace Total"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
         'Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1703,12 +1743,6 @@ Partial Class Principale
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1822,4 +1856,13 @@ Partial Class Principale
     Friend WithEvents NsTheme1 As NSTheme
     Friend WithEvents NsButton3 As NSButton
     Friend WithEvents NsLabel36 As NSLabel
+    Friend WithEvents NsTextBox1 As NSTextBox
+    Friend WithEvents NsLabel37 As NSLabel
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column17 As DataGridViewProgressColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class

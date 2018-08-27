@@ -53,7 +53,6 @@ Public Class Principale
     Const WinServeur2016 = 10
     Const WinServeur = 11
     Const WinXP = 12
-
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim Config As New StreamReader("c:\temp\ConfCompar.ini"), Ligne As String
         Dim Serveur As New StreamReader("c:\temp\serveur.ini")
@@ -74,7 +73,6 @@ Public Class Principale
         Form1.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Size.Width) / 2
         Form1.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Size.Height) / 2
     End Sub
-
     Public Sub Exec()
         ' Exécute le recherche demandée par l'utilistateur en fonction des paramètres connu dans le fichier ConfCompar.ini et en affiche le résultat dans l'onglet Comparaison
         Dim Serveur As New StreamReader("c:\temp\serveur.ini")
@@ -190,36 +188,19 @@ Public Class Principale
                         Loop Until Ligne Is Nothing
                     Loop Until Ligne Is Nothing
                 End If
-
-
-
-
             End If
         Loop Until Nom Is Nothing
         boucle = True
     End Sub
-
-
-
-    Private Sub AProposToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
-    End Sub
-
-
-
     Private Sub LicenceToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Licence.Show()
-
     End Sub
-
     Public Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         ' Timer qui se lance au démarrage de l'application puis toutes les 60 secondes. Il gére le lancement du Thread Ping
         Dim ThreadPing As New System.Threading.Thread(
         AddressOf Ping_serveur)
         ThreadPing.Start() ' Démarrer le nouveau thread.
         'Timer1.Interval = 600000
-    End Sub
-
-    Private Sub ActiverToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
     End Sub
     Public Sub Ping_serveur()
         ' Ce Thread va depuis le fichier Serveur.ini pinguer tous les serveurs et retourner le résultat dans l'onglet Surveillance
@@ -324,43 +305,24 @@ Public Class Principale
     Private Function Int(getString As Func(Of Integer, String)) As String
         Throw New NotImplementedException()
     End Function
-
-    Private Sub NsTheme1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub NsButton1_Click(sender As Object, e As EventArgs) Handles NsButton1.Click
         Form2.Show()
-
     End Sub
-
     Private Sub NsButton2_Click(sender As Object, e As EventArgs) Handles NsButton2.Click
         Licence.Show()
-
     End Sub
-
-    Private Sub SurveillanceToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub NsOnOffBox1_CheckedChanged(sender As Object) Handles NsOnOffBox1.CheckedChanged
         If NsOnOffBox1.Checked Then
             Timer1.Enabled = False
         Else
             Timer1.Enabled = True
         End If
-
     End Sub
-
     Private Sub NsButton3_Click(sender As Object, e As EventArgs) Handles NsButton3.Click
         End
     End Sub
-
-    Private Sub NsTheme1_Click_1(sender As Object, e As EventArgs) Handles NsTheme1.Click
-
-    End Sub
-
     Private Sub ComboBox2_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        'On Error GoTo GestErr
         ' En fonction du fichier sélectionné lit le fichier un complète tous les champs de l'onglet Audit
         Dim Fichier As New StreamReader(ComboBox2.Text)
         Dim Ligne As String, Lecteur As String, NS As String, Tipe As String, SysFic As String, EspLibre As String, EspTotal As String, Pourcentage As Integer
@@ -370,21 +332,21 @@ Public Class Principale
             If Ligne = "[POSTE]" Then
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
-                TextBox1.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "NomPoste") > 0 Then TextBox1.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox2.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "DescPoste") > 0 Then TextBox2.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox3.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "OS") > 0 Then TextBox3.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox4.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "Version") > 0 Then TextBox4.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox5.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "DateInstall") > 0 Then NsTextBox1.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox6.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "NumDernierSPMa") > 0 Then TextBox5.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox7.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "NumDernierSPMi") > 0 Then TextBox6.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox8.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "Fabricant") > 0 Then TextBox7.Text = Ligne.Substring(InStr(Ligne, "="))
                 If InStr(TextBox3.Text, "7") > 0 Then PictureBox1.Image = ImageList1.Images(Win7)
                 If InStr(TextBox3.Text, "2016") > 0 Then PictureBox1.Image = ImageList1.Images(WinServeur2016)
                 If InStr(TextBox3.Text, "2003") > 0 Then PictureBox1.Image = ImageList1.Images(WinServeur2003)
@@ -392,6 +354,8 @@ Public Class Principale
                 If InStr(TextBox3.Text, "XP") > 0 Then PictureBox1.Image = ImageList1.Images(WinXP)
                 If InStr(TextBox3.Text, "8") > 0 Then PictureBox1.Image = ImageList1.Images(Win8)
                 If InStr(TextBox3.Text, "10") > 0 Then PictureBox1.Image = ImageList1.Images(Win10)
+                Ligne = Fichier.ReadLine
+                If InStr(Ligne, "Model") > 0 Then TextBox8.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
                 Exit Do
             End If
@@ -402,11 +366,11 @@ Public Class Principale
             If Ligne = "[CARTE-MERE]" Then
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
-                TextBox11.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "Nom") > 0 Then TextBox11.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox10.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "Modèle") > 0 Then TextBox10.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox9.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "Manufacturier") > 0 Then TextBox9.Text = Ligne.Substring(InStr(Ligne, "="))
                 Exit Do
             End If
         Loop Until Ligne Is Nothing
@@ -416,15 +380,15 @@ Public Class Principale
             If Ligne = "[PROCESSEUR]" Then
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
-                TextBox14.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "TypeProc") > 0 Then TextBox14.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox13.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "NomProc") > 0 Then TextBox13.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox12.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "DescProc") > 0 Then TextBox12.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox15.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "VitesseACT") > 0 Then TextBox15.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox16.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "VitesseMAX") > 0 Then TextBox16.Text = Ligne.Substring(InStr(Ligne, "="))
                 Exit Do
             End If
         Loop Until Ligne Is Nothing
@@ -434,29 +398,42 @@ Public Class Principale
             If Ligne = "[MEMOIRE]" Then
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
-                TextBox17.Text = Format(Val(Ligne.Substring(InStr(Ligne, "="))) / 1024, "# ### ###.00 Mo")
+                If InStr(Ligne, "Taille") > 0 Then TextBox17.Text = Format(Val(Ligne.Substring(InStr(Ligne, "="))) / 1024, "# ### ###.00 Mo")
                 Exit Do
             End If
         Loop Until Ligne Is Nothing
 
         DataGridView1.Rows.Clear()
+        N = -1
         Do
             Ligne = Fichier.ReadLine
             If Ligne = "[HDD]" Then
                 Ligne = Fichier.ReadLine
                 Do While Not Ligne = "[RESEAU]"
-                    Lecteur = Fichier.ReadLine
-                    If Lecteur = "[RESEAU]" Then Exit Do
-                    NS = Fichier.ReadLine
-                    If NS = "[RESEAU]" Then Exit Do
-                    Tipe = Fichier.ReadLine
-                    If Tipe = "[RESEAU]" Then Exit Do
-                    SysFic = Fichier.ReadLine
-                    If SysFic = "[RESEAU]" Then Exit Do
-                    EspLibre = Fichier.ReadLine
-                    If EspLibre = "[RESEAU]" Then Exit Do
-                    EspTotal = Fichier.ReadLine : Ligne = EspTotal
-                    If EspTotal = "[RESEAU]" Then Exit Do
+                    Ligne = Fichier.ReadLine
+                    If InStr(Ligne, "Lecteur") > 0 Then Lecteur = Ligne
+                    If Ligne = "[RESEAU]" Then Exit Do
+
+                    Ligne = Fichier.ReadLine
+                    If InStr(Ligne, "NS") > 0 Then NS = Ligne
+                    If Ligne = "[RESEAU]" Then Exit Do
+
+                    Ligne = Fichier.ReadLine
+                    If InStr(Ligne, "Type") > 0 Then Tipe = Ligne
+                    If Ligne = "[RESEAU]" Then Exit Do
+
+                    Ligne = Fichier.ReadLine
+                    If InStr(Ligne, "SysFic") > 0 Then SysFic = Ligne
+                    If Ligne = "[RESEAU]" Then Exit Do
+
+                    Ligne = Fichier.ReadLine
+                    If InStr(Ligne, "EspLibre") > 0 Then EspLibre = Ligne
+                    If Ligne = "[RESEAU]" Then Exit Do
+
+                    Ligne = Fichier.ReadLine
+                    If InStr(Ligne, "EspTotal") > 0 Then EspTotal = Ligne
+                    If Ligne = "[RESEAU]" Then Exit Do
+
                     If Val(EspLibre.Substring(InStr(EspLibre, "="))) > 1024 Then
                         EspLibre = Format(Val(EspLibre.Substring(InStr(EspLibre, "="))) / 1024, "# ### ###.00 Go")
                     Else
@@ -468,8 +445,15 @@ Public Class Principale
                         EspTotal = EspTotal.Substring(InStr(EspTotal, "=")) & " Mo"
                     End If
                     Pourcentage = Val(EspLibre.Substring(InStr(EspLibre, "="))) / (Val(EspTotal.Substring(InStr(EspLibre, "="))) / 100)
-                    DataGridView1.Rows.Add(Lecteur.Substring(InStr(Lecteur, "=")), NS.Substring(InStr(NS, "=")), Tipe.Substring(InStr(Tipe, "=")), SysFic.Substring(InStr(SysFic, "=")),
-                                           EspLibre, Pourcentage, EspTotal)
+                    DataGridView1.Rows.Add()
+                    N += 1
+                    If Lecteur IsNot Nothing Then DataGridView1.Rows(N).Cells(0).Value = Lecteur.Substring(InStr(Lecteur, "="))
+                    If NS IsNot Nothing Then DataGridView1.Rows(N).Cells(1).Value = NS.Substring(InStr(NS, "="))
+                    If Tipe IsNot Nothing Then DataGridView1.Rows(N).Cells(2).Value = Tipe.Substring(InStr(Tipe, "="))
+                    If SysFic IsNot Nothing Then DataGridView1.Rows(N).Cells(3).Value = SysFic.Substring(InStr(SysFic, "="))
+                    If EspLibre IsNot Nothing Then DataGridView1.Rows(N).Cells(4).Value = EspLibre
+                    If EspLibre IsNot Nothing And EspTotal IsNot Nothing Then DataGridView1.Rows(N).Cells(5).Value = Pourcentage
+                    If EspTotal IsNot Nothing Then DataGridView1.Rows(N).Cells(6).Value = EspTotal
                     Ligne = Fichier.ReadLine
                 Loop
                 Exit Do
@@ -519,23 +503,23 @@ Public Class Principale
             If Ligne = "[STRATEGIE]" Then
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
-                TextBox25.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "Expiration") > 0 Then TextBox25.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox24.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "MDPVieMin") > 0 Then TextBox24.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox23.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "MDPVieMax") > 0 Then TextBox23.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox22.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "MDPLongueur") > 0 Then TextBox22.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox21.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "MDPAnterieur") > 0 Then TextBox21.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox20.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "SeuilVerrou") > 0 Then TextBox20.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox19.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "DureeVerrou") > 0 Then TextBox19.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox18.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "FenObsVerrou") > 0 Then TextBox18.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
-                TextBox26.Text = Ligne.Substring(InStr(Ligne, "="))
+                If InStr(Ligne, "RolePoste") > 0 Then TextBox26.Text = Ligne.Substring(InStr(Ligne, "="))
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
@@ -588,8 +572,10 @@ Public Class Principale
             DataGridView4.Rows.Add(ColData(1), ColData(2), ColData(3), ColData(4), ColData(5), ColData(6))
             X = 0
         Loop
+        Exit Sub
+GestErr:
+        MsgBox("Le fichier Decimal donnée du serveur est incorrect. Merci Decimal le vérifier." & vbCrLf & ComboBox2.Text)
     End Sub
-
     Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
         ' En fonction de l'option demandé charge les contrôle prédéfinit dans le fihcier ConfCompar.ini
         Dim Fichier As New StreamReader("c:\temp\ConfCompar.ini"), Ligne As String, Instruction As String
@@ -640,7 +626,6 @@ Public Class Principale
             End If
         Loop Until Ligne Is Nothing
     End Sub
-
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         ' Lorsque le Combo change les Combo2 est replis en concéquence (Liste des fichiers audit concernant ce serveur)
         Dim i As Integer
@@ -650,7 +635,6 @@ Public Class Principale
         Next i
 
     End Sub
-
     Private Sub Principale_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         End
     End Sub

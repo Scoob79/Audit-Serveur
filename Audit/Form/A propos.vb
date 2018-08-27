@@ -25,11 +25,4 @@
 '    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA".Public Class Form2
 
 Public Class Form2
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

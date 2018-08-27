@@ -56,8 +56,3 @@ Public Class DataGridViewProgressCell
         End If
     End Sub
 End Class
-
-Public Class DBConnect
-
-
-End Class

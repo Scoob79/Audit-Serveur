@@ -25,7 +25,6 @@
 '    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA".Public Class Form2
 
 Public Class Licence
-
     Private Sub Licence_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub

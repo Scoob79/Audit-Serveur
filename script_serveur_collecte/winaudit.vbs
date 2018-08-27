@@ -1,4 +1,4 @@
-' déclaration des variables
+' dÃ©claration des variables
 Option Explicit
 
 'on error resume next 
@@ -10,13 +10,13 @@ Const ForAppending = 8
 Const HKEY_LOCAL_MACHINE = &H80000002
 Const UnInstPath = "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\"
 
-Dim objWMIService, objItem, colOperatingSystem, colBaseBoards, objProcessor, writetextfile, fso1, colSettings, Architecture
-Dim oUnLecteur, strLectType, oDesLecteurs, oFSO, objLogicalDisk, colAdapters, colAdaptersConf, objAdapter, objAdapterConf
-Dim pass, colUsagers, objUsager, Poste, strComputer, oShell, env, FichierTxt, shl, Fs, Depart, Memoire, ScreenHeight,ScreenWeight 
-Dim Fin, User, S, strLine, ReadTextFile, N, X, Group, Domaine, colMemoryCapacity, colComputerSystem, Fabricant, Modele
+Dim objItem, colOperatingSystem, colBaseBoards, objProcessor, writetextfile, colSettings, Architecture
+Dim oUnLecteur, strLectType, oDesLecteurs, objLogicalDisk, colAdapters, colAdaptersConf, objAdapter, objAdapterConf
+Dim pass, strComputer, env, FichierTxt, shl, Fs, Depart, Memoire
+Dim Fin, User, S, ReadTextFile, N, X, Group, Domaine, colComputerSystem, Fabricant, Modele
 Dim colEcrans, objEcran, colInstalledPrinters, objPrinter, colSoundDevices, objSoundDevice, colCartesVideo, objCartesVideo, A
-Dim subkey, arrSubKeys, software, oReg, Thermal, objService, colService, MAJ, FSO2, strReportProc
-Dim Valeur (10, 10)
+Dim subkey, arrSubKeys, software, oReg, Thermal, objService, colService, strReportProc
+Dim Valeur(10, 10)
 
 Set oReg=GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\default:StdRegProv")
 Set oShell = CreateObject("wscript.Shell")
@@ -31,9 +31,12 @@ Set FSO2 = CreateObject("Scripting.FileSystemObject")
 Set WriteTextFile = FSO1.OpenTextFile(strReportProc, ForWriting, True)
 
 
-' Récupération des informations
+' RÃ©cupÃ©ration des informations
 
  '=======================================POSTE=======================================
+
+WriteTextFile.WriteLine "[INFO]" & vbcrlf
+WriteTextFile.WriteLine "Date de crÃ©ation=" & now & vbcrlf
 
 WriteTextFile.WriteLine "[POSTE]" & vbcrlf
 
@@ -50,7 +53,7 @@ For Each objItem in colComputerSystem
 		case 3 = Thermal = "OK"
 		case 4 = Thermal = "Alerte"
 		case 5 = Thermal = "Critique"
-		case 6 = Thermal = "Non réquapérable"
+		case 6 = Thermal = "Non rÃ©quapÃ©rable"
 	End Select
 Next
 
@@ -73,7 +76,7 @@ WriteTextFile.WriteLine vbcrlf & "[CARTE-MERE]" & vbcrlf
 Set colBaseBoards =  objWMIService.ExecQuery ("Select * from Win32_BaseBoard")
 For Each objItem in colBaseBoards
 	WriteTextFile.WriteLine "Nom=" & objItem.Name
-	WriteTextFile.WriteLine "Modèle=" & objItem.Model
+	WriteTextFile.WriteLine "ModÃ¨le=" & objItem.Model
 	WriteTextFile.WriteLine "Manufacturier=" & objItem.Manufacturer
 Next
 
@@ -113,9 +116,9 @@ WriteTextFile.WriteLine vbcrlf & "[HDD]" & vbcrlf
 For Each oUnLecteur in oDesLecteurs
         If oUnLecteur.IsReady Then
 				If oUnLecteur.DriveType = 0 Then strLectType = "Inconnu"
-				If oUnLecteur.DriveType = 1 Then strLectType = "Amovible (Disquette, clé USB, etc.)"
+				If oUnLecteur.DriveType = 1 Then strLectType = "Amovible (Disquette, clÃ© USB, etc.)"
 				If oUnLecteur.DriveType = 2 Then strLectType = "Fixe (Disque dur, etc.)"
-				If oUnLecteur.DriveType = 3 Then strLectType = "Réseau"
+				If oUnLecteur.DriveType = 3 Then strLectType = "RÃ©seau"
 				If oUnLecteur.DriveType = 4 Then strLectType = "CD-Rom"
 				If oUnLecteur.DriveType = 5 Then strLectType = "Virtuel"
  
@@ -162,21 +165,21 @@ Next
  '=======================================UTILISATEURS=======================================
 
 WriteTextFile.WriteLine vbcrlf & "[UTILISATEURS]" 
-'Fichier où seront copiées les données de la commande Dos
+'Fichier oÃ¹ seront copiÃ©es les donnÃ©es de la commande Dos
 FichierTxt = "temp.txt"
 
 set shl = createobject("wscript.shell")
 shl.run "cmd /c Net User > " & FichierTxt, 0, true
 Set Fs = CreateObject("Scripting.FileSystemObject")
 
-'Délai pour laisser le temps de créer le fichier texte
+'DÃ©lai pour laisser le temps de crÃ©er le fichier texte
 WScript.Sleep (1000)
 
 S = Fs.OpenTextFile(FichierTxt, 1).ReadAll
 Depart = instr(1, S, "-------------------------------------------------------------------------------")+79
 Fin = instr(1, S, "command")
 User = mid(S, Depart, Fin-4-Depart)
-User = replace(user, "‚", "é")
+User = replace(user, "â€š", "Ã©")
 do while instr(1, User, " ")<> 0
 	A = A & left(User, instr(1, User, " ")) & vbcrlf
 	User = ltrim(right(User, len(User) - instr(1, User, " ")))
@@ -187,37 +190,37 @@ WriteTextFile.WriteLine A
  '=======================================GROUPES=======================================
 
 WriteTextFile.WriteLine vbcrlf & "[GROUPES]" 
-'Fichier où seront copiées les données de la commande Dos
+'Fichier oÃ¹ seront copiÃ©es les donnÃ©es de la commande Dos
 FichierTxt = "temp.txt"
 
 set shl = createobject("wscript.shell")
 shl.run "cmd /c Net localgroup > " & FichierTxt, 0, true
 
-'Délai pour laisser le temps de créer le fichier texte
+'DÃ©lai pour laisser le temps de crÃ©er le fichier texte
 WScript.Sleep (1000)
 
 S = Fs.OpenTextFile(FichierTxt, 1).ReadAll
 Depart = instr(1, S, "-------------------------------------------------------------------------------")+79
 Fin = instr(1, S, "command")
 Group = mid(S, Depart, Fin-4-Depart)
-Group = replace(Group, "‚", "é")
+Group = replace(Group, "â€š", "Ã©")
 Group = replace(Group, "*", "")
 WriteTextFile.WriteLine Group
 
  '=======================================STRATEGIE=======================================
 
 WriteTextFile.WriteLine vbcrlf & "[STRATEGIE]" & vbcrlf
-'Fichier où seront copiées les données de la commande Dos
+'Fichier oÃ¹ seront copiÃ©es les donnÃ©es de la commande Dos
 
 shl.run "cmd /c Net accounts > " & FichierTxt, 0, true
 Set ReadTextFile = FSO2.OpenTextFile(FichierTxt, ForReading,False)
 
-'Délai pour laisser le temps de créer le fichier texte
+'DÃ©lai pour laisser le temps de crÃ©er le fichier texte
 WScript.Sleep (1000)
 
 n = 0
 
-' Définition des clés
+' DÃ©finition des clÃ©s
 Valeur(1, 0) = "Expiration"
 Valeur(2, 0) = "MDPVieMin"
 Valeur(3, 0) = "MDPVieMax"

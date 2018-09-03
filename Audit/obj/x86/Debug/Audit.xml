@@ -32,67 +32,167 @@ Audit
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="T:WindowsApplication1.Database1DataSet">
+<member name="T:WindowsApplication1.BDDDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
-<member name="T:WindowsApplication1.Database1DataSet.TableDataTable">
+<member name="T:WindowsApplication1.BDDDataSet.AlarmeDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:WindowsApplication1.Database1DataSet.TableRow">
+<member name="T:WindowsApplication1.BDDDataSet.ArchiveDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.ServeurDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.SERVEUR_HDDDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.SERVEUR_ReseauDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.ServeurLstDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.AlarmeRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:WindowsApplication1.Database1DataSet.TableRowChangeEvent">
+<member name="T:WindowsApplication1.BDDDataSet.ArchiveRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.ServeurRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.SERVEUR_HDDRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.SERVEUR_ReseauRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.ServeurLstRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.AlarmeRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:WindowsApplication1.Database1DataSetTableAdapters.TableTableAdapter">
+<member name="T:WindowsApplication1.BDDDataSet.ArchiveRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.ServeurRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.SERVEUR_HDDRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.SERVEUR_ReseauRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.ServeurLstRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.AlarmeTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager">
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.ArchiveTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.ServeurTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.SERVEUR_HDDTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.SERVEUR_ReseauTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.ServeurLstTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager">
 <summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
 </member>
-<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(WindowsApplication1.Database1DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(WindowsApplication1.BDDDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Update rows in top-down order.
 </summary>
 </member>
-<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(WindowsApplication1.Database1DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(WindowsApplication1.BDDDataSet,System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Insert rows in top-down order.
 </summary>
 </member>
-<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(WindowsApplication1.Database1DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(WindowsApplication1.BDDDataSet,System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Delete rows in bottom-up order.
 </summary>
 </member>
-<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
 </summary>
 </member>
-<member name="M:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateAll(WindowsApplication1.Database1DataSet)">
+<member name="M:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateAll(WindowsApplication1.BDDDataSet)">
 <summary>
 Update all changes to the dataset.
 </summary>
 </member>
-<member name="T:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
 <summary>
 Update Order Option
 </summary>
 </member>
-<member name="T:WindowsApplication1.Database1DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
 <summary>
 Used to sort self-referenced table's rows
 </summary>

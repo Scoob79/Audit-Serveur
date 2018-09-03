@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Principale
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,17 @@ Partial Class Principale
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principale))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.BDDDataSet = New WindowsApplication1.BDDDataSet()
+        Me.BDDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ServeurLstBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ServeurLstTableAdapter = New WindowsApplication1.BDDDataSetTableAdapters.ServeurLstTableAdapter()
         Me.NsLabel35 = New WindowsApplication1.NSLabel()
         Me.NsOnOffBox1 = New WindowsApplication1.NSOnOffBox()
         Me.NsButton2 = New WindowsApplication1.NSButton()
@@ -78,6 +82,13 @@ Partial Class Principale
         Me.NsLabel17 = New WindowsApplication1.NSLabel()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column17 = New WindowsApplication1.DataGridViewProgressColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -154,15 +165,15 @@ Partial Class Principale
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NsTheme1 = New WindowsApplication1.NSTheme()
+        Me.NsLabel38 = New WindowsApplication1.NSLabel()
+        Me.NsProgressBar1 = New WindowsApplication1.NSProgressBar()
         Me.NsButton3 = New WindowsApplication1.NSButton()
         Me.NsLabel36 = New WindowsApplication1.NSLabel()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column17 = New WindowsApplication1.DataGridViewProgressColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NsSeperator1 = New WindowsApplication1.NSSeperator()
+        Me.ServeurLstBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.BDDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BDDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ServeurLstBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NsTabControl2.SuspendLayout()
         Me.TabPage17.SuspendLayout()
         Me.NsTabControl1.SuspendLayout()
@@ -189,6 +200,7 @@ Partial Class Principale
         Me.TabPage19.SuspendLayout()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NsTheme1.SuspendLayout()
+        CType(Me.ServeurLstBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -211,8 +223,26 @@ Partial Class Principale
         '
         'Timer1
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
+        Me.Timer1.Interval = 5000
+        '
+        'BDDDataSet
+        '
+        Me.BDDDataSet.DataSetName = "BDDDataSet"
+        Me.BDDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BDDDataSetBindingSource
+        '
+        Me.BDDDataSetBindingSource.DataSource = Me.BDDDataSet
+        Me.BDDDataSetBindingSource.Position = 0
+        '
+        'ServeurLstBindingSource
+        '
+        Me.ServeurLstBindingSource.DataMember = "ServeurLst"
+        Me.ServeurLstBindingSource.DataSource = Me.BDDDataSet
+        '
+        'ServeurLstTableAdapter
+        '
+        Me.ServeurLstTableAdapter.ClearBeforeFill = True
         '
         'NsLabel35
         '
@@ -861,6 +891,52 @@ Partial Class Principale
         Me.DataGridView1.Size = New System.Drawing.Size(886, 359)
         Me.DataGridView1.TabIndex = 0
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Lettre"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 50
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Numéro de Série"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 200
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Type"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 200
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Système de fichier"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Espace Libre"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'Column17
+        '
+        Me.Column17.HeaderText = "Pourcentage"
+        Me.Column17.Name = "Column17"
+        Me.Column17.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Espace Total"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        '
         'TabPage9
         '
         Me.TabPage9.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
@@ -1280,7 +1356,7 @@ Partial Class Principale
         Me.NsLabel29.Size = New System.Drawing.Size(259, 17)
         Me.NsLabel29.TabIndex = 19
         Me.NsLabel29.Text = "Nom de la carte mère"
-        Me.NsLabel29.Value1 = "Liste des Logiciels"
+        Me.NsLabel29.Value1 = "Liste des logiciels"
         Me.NsLabel29.Value2 = ""
         '
         'TabPage14
@@ -1312,7 +1388,7 @@ Partial Class Principale
         Me.NsLabel30.Size = New System.Drawing.Size(259, 17)
         Me.NsLabel30.TabIndex = 21
         Me.NsLabel30.Text = "Nom de la carte mère"
-        Me.NsLabel30.Value1 = "Liste des Logiciels"
+        Me.NsLabel30.Value1 = "Liste des pilotes"
         Me.NsLabel30.Value2 = ""
         '
         'TabPage15
@@ -1445,6 +1521,8 @@ Partial Class Principale
         'ComboBox1
         '
         Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.ComboBox1.DataSource = Me.ServeurLstBindingSource1
+        Me.ComboBox1.DisplayMember = "Nom"
         Me.ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.ForeColor = System.Drawing.Color.White
@@ -1599,8 +1677,11 @@ Partial Class Principale
         Me.NsTheme1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.NsTheme1.Colors = New WindowsApplication1.Bloom(-1) {}
+        Me.NsTheme1.Controls.Add(Me.NsLabel38)
+        Me.NsTheme1.Controls.Add(Me.NsProgressBar1)
         Me.NsTheme1.Controls.Add(Me.NsButton3)
         Me.NsTheme1.Controls.Add(Me.NsLabel36)
+        Me.NsTheme1.Controls.Add(Me.NsSeperator1)
         Me.NsTheme1.Customization = ""
         Me.NsTheme1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NsTheme1.Font = New System.Drawing.Font("Verdana", 8.0!)
@@ -1610,12 +1691,35 @@ Partial Class Principale
         Me.NsTheme1.Name = "NsTheme1"
         Me.NsTheme1.NoRounding = False
         Me.NsTheme1.Sizable = True
-        Me.NsTheme1.Size = New System.Drawing.Size(1184, 542)
+        Me.NsTheme1.Size = New System.Drawing.Size(1184, 563)
         Me.NsTheme1.SmartBounds = True
         Me.NsTheme1.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.NsTheme1.TabIndex = 10
         Me.NsTheme1.TransparencyKey = System.Drawing.Color.Empty
         Me.NsTheme1.Transparent = True
+        '
+        'NsLabel38
+        '
+        Me.NsLabel38.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NsLabel38.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NsLabel38.Location = New System.Drawing.Point(3, 545)
+        Me.NsLabel38.Name = "NsLabel38"
+        Me.NsLabel38.Size = New System.Drawing.Size(776, 18)
+        Me.NsLabel38.TabIndex = 15
+        Me.NsLabel38.Text = "NsLabel38"
+        Me.NsLabel38.Value1 = "Chargement de la base"
+        Me.NsLabel38.Value2 = ""
+        '
+        'NsProgressBar1
+        '
+        Me.NsProgressBar1.Location = New System.Drawing.Point(987, 544)
+        Me.NsProgressBar1.Maximum = 100
+        Me.NsProgressBar1.Minimum = 0
+        Me.NsProgressBar1.Name = "NsProgressBar1"
+        Me.NsProgressBar1.Size = New System.Drawing.Size(192, 15)
+        Me.NsProgressBar1.TabIndex = 13
+        Me.NsProgressBar1.Text = "NsProgressBar1"
+        Me.NsProgressBar1.Value = 0
         '
         'NsButton3
         '
@@ -1636,57 +1740,24 @@ Partial Class Principale
         Me.NsLabel36.Value1 = "AUDIT"
         Me.NsLabel36.Value2 = "0.1"
         '
-        'Column1
+        'NsSeperator1
         '
-        Me.Column1.HeaderText = "Lettre"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 50
+        Me.NsSeperator1.Location = New System.Drawing.Point(3, 536)
+        Me.NsSeperator1.Name = "NsSeperator1"
+        Me.NsSeperator1.Size = New System.Drawing.Size(1176, 23)
+        Me.NsSeperator1.TabIndex = 14
+        Me.NsSeperator1.Text = "NsSeperator1"
         '
-        'Column2
+        'ServeurLstBindingSource1
         '
-        Me.Column2.HeaderText = "Numéro de Série"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 200
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Type"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 200
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Système de fichier"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Espace Libre"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'Column17
-        '
-        Me.Column17.HeaderText = "Pourcentage"
-        Me.Column17.Name = "Column17"
-        Me.Column17.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Espace Total"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
+        Me.ServeurLstBindingSource1.DataMember = "ServeurLst"
+        Me.ServeurLstBindingSource1.DataSource = Me.BDDDataSetBindingSource
         '
         'Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1184, 542)
+        Me.ClientSize = New System.Drawing.Size(1184, 563)
         Me.Controls.Add(Me.NsLabel35)
         Me.Controls.Add(Me.NsOnOffBox1)
         Me.Controls.Add(Me.NsButton2)
@@ -1697,6 +1768,9 @@ Partial Class Principale
         Me.Name = "Principale"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Audit"
+        CType(Me.BDDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BDDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ServeurLstBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NsTabControl2.ResumeLayout(False)
         Me.TabPage17.ResumeLayout(False)
         Me.NsTabControl1.ResumeLayout(False)
@@ -1723,6 +1797,7 @@ Partial Class Principale
         Me.TabPage19.ResumeLayout(False)
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NsTheme1.ResumeLayout(False)
+        CType(Me.ServeurLstBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1865,4 +1940,12 @@ Partial Class Principale
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column17 As DataGridViewProgressColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents NsProgressBar1 As NSProgressBar
+    Friend WithEvents NsLabel38 As NSLabel
+    Friend WithEvents NsSeperator1 As NSSeperator
+    Friend WithEvents BDDDataSetBindingSource As BindingSource
+    Friend WithEvents BDDDataSet As BDDDataSet
+    Friend WithEvents ServeurLstBindingSource As BindingSource
+    Friend WithEvents ServeurLstTableAdapter As BDDDataSetTableAdapters.ServeurLstTableAdapter
+    Friend WithEvents ServeurLstBindingSource1 As BindingSource
 End Class

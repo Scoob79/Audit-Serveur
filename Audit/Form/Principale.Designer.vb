@@ -31,7 +31,6 @@ Partial Class Principale
         Me.BDDDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ServeurLstBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ServeurLstTableAdapter = New WindowsApplication1.BDDDataSetTableAdapters.ServeurLstTableAdapter()
-        Me.NsLabel35 = New WindowsApplication1.NSLabel()
         Me.NsOnOffBox1 = New WindowsApplication1.NSOnOffBox()
         Me.NsButton2 = New WindowsApplication1.NSButton()
         Me.NsButton1 = New WindowsApplication1.NSButton()
@@ -149,6 +148,7 @@ Partial Class Principale
         Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NsLabel34 = New WindowsApplication1.NSLabel()
         Me.ComboBox1 = New WindowsApplication1.NSComboBox()
+        Me.ServeurLstBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.NsLabel33 = New WindowsApplication1.NSLabel()
         Me.TabPage18 = New System.Windows.Forms.TabPage()
         Me.ComboBox3 = New WindowsApplication1.NSComboBox()
@@ -159,18 +159,25 @@ Partial Class Principale
         Me.NsLabel31 = New WindowsApplication1.NSLabel()
         Me.TabPage19 = New System.Windows.Forms.TabPage()
         Me.DataGridView6 = New System.Windows.Forms.DataGridView()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NsTheme1 = New WindowsApplication1.NSTheme()
-        Me.NsLabel38 = New WindowsApplication1.NSLabel()
-        Me.NsProgressBar1 = New WindowsApplication1.NSProgressBar()
-        Me.NsButton3 = New WindowsApplication1.NSButton()
-        Me.NsLabel36 = New WindowsApplication1.NSLabel()
+        Me.AlarmeBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AlarmeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AlarmeTableAdapter = New WindowsApplication1.BDDDataSetTableAdapters.AlarmeTableAdapter()
+        Me.NsLabel35 = New WindowsApplication1.NSLabel()
         Me.NsSeperator1 = New WindowsApplication1.NSSeperator()
-        Me.ServeurLstBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NsButton3 = New WindowsApplication1.NSButton()
+        Me.NsProgressBar1 = New WindowsApplication1.NSProgressBar()
+        Me.NsLabel38 = New WindowsApplication1.NSLabel()
+        Me.NsTheme1 = New WindowsApplication1.NSTheme()
+        Me.NsLabel39 = New WindowsApplication1.NSLabel()
+        Me.NsLabel36 = New WindowsApplication1.NSLabel()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ServeurDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescritpionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JoursDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HeureDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NiveauDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ActionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.BDDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BDDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ServeurLstBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,12 +202,15 @@ Partial Class Principale
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage16.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ServeurLstBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage18.SuspendLayout()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage19.SuspendLayout()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AlarmeBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AlarmeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NsTheme1.SuspendLayout()
-        CType(Me.ServeurLstBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -243,17 +253,6 @@ Partial Class Principale
         'ServeurLstTableAdapter
         '
         Me.ServeurLstTableAdapter.ClearBeforeFill = True
-        '
-        'NsLabel35
-        '
-        Me.NsLabel35.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.NsLabel35.Location = New System.Drawing.Point(139, 28)
-        Me.NsLabel35.Name = "NsLabel35"
-        Me.NsLabel35.Size = New System.Drawing.Size(87, 23)
-        Me.NsLabel35.TabIndex = 9
-        Me.NsLabel35.Text = "NsLabel35"
-        Me.NsLabel35.Value1 = "Surveillance"
-        Me.NsLabel35.Value2 = ""
         '
         'NsOnOffBox1
         '
@@ -1532,6 +1531,11 @@ Partial Class Principale
         Me.ComboBox1.Size = New System.Drawing.Size(224, 21)
         Me.ComboBox1.TabIndex = 2
         '
+        'ServeurLstBindingSource1
+        '
+        Me.ServeurLstBindingSource1.DataMember = "ServeurLst"
+        Me.ServeurLstBindingSource1.DataSource = Me.BDDDataSetBindingSource
+        '
         'NsLabel33
         '
         Me.NsLabel33.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
@@ -1623,6 +1627,7 @@ Partial Class Principale
         '
         'TabPage19
         '
+        Me.TabPage19.AutoScroll = True
         Me.TabPage19.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.TabPage19.Controls.Add(Me.DataGridView6)
         Me.TabPage19.Location = New System.Drawing.Point(119, 4)
@@ -1634,53 +1639,92 @@ Partial Class Principale
         '
         'DataGridView6
         '
+        Me.DataGridView6.AutoGenerateColumns = False
         Me.DataGridView6.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView6.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column11, Me.Column13, Me.Column14, Me.Column15, Me.Column16})
+        Me.DataGridView6.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.ServeurDataGridViewTextBoxColumn, Me.DescritpionDataGridViewTextBoxColumn, Me.JoursDataGridViewTextBoxColumn, Me.HeureDataGridViewTextBoxColumn, Me.NiveauDataGridViewTextBoxColumn, Me.ActionDataGridViewTextBoxColumn})
+        Me.DataGridView6.DataSource = Me.AlarmeBindingSource1
         Me.DataGridView6.Location = New System.Drawing.Point(6, 3)
         Me.DataGridView6.Name = "DataGridView6"
         Me.DataGridView6.Size = New System.Drawing.Size(1032, 445)
         Me.DataGridView6.TabIndex = 0
         '
-        'Column11
+        'AlarmeBindingSource1
         '
-        Me.Column11.HeaderText = "#"
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
+        Me.AlarmeBindingSource1.DataMember = "Alarme"
+        Me.AlarmeBindingSource1.DataSource = Me.BDDDataSet
         '
-        'Column13
+        'AlarmeBindingSource
         '
-        Me.Column13.HeaderText = "Description"
-        Me.Column13.Name = "Column13"
-        Me.Column13.ReadOnly = True
-        Me.Column13.Width = 500
+        Me.AlarmeBindingSource.DataMember = "Alarme"
+        Me.AlarmeBindingSource.DataSource = Me.BDDDataSetBindingSource
         '
-        'Column14
+        'AlarmeTableAdapter
         '
-        Me.Column14.HeaderText = "Date"
-        Me.Column14.Name = "Column14"
+        Me.AlarmeTableAdapter.ClearBeforeFill = True
         '
-        'Column15
+        'NsLabel35
         '
-        Me.Column15.HeaderText = "Heure"
-        Me.Column15.Name = "Column15"
+        Me.NsLabel35.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel35.Location = New System.Drawing.Point(138, 28)
+        Me.NsLabel35.Name = "NsLabel35"
+        Me.NsLabel35.Size = New System.Drawing.Size(87, 23)
+        Me.NsLabel35.TabIndex = 9
+        Me.NsLabel35.Text = "v"
+        Me.NsLabel35.Value1 = "Surveillance"
+        Me.NsLabel35.Value2 = ""
         '
-        'Column16
+        'NsSeperator1
         '
-        Me.Column16.HeaderText = "Niveau"
-        Me.Column16.Name = "Column16"
-        Me.Column16.ReadOnly = True
+        Me.NsSeperator1.Location = New System.Drawing.Point(3, 536)
+        Me.NsSeperator1.Name = "NsSeperator1"
+        Me.NsSeperator1.Size = New System.Drawing.Size(1176, 23)
+        Me.NsSeperator1.TabIndex = 14
+        Me.NsSeperator1.Text = "NsSeperator1"
+        '
+        'NsButton3
+        '
+        Me.NsButton3.Location = New System.Drawing.Point(1160, 3)
+        Me.NsButton3.Name = "NsButton3"
+        Me.NsButton3.Size = New System.Drawing.Size(21, 22)
+        Me.NsButton3.TabIndex = 12
+        Me.NsButton3.Text = "X"
+        '
+        'NsProgressBar1
+        '
+        Me.NsProgressBar1.Location = New System.Drawing.Point(987, 544)
+        Me.NsProgressBar1.Maximum = 100
+        Me.NsProgressBar1.Minimum = 0
+        Me.NsProgressBar1.Name = "NsProgressBar1"
+        Me.NsProgressBar1.Size = New System.Drawing.Size(192, 15)
+        Me.NsProgressBar1.TabIndex = 13
+        Me.NsProgressBar1.Text = "NsProgressBar1"
+        Me.NsProgressBar1.Value = 0
+        '
+        'NsLabel38
+        '
+        Me.NsLabel38.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NsLabel38.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NsLabel38.Location = New System.Drawing.Point(3, 545)
+        Me.NsLabel38.Name = "NsLabel38"
+        Me.NsLabel38.Size = New System.Drawing.Size(776, 18)
+        Me.NsLabel38.TabIndex = 15
+        Me.NsLabel38.Text = "NsLabel38"
+        Me.NsLabel38.Value1 = "Chargement de la base"
+        Me.NsLabel38.Value2 = ""
         '
         'NsTheme1
         '
         Me.NsTheme1.AccentOffset = 42
         Me.NsTheme1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.NsTheme1.Colors = New WindowsApplication1.Bloom(-1) {}
+        Me.NsTheme1.Controls.Add(Me.NsLabel39)
+        Me.NsTheme1.Controls.Add(Me.NsLabel36)
+        Me.NsTheme1.Controls.Add(Me.NsLabel35)
         Me.NsTheme1.Controls.Add(Me.NsLabel38)
         Me.NsTheme1.Controls.Add(Me.NsProgressBar1)
         Me.NsTheme1.Controls.Add(Me.NsButton3)
-        Me.NsTheme1.Controls.Add(Me.NsLabel36)
         Me.NsTheme1.Controls.Add(Me.NsSeperator1)
         Me.NsTheme1.Customization = ""
         Me.NsTheme1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -1698,76 +1742,87 @@ Partial Class Principale
         Me.NsTheme1.TransparencyKey = System.Drawing.Color.Empty
         Me.NsTheme1.Transparent = True
         '
-        'NsLabel38
+        'NsLabel39
         '
-        Me.NsLabel38.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NsLabel38.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NsLabel38.Location = New System.Drawing.Point(3, 545)
-        Me.NsLabel38.Name = "NsLabel38"
-        Me.NsLabel38.Size = New System.Drawing.Size(776, 18)
-        Me.NsLabel38.TabIndex = 15
-        Me.NsLabel38.Text = "NsLabel38"
-        Me.NsLabel38.Value1 = "Chargement de la base"
-        Me.NsLabel38.Value2 = ""
-        '
-        'NsProgressBar1
-        '
-        Me.NsProgressBar1.Location = New System.Drawing.Point(987, 544)
-        Me.NsProgressBar1.Maximum = 100
-        Me.NsProgressBar1.Minimum = 0
-        Me.NsProgressBar1.Name = "NsProgressBar1"
-        Me.NsProgressBar1.Size = New System.Drawing.Size(192, 15)
-        Me.NsProgressBar1.TabIndex = 13
-        Me.NsProgressBar1.Text = "NsProgressBar1"
-        Me.NsProgressBar1.Value = 0
-        '
-        'NsButton3
-        '
-        Me.NsButton3.Location = New System.Drawing.Point(1160, 3)
-        Me.NsButton3.Name = "NsButton3"
-        Me.NsButton3.Size = New System.Drawing.Size(21, 22)
-        Me.NsButton3.TabIndex = 12
-        Me.NsButton3.Text = "X"
+        Me.NsLabel39.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel39.Location = New System.Drawing.Point(12, -1)
+        Me.NsLabel39.Name = "NsLabel39"
+        Me.NsLabel39.Size = New System.Drawing.Size(87, 22)
+        Me.NsLabel39.TabIndex = 17
+        Me.NsLabel39.Text = "NsLabel39"
+        Me.NsLabel39.Value1 = "Audit"
+        Me.NsLabel39.Value2 = " 0.7"
         '
         'NsLabel36
         '
         Me.NsLabel36.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.NsLabel36.Location = New System.Drawing.Point(13, 3)
+        Me.NsLabel36.Location = New System.Drawing.Point(549, 270)
         Me.NsLabel36.Name = "NsLabel36"
         Me.NsLabel36.Size = New System.Drawing.Size(87, 23)
-        Me.NsLabel36.TabIndex = 11
+        Me.NsLabel36.TabIndex = 16
         Me.NsLabel36.Text = "NsLabel36"
-        Me.NsLabel36.Value1 = "AUDIT"
-        Me.NsLabel36.Value2 = "0.1"
+        Me.NsLabel36.Value1 = "Surveillance"
+        Me.NsLabel36.Value2 = ""
         '
-        'NsSeperator1
+        'IDDataGridViewTextBoxColumn
         '
-        Me.NsSeperator1.Location = New System.Drawing.Point(3, 536)
-        Me.NsSeperator1.Name = "NsSeperator1"
-        Me.NsSeperator1.Size = New System.Drawing.Size(1176, 23)
-        Me.NsSeperator1.TabIndex = 14
-        Me.NsSeperator1.Text = "NsSeperator1"
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
         '
-        'ServeurLstBindingSource1
+        'ServeurDataGridViewTextBoxColumn
         '
-        Me.ServeurLstBindingSource1.DataMember = "ServeurLst"
-        Me.ServeurLstBindingSource1.DataSource = Me.BDDDataSetBindingSource
+        Me.ServeurDataGridViewTextBoxColumn.DataPropertyName = "Serveur"
+        Me.ServeurDataGridViewTextBoxColumn.HeaderText = "Serveur"
+        Me.ServeurDataGridViewTextBoxColumn.Name = "ServeurDataGridViewTextBoxColumn"
+        '
+        'DescritpionDataGridViewTextBoxColumn
+        '
+        Me.DescritpionDataGridViewTextBoxColumn.DataPropertyName = "Descritpion"
+        Me.DescritpionDataGridViewTextBoxColumn.HeaderText = "Descritpion"
+        Me.DescritpionDataGridViewTextBoxColumn.Name = "DescritpionDataGridViewTextBoxColumn"
+        '
+        'JoursDataGridViewTextBoxColumn
+        '
+        Me.JoursDataGridViewTextBoxColumn.DataPropertyName = "Jours"
+        Me.JoursDataGridViewTextBoxColumn.HeaderText = "Jours"
+        Me.JoursDataGridViewTextBoxColumn.Name = "JoursDataGridViewTextBoxColumn"
+        '
+        'HeureDataGridViewTextBoxColumn
+        '
+        Me.HeureDataGridViewTextBoxColumn.DataPropertyName = "Heure"
+        Me.HeureDataGridViewTextBoxColumn.HeaderText = "Heure"
+        Me.HeureDataGridViewTextBoxColumn.Name = "HeureDataGridViewTextBoxColumn"
+        '
+        'NiveauDataGridViewTextBoxColumn
+        '
+        Me.NiveauDataGridViewTextBoxColumn.DataPropertyName = "Niveau"
+        Me.NiveauDataGridViewTextBoxColumn.HeaderText = "Niveau"
+        Me.NiveauDataGridViewTextBoxColumn.Name = "NiveauDataGridViewTextBoxColumn"
+        '
+        'ActionDataGridViewTextBoxColumn
+        '
+        Me.ActionDataGridViewTextBoxColumn.DataPropertyName = "Action"
+        Me.ActionDataGridViewTextBoxColumn.HeaderText = "Action"
+        Me.ActionDataGridViewTextBoxColumn.Name = "ActionDataGridViewTextBoxColumn"
         '
         'Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CausesValidation = False
         Me.ClientSize = New System.Drawing.Size(1184, 563)
-        Me.Controls.Add(Me.NsLabel35)
+        Me.ControlBox = False
         Me.Controls.Add(Me.NsOnOffBox1)
         Me.Controls.Add(Me.NsButton2)
         Me.Controls.Add(Me.NsButton1)
         Me.Controls.Add(Me.NsTabControl2)
         Me.Controls.Add(Me.NsTheme1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Principale"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "Audit"
         CType(Me.BDDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BDDDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ServeurLstBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1792,12 +1847,15 @@ Partial Class Principale
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage16.ResumeLayout(False)
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ServeurLstBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage18.ResumeLayout(False)
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage19.ResumeLayout(False)
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AlarmeBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AlarmeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NsTheme1.ResumeLayout(False)
-        CType(Me.ServeurLstBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1825,11 +1883,6 @@ Partial Class Principale
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents DataGridView6 As System.Windows.Forms.DataGridView
-    Friend WithEvents Column11 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column13 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column14 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column15 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column16 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents NsTabControl1 As NSTabControl
     Friend WithEvents TabPage4 As TabPage
@@ -1927,10 +1980,6 @@ Partial Class Principale
     Friend WithEvents NsButton1 As NSButton
     Friend WithEvents NsButton2 As NSButton
     Friend WithEvents NsOnOffBox1 As NSOnOffBox
-    Friend WithEvents NsLabel35 As NSLabel
-    Friend WithEvents NsTheme1 As NSTheme
-    Friend WithEvents NsButton3 As NSButton
-    Friend WithEvents NsLabel36 As NSLabel
     Friend WithEvents NsTextBox1 As NSTextBox
     Friend WithEvents NsLabel37 As NSLabel
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
@@ -1940,12 +1989,28 @@ Partial Class Principale
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column17 As DataGridViewProgressColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents NsProgressBar1 As NSProgressBar
-    Friend WithEvents NsLabel38 As NSLabel
-    Friend WithEvents NsSeperator1 As NSSeperator
     Friend WithEvents BDDDataSetBindingSource As BindingSource
     Friend WithEvents BDDDataSet As BDDDataSet
     Friend WithEvents ServeurLstBindingSource As BindingSource
     Friend WithEvents ServeurLstTableAdapter As BDDDataSetTableAdapters.ServeurLstTableAdapter
     Friend WithEvents ServeurLstBindingSource1 As BindingSource
+    Friend WithEvents AlarmeBindingSource As BindingSource
+    Friend WithEvents AlarmeTableAdapter As BDDDataSetTableAdapters.AlarmeTableAdapter
+    Friend WithEvents NsLabel35 As NSLabel
+    Friend WithEvents NsSeperator1 As NSSeperator
+    Friend WithEvents NsButton3 As NSButton
+    Friend WithEvents NsProgressBar1 As NSProgressBar
+    Friend WithEvents NsLabel38 As NSLabel
+    Friend WithEvents NsTheme1 As NSTheme
+    Friend WithEvents NsLabel39 As NSLabel
+    Friend WithEvents NsLabel36 As NSLabel
+    Friend WithEvents AlarmeBindingSource1 As BindingSource
+    Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents IDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ServeurDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescritpionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents JoursDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HeureDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NiveauDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ActionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -71,13 +71,14 @@ Public Class SQL
                 Exit Do
             End If
         Loop Until Ligne Is Nothing
+        CléServeur = NomPoste & "_" & Format(Now, "ddMMyyyy")
         DateInstall = DateInstall.Substring(6, 2) & "/" & DateInstall.Substring(4, 2) & "/" & DateInstall.Substring(0, 4)
 #Disable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
         Retour = Requete(ChaineDeConnexion, "INSERT INTO Serveur (POSTE_NomPoste, POSTE_DescPoste, POSTE_OS, POSTE_Version, POSTE_DateInstall, POSTE_NumDernierSPMa, POSTE_NumDernierSPMi ," &
-                "POSTE_Fabricant, POSTE_Model, DATE_COLLECTE) values ('" & NomPoste & "_" & Format(Now, "ddMMyyyy") & "', '" & DescPoste & "', '" & OS & "', '" & Version & "', '" & DateInstall & "', '" & NumDernierSPMa _
+                "POSTE_Fabricant, POSTE_Model, DATE_COLLECTE) values ('" & CléServeur & "', '" & DescPoste & "', '" & OS & "', '" & Version & "', '" & DateInstall & "', '" & NumDernierSPMa _
 & "', '" & NumDernierSPMi & "', '" & Fabricant & "', '" & Model & "', '" & Now & "')")
         If Retour <> "" Then
-            Retour = Requete(ChaineDeConnexion, "UPDATE Serveur SET POSTE_NomPoste='" & NomPoste & "_" & Format(Now, "ddMMyyyy") & "', POSTE_DescPoste='" & DescPoste & "', POSTE_OS='" & OS &
+            Retour = Requete(ChaineDeConnexion, "UPDATE Serveur SET POSTE_NomPoste='" & CléServeur & "', POSTE_DescPoste='" & DescPoste & "', POSTE_OS='" & OS &
             "', POSTE_Version='" & Version & "', POSTE_DateInstall='" & DateInstall & "', POSTE_NumDernierSPMa='" & NumDernierSPMa & "', POSTE_NumDernierSPMi='" & NumDernierSPMi & "', POSTE_Fabricant='" & Fabricant & "', POSTE_Model='" & Model & "'")
         End If
 #Enable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
@@ -95,7 +96,7 @@ Public Class SQL
                 Exit Do
             End If
         Loop Until Ligne Is Nothing
-        Retour = Requete(ChaineDeConnexion, "UPDATE Serveur SET CARTE_MERE_Nom='" & Nom & "', CARTE_MERE_Modèle='" & Modèle & "', CARTE_MERE_Manufacturier='" & Manufacturier & "' WHERE  (((Serveur.POSTE_NomPoste)='" & NomPoste & "'));")
+        Retour = Requete(ChaineDeConnexion, "UPDATE Serveur SET CARTE_MERE_Nom='" & Nom & "', CARTE_MERE_Modèle='" & Modèle & "', CARTE_MERE_Manufacturier='" & Manufacturier & "' WHERE  POSTE_NomPoste='" & CléServeur & "';")
 
         Do
             Ligne = Fichier.ReadLine
@@ -115,7 +116,7 @@ Public Class SQL
             End If
         Loop Until Ligne Is Nothing
         Retour = Requete(ChaineDeConnexion, "UPDATE Serveur SET PROCESSEUR_TypeProc='" & Nom & "', PROCESSEUR_NomProc='" & Modèle & "', PROCESSEUR_DescProc='" & Manufacturier _
-            & "', PROCESSEUR_VitesseACT='" & VitesseACT & "', PROCESSEUR_VitesseMAX='" & VitesseMAX & "' WHERE  (((Serveur.POSTE_NomPoste)='" & NomPoste & "'));")
+            & "', PROCESSEUR_VitesseACT='" & VitesseACT & "', PROCESSEUR_VitesseMAX='" & VitesseMAX & "' WHERE  POSTE_NomPoste='" & CléServeur & "';")
 
         Do
             Ligne = Fichier.ReadLine
@@ -126,9 +127,8 @@ Public Class SQL
                 Exit Do
             End If
         Loop Until Ligne Is Nothing
-        Retour = Requete(ChaineDeConnexion, "UPDATE Serveur SET MEMOIRE_Taille='" & Taille & "' WHERE  (((Serveur.POSTE_NomPoste)='" & NomPoste & "'));")
+        Retour = Requete(ChaineDeConnexion, "UPDATE Serveur SET MEMOIRE_Taille='" & Taille & "' WHERE  POSTE_NomPoste)='" & CléServeur & "';")
 
-        CléServeur = NomPoste & "_" & Format(Now, "ddMMyyyy")
 
         N = -1
         Do
@@ -218,7 +218,7 @@ Public Class SQL
             Ligne = Fichier.ReadLine
             If Ligne <> "" And Ligne <> "[GROUPES]" Then Utilisateurs = Utilisateurs & "|" & Ligne
         Loop While Not Ligne = "[GROUPES]"
-        Requete(ChaineDeConnexion, "UPDATE Serveur SET UTILISATEURS='" & Utilisateurs & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+        Requete(ChaineDeConnexion, "UPDATE Serveur SET UTILISATEURS='" & Utilisateurs & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
 
         N = 0
         Do
@@ -226,29 +226,29 @@ Public Class SQL
             If Ligne <> "" And Ligne <> "[STRATEGIE]" Then Groupes = Groupes & "|" & Ligne
             Groupes = Replace(Replace(Groupes, "�", ""), "'", " ")
         Loop While Not Ligne = "[STRATEGIE]"
-        Requete(ChaineDeConnexion, "UPDATE Serveur SET GROUPES='" & Groupes & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+        Requete(ChaineDeConnexion, "UPDATE Serveur SET GROUPES='" & Groupes & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
 
         Do
             If Ligne = "[STRATEGIE]" Then
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "Expiration") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_Expiration='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "Expiration") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_Expiration='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "MDPVieMin") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_MDPVieMin='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "MDPVieMin") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_MDPVieMin='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "MDPVieMax") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_MDPVieMax='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "MDPVieMax") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_MDPVieMax='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "MDPLongueur") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_MDPLongueur='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "MDPLongueur") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_MDPLongueur='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "MDPAnterieur") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_MDPAnterieur='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "MDPAnterieur") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_MDPAnterieur='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "SeuilVerrou") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_SeuilVerrou='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "SeuilVerrou") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_SeuilVerrou='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "DureeVerrou") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_DureeVerrou='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "DureeVerrou") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_DureeVerrou='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "FenObsVerrou") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_FenObsVerrou='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "FenObsVerrou") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_FenObsVerrou='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
-                If InStr(Ligne, "RolePoste") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_RolePoste='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+                If InStr(Ligne, "RolePoste") > 0 Then Requete(ChaineDeConnexion, "UPDATE Serveur SET STRATEGIE_RolePoste='" & Ligne.Substring(InStr(Ligne, "=")) & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
                 Ligne = Fichier.ReadLine
@@ -262,7 +262,7 @@ Public Class SQL
             If Ligne <> "" And Ligne <> "[PILOTES]" Then N += 1 : Logiciels = Logiciels & "|" & Ligne
             Logiciels = Replace(Replace(Logiciels, "�", ""), "'", " ")
         Loop While Not Ligne = "[PILOTES]"
-        Requete(ChaineDeConnexion, "UPDATE Serveur SET Logiciels='" & Logiciels & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
+        Requete(ChaineDeConnexion, "UPDATE Serveur SET Logiciels='" & Logiciels & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
 
         N = 0
         Do
@@ -270,13 +270,7 @@ Public Class SQL
             If Ligne <> "" And Ligne <> "[SERVICES]" Then N += 1 : Pilotes = Pilotes & "|" & Ligne
             Pilotes = Replace(Replace(Pilotes, "�", ""), "'", " ")
         Loop While Not Ligne = "[SERVICES]"
-        Requete(ChaineDeConnexion, "UPDATE Serveur SET Pilotes='" & Pilotes & "' WHERE POSTE_NomPoste='" & NomPoste & "'")
-
-
-        N = 0
-
-
-        Exit Sub
+        Requete(ChaineDeConnexion, "UPDATE Serveur SET Pilotes='" & Pilotes & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
 
         N = 0
         Retour = Requete(ChaineDeConnexion, "CREATE TABLE " & Replace(NomPoste, "-", "_") & "_SERVICES (SERVICES_Nom VARCHAR(255) PRIMARY KEY,SERVICES_Description LONGTEXT,SERVICES_Statut VARCHAR(15),SERVICES_Etat VARCHAR(15),SERVICES_code VARCHAR(10))")
@@ -338,37 +332,5 @@ Public Class SQL
         Import.Close()
         Requete(ChaineDeConnexion, "DROP TABLE " & Replace(NomPoste, "-", "_") & "_MAJ")
         Requete(ChaineDeConnexion, "SELECT * INTO " & Replace(NomPoste, "-", "_") & "_MAJ FROM [Text;DATABASE=c:\temp;].[import.txt];")
-
-
-
-
-
-
-        N = -1
-        Ligne = Fichier.ReadLine
-        Ligne = Fichier.ReadLine
-        Retour = Requete(ChaineDeConnexion, "CREATE TABLE " & Replace(NomPoste, "-", "_") & "_MAJ (MAJ_Support VARCHAR(255) ,MAJ_Poste VARCHAR(255),MAJ_Type VARCHAR(20),MAJ_ID VARCHAR(20) PRIMARY KEY,MAJ_InstallPar VARCHAR(20), MAJ_Date date)")
-        Data = Fichier.ReadToEnd
-        Data = Data.Substring(0, Len(Data) - 1)
-        Tableau = Data.Split(vbCrLf)
-        For Each item As String In Tableau
-            If item = "" Then Exit For
-            N += 1
-            MAJ(1) = RTrim(Tableau(N).Substring(1, 47))
-            MAJ(2) = RTrim(Tableau(N).Substring(48, 13))
-            MAJ(3) = RTrim(Tableau(N).Substring(61, 30))
-            MAJ(4) = RTrim(Tableau(N).Substring(91, 24))
-            MAJ(5) = RTrim(Tableau(N).Substring(115, 24))
-            MAJ(6) = RTrim(Tableau(N).Substring(139))
-            X = 0
-            Ret = Requete(ChaineDeConnexion, "INSERT INTO " & Replace(NomPoste, "-", "_") & "_MAJ (MAJ_Support, MAJ_Poste, MAJ_Type, MAJ_ID, MAJ_InstallPar, MAJ_Date) values ('" &
-                            MAJ(1) & "', '" & MAJ(2) & "', '" & MAJ(3) & "', '" & MAJ(4) & "', '" & MAJ(5) & "', '" & MAJ(6) & "')")
-            If Ret <> "" Then
-                Ret = Requete(ChaineDeConnexion, "UPDATE " & Replace(NomPoste, "-", "_") & "_MAJ SET MAJ_Support='" &
-                            MAJ(1) & "', MAJ_Poste='" & MAJ(2) & "', MAJ_Type='" & MAJ(3) & "', MAJ_ID='" & MAJ(4) & "', MAJ_InstallPar='" & MAJ(5) & "', MAJ_Date='" & MAJ(6) & "' WHERE HDD_Lecteur='" & MAJ(4) & "';")
-
-            End If
-        Next
-
     End Sub
 End Class

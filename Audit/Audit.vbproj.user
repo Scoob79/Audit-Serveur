@@ -10,4 +10,7 @@
     <FallbackCulture>fr-FR</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>D:\Users\u165147\Downloads\</ReferencePath>
+  </PropertyGroup>
 </Project>

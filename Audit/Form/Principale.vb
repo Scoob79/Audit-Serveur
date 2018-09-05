@@ -27,7 +27,7 @@
 
 Imports System.IO
 Imports System.Data.OleDb
-
+Imports System.Data.SqlClient
 
 Public Class Principale
     Public P As Principale
@@ -35,6 +35,7 @@ Public Class Principale
     Public Todo As String
     Public Champ As String
     Public boucle As Boolean = False
+    Public DGV As Object
     Public PingEC As Boolean = False
     Public Const ChaineDeConnexion As String = "Provider=microsoft.jet.oledb.4.0;Data Source=D:\Users\u165147\source\repos\Audit\Audit\BDD\BDD.mdb"
     Declare Function GetTickCount Lib "kernel32" Alias "GetTickCount" () As Long
@@ -55,16 +56,19 @@ Public Class Principale
     Const WinServeur = 11
     Const WinXP = 12
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'TODO: cette ligne de code charge les données dans la table 'BDDDataSet.Alarme'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+        Me.AlarmeTableAdapter.Fill(Me.BDDDataSet.Alarme)
         'TODO: cette ligne de code charge les données dans la table 'BDDDataSet.ServeurLst'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Me.ServeurLstTableAdapter.Fill(Me.BDDDataSet.ServeurLst)
         'TODO: cette ligne de code charge les données dans la table 'Database1DataSet.Table'. Vous pouvez la déplacer ou la supprimer selon les besoins.
         Dim Config As New StreamReader("c:\temp\ConfCompar.ini"), Ligne As String
 
-        Charge_Alarme()
-
         Dim ThreadCollect As New System.Threading.Thread(AddressOf Collect)
         ThreadCollect.Priority = Threading.ThreadPriority.Highest
+        ThreadCollect.IsBackground = True
         ThreadCollect.Start() ' Démarrer le nouveau thread.
+
+        DGV = DataGridView6.DataSource
 
         On Error Resume Next
         DateTimePicker1.Value = Today.AddDays(-1)
@@ -74,8 +78,8 @@ Public Class Principale
             If InStr(Ligne, "{") > 0 Then ComboBox3.Items.Add(Ligne.Substring(0, InStr(Ligne, "{") - 1))
         Loop Until Ligne Is Nothing
 
-        Form1.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Size.Width) / 2
-        Form1.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Size.Height) / 2
+        Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Size.Width) / 2
+        Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Size.Height) / 2
     End Sub
     Public Sub Exec()
         ' Exécute le recherche demandée par l'utilistateur en fonction des paramètres connu dans le fichier ConfCompar.ini et en affiche le résultat dans l'onglet Comparaison
@@ -212,7 +216,7 @@ Public Class Principale
         Dim connect As New OleDbConnection(ChaineDeConnexion), Trouvé As Boolean, Nowdate As String, Nowheure As String
         Dim cmd As New OleDbCommand
         Dim Res As OleDbDataReader
-        Dim NetSql As New SQL
+        Dim NetSql As New SQL, N1 As Integer, N2 As Integer
         N = 0
         If PingEC Or NsOnOffBox1.Checked = False Then Exit Sub
         PingEC = True
@@ -253,25 +257,33 @@ Public Class Principale
                     End While
                     connect.Close()
 
-                    ' Si l'alarme n'existe pas on l'ajoute
 
-                    connect.Open()
+                    connect.Open() ' On récupère le dernier ID de la base Alarme
                     cmd.Connection = connect
                     cmd.CommandText = "SELECT COUNT(*) FROM Alarme;"
                     Res = cmd.ExecuteReader()
-
                     If Res.Read Then
-                        N = Val(Res.Item(0).ToString)
+                        N1 = Val(Res.Item(0).ToString)
                     End If
                     connect.Close()
 
-                    N += 1
-                    If Not Trouvé Then
-                        NetSql.Requete(ChaineDeConnexion, "INSERT INTO Alarme (ID, Serveur, Descritpion, Jours, Heure, Niveau, [Action]) VALUES ('" & N & "','" & Ligne & "','Le serveur " & Ligne & " n''est pas en ligne.','" & Nowdate & "','" & Nowheure & "','Critique','Ping')")
-                        NetSql.Requete(ChaineDeConnexion, "INSERT INTO Archive (ID, Serveur, Descritpion, Jours, Heure, Niveau, [Action]) VALUES ('" & N & "','" & Ligne & "','Le serveur " & Ligne & " n''est pas en ligne.','" & Nowdate & "','" & Nowheure & "','Critique','Ping')")
+                    connect.Open() ' On récupère le dernier ID de la base Archive
+                    cmd.Connection = connect
+                    cmd.CommandText = "SELECT COUNT(*) FROM Archive;"
+                    Res = cmd.ExecuteReader()
+                    If Res.Read Then
+                        N2 = Val(Res.Item(0).ToString)
+                    End If
+                    connect.Close()
+
+                    N1 += 1
+                    N2 += 1
+                    If Not Trouvé Then ' Si l'alarme n'existe pas on l'ajoute
+                        NetSql.Requete(ChaineDeConnexion, "INSERT INTO Alarme (ID, Serveur, Descritpion, Jours, Heure, Niveau, [Action]) VALUES ('" & N1 & "','" & Ligne & "','Le serveur " & Ligne & " n''est pas en ligne.','" & Nowdate & "','" & Nowheure & "','Critique','Ping')")
+                        NetSql.Requete(ChaineDeConnexion, "INSERT INTO Archive (ID, Serveur, Descritpion, Jours, Heure, Niveau, [Action]) VALUES ('" & N2 & "','" & Ligne & "','Le serveur " & Ligne & " n''est pas en ligne.','" & Nowdate & "','" & Nowheure & "','Critique','Ping')")
                     Else ' Si l'alarme existe on la met à jour
                         NetSql.Requete(ChaineDeConnexion, "UPDATE Alarme SET Jours = '" & Nowdate & "',Heure = '" & Nowheure & "' WHERE Serveur='" & Ligne & "';")
-                        NetSql.Requete(ChaineDeConnexion, "INSERT INTO Archive (ID, Serveur, Descritpion, Jours, Heure, Niveau, [Action]) VALUES ('" & N & "','" & Ligne & "','Le serveur " & Ligne & " n''est pas en ligne.','" & Nowdate & "','" & Nowheure & "','Critique', 'Ping');")
+                        NetSql.Requete(ChaineDeConnexion, "INSERT INTO Archive (ID, Serveur, Descritpion, Jours, Heure, Niveau, [Action]) VALUES ('" & N2 & "','" & Ligne & "','Le serveur " & Ligne & " n''est pas en ligne.','" & Nowdate & "','" & Nowheure & "','Critique', 'Ping');")
 
                         connect.Open()
                         cmd.Connection = connect
@@ -294,18 +306,23 @@ Public Class Principale
                     connect.Close()
                 End Try
 
+                DGV = DataGridView6.DataSource
+                DataGridView6.DataSource = DGV
                 If Not Trouvé Then ' Si l'alarme n'existe pas on l'ajoute
                     Invoke(New MethodInvoker(Sub() DataGridView6.Rows.Add(N, "Le serveur " & Ligne & " n'est pas en ligne.", Format(Now, "dd/MM/yyyy"), Format(Now, "hh:mm"), "Critique")))
                 Else
-                    Invoke(New MethodInvoker(Sub() DataGridView6.Rows(N - 1).Cells(2).Value = Nowdate))
-                    Invoke(New MethodInvoker(Sub() DataGridView6.Rows(N - 1).Cells(3).Value = Nowheure))
+                    Invoke(New MethodInvoker(Sub() DataGridView6.Rows(N - 1).Cells(3).Value = Nowdate))
+                    Invoke(New MethodInvoker(Sub() DataGridView6.Rows(N - 1).Cells(4).Value = Nowheure))
                 End If
+                DGV = DataGridView6.DataSource
+                Invoke(New MethodInvoker(Sub() DataGridView6.Refresh()))
                 connect.Close()
+            Catch ex As SyntaxErrorException
+                MsgBox(ex.Message)
             End Try
             Trouvé = False
         Loop Until Ligne Is Nothing
         PingEC = False
-        Invoke(New MethodInvoker(Sub() DataGridView6.Refresh()))
     End Sub
 
     Private Function Int(getString As Func(Of Integer, String)) As String
@@ -328,39 +345,25 @@ Public Class Principale
         End
     End Sub
     Private Sub ComboBox2_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
-        'On Error GoTo GestErr
+        On Error Resume Next
         ' En fonction du fichier sélectionné lit le fichier un complète tous les champs de l'onglet Audit
-        Dim Fichier As New StreamReader(ComboBox2.Text)
         Dim Ligne As String, Lecteur As String, NS As String, Tipe As String, SysFic As String, EspLibre As String, EspTotal As String, Pourcentage As Integer
         Dim Nom As String, Description As String, Statut As String, Etat As String, CodeSortie As String, X As Integer, Data As String, ColData(12) As String
 
         Dim connect As New OleDbConnection(ChaineDeConnexion)
         Dim cmd As New OleDbCommand, Res As OleDbDataReader, Serveur As OleDbDataReader, Serveur_HDD As OleDbDataReader, Serveur_Reseau As OleDbDataReader, Serveur_Services As OleDbDataReader
         Dim Serveur_MAJ As OleDbDataReader
-        Try ' Connexion à la base de données
-            connect.Open()
-            cmd.Connection = connect
-            ComboBox2.Items.Clear()
-            ' Récupère l'intégralité des données contenue dans la base serveur dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
-            cmd.CommandText = "SELECT * FROM Serveur WHERE POSTE_NomPoste LIKE '" & ComboBox1.Text & "_" & Format(ComboBox2.Text, "ddMMyyyy") & "%'"
-            Serveur = cmd.ExecuteReader()
-            ' Récupère l'intégralité des données contenue dans la base Serveur_HDD dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
-            cmd.CommandText = "SELECT * FROM Serveur_HDD WHERE POSTE_NomPoste LIKE '" & ComboBox1.Text & "_" & Format(ComboBox2.Text, "ddMMyyyy") & "%'"
-            Serveur_HDD = cmd.ExecuteReader()
-            ' Récupère l'intégralité des données contenue dans la base Serveur_Reseau dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
-            cmd.CommandText = "SELECT * FROM Serveur_Reseau WHERE POSTE_NomPoste LIKE '" & ComboBox1.Text & "_" & Format(ComboBox2.Text, "ddMMyyyy") & "%'"
-            Serveur_Reseau = cmd.ExecuteReader()
-            ' Récupère l'intégralité des données contenue dans la base <Nom du serveur>_Services dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
-            cmd.CommandText = "SELECT * FROM " & ComboBox1.Text & "_Services WHERE POSTE_NomPoste LIKE '" & ComboBox1.Text & "_" & Format(ComboBox2.Text, "ddMMyyyy") & "%'"
-            Serveur_Services = cmd.ExecuteReader()
-            ' Récupère l'intégralité des données contenue dans la base <Nom du serveur>_MAJ dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
-            cmd.CommandText = "SELECT * FROM " & ComboBox1.Text & "_MAJ WHERE POSTE_NomPoste LIKE '" & ComboBox1.Text & "_" & Format(ComboBox2.Text, "ddMMyyyy") & "%'"
-            Serveur_MAJ = cmd.ExecuteReader()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        ' Connexion à la base de données
+
+        connect.Open()
+        cmd.Connection = connect
+        cmd.CommandText = "SELECT * FROM Serveur WHERE POSTE_NomPoste LIKE '" & ComboBox1.Text & "_" & Format(CDate(ComboBox2.Text), "ddMMyyyy") & "'"
+        Serveur = cmd.ExecuteReader()
+
+        ' Récupère l'intégralité des données contenue dans la base serveur dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
 
         ' ========================================== POSTE ==========================================
+        If Serveur.Read = False Then Exit Sub
         TextBox1.Text = Serveur.Item(0)
         TextBox2.Text = Serveur.Item(1)
         TextBox3.Text = Serveur.Item(2)
@@ -397,6 +400,13 @@ Public Class Principale
         TextBox17.Text = Format(Val(Serveur.Item(16)) / 1024, "# ### ###.00 Mo")
 
         ' ========================================== HDD ==========================================
+        connect.Close()
+        ' Récupère l'intégralité des données contenue dans la base Serveur_HDD dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
+        connect.Open()
+        cmd.Connection = connect
+        cmd.CommandText = "SELECT * FROM Serveur_HDD WHERE HDD_Serveur LIKE '" & ComboBox1.Text & "_" & Format(CDate(ComboBox2.Text), "ddMMyyyy") & "%'"
+        Serveur_HDD = cmd.ExecuteReader()
+        If Serveur_HDD.Read = False Then Exit Sub
 
         DataGridView1.Rows.Clear()
         N = -1
@@ -405,145 +415,73 @@ Public Class Principale
         If Val(Serveur_HDD.Item(5)) > 1024 Then
             EspLibre = Format(Val(Serveur_HDD.Item(5)) / 1024, "# ### ###.00 Go")
         Else
-                EspLibre = EspLibre.Substring(InStr(EspLibre, "=")) & " Mo"
-                    End If
+            EspLibre = Serveur_HDD.Item(5).Substring(InStr(Serveur_HDD.Item(5), "=")) & " Mo"
+        End If
+
         If Val(Serveur_HDD.Item(6)) > 1024 Then
-            EspTotal = Format(Val(EspTotal.Substring(InStr(EspTotal, "="))) / 1024, "# ### ###.00 Go")
+            EspTotal = Format(Val(Serveur_HDD.Item(6).Substring(InStr(Serveur_HDD.Item(6), "="))) / 1024, "# ### ###.00 Go")
         Else
-            EspTotal = EspTotal.Substring(InStr(EspTotal, "=")) & " Mo"
-                    End If
-                    Pourcentage = Val(EspLibre.Substring(InStr(EspLibre, "="))) / (Val(EspTotal.Substring(InStr(EspLibre, "="))) / 100)
-                    DataGridView1.Rows.Add()
-                    N += 1
-        If Lecteur IsNot Nothing Then DataGridView1.Rows(N).Cells(0).Value = Serveur_HDD.Item(1)
-        If NS IsNot Nothing Then DataGridView1.Rows(N).Cells(1).Value = Serveur_HDD.Item(2)
-            If Tipe IsNot Nothing Then DataGridView1.Rows(N).Cells(2).Value = Serveur_HDD.Item(3)
-            If SysFic IsNot Nothing Then DataGridView1.Rows(N).Cells(3).Value = Serveur_HDD.Item(4)
-            If EspLibre IsNot Nothing Then DataGridView1.Rows(N).Cells(4).Value = EspLibre
-                    If EspLibre IsNot Nothing And EspTotal IsNot Nothing Then DataGridView1.Rows(N).Cells(5).Value = Pourcentage
-                    If EspTotal IsNot Nothing Then DataGridView1.Rows(N).Cells(6).Value = EspTotal
+            EspTotal = Serveur_HDD.Item(6).Substring(InStr(Serveur_HDD.Item(6), "=")) & " Mo"
+        End If
+        Pourcentage = Val(Serveur_HDD.Item(6).Substring(InStr(Serveur_HDD.Item(6), "="))) / (Val(Serveur_HDD.Item(6).Substring(InStr(Serveur_HDD.Item(6), "="))) / 100)
+        DataGridView1.Rows.Add()
+        N += 1
+        If Serveur_HDD.Read Then DataGridView1.Rows(N).Cells(0).Value = Serveur_HDD.Item(1)
+        If Serveur_HDD.Read Then DataGridView1.Rows(N).Cells(1).Value = Serveur_HDD.Item(2)
+        If Serveur_HDD.Read Then DataGridView1.Rows(N).Cells(2).Value = Serveur_HDD.Item(3)
+        If Serveur_HDD.Read Then DataGridView1.Rows(N).Cells(3).Value = Serveur_HDD.Item(4)
+        If Serveur_HDD.Read Then DataGridView1.Rows(N).Cells(4).Value = EspLibre
+        If Serveur_HDD.Read And EspTotal IsNot Nothing Then DataGridView1.Rows(N).Cells(5).Value = Pourcentage
+        If Serveur_HDD.Read Then DataGridView1.Rows(N).Cells(6).Value = EspTotal
 #Enable Warning BC42104 ' La variable est utilisée avant de se voir attribuer une valeur
+        connect.Close()
+        ' Récupère l'intégralité des données contenue dans la base Serveur_Reseau dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
+        connect.Open()
+        cmd.Connection = connect
+        cmd.CommandText = "SELECT * FROM Serveur_Reseau WHERE RESEAU_Serveur LIKE '" & ComboBox1.Text & "_" & Format(CDate(ComboBox2.Text), "ddMMyyyy") & "%'"
+        Serveur_Reseau = cmd.ExecuteReader()
+        If Serveur_Reseau.Read = False Then Exit Sub
 
 
-        ' ========================================== RESEAU ========================================== <====== J'EN SUIS LA !!!!!
+        ' ========================================== RESEAU ========================================== 
 
         N = -1
         DataGridView2.Rows.Clear()
-        Do
 
-            If InStr(Ligne, "NomCarte") <> 0 Then DataGridView2.Rows.Add(Ligne.Substring(9)) : N = N + 1
-            If InStr(Ligne, "TypeCarte") <> 0 Then DataGridView2.Rows.Item(N).Cells.Item(1).Value = Ligne.Substring(10)
-            If InStr(Ligne, "Description") <> 0 Then DataGridView2.Rows.Item(N).Cells.Item(2).Value = Ligne.Substring(12)
-            If InStr(Ligne, "@MAC") <> 0 Then DataGridView2.Rows.Item(N).Cells.Item(3).Value = Ligne.Substring(5)
-            If InStr(Ligne, "VitesseMAX") <> 0 Then DataGridView2.Rows.Item(N).Cells.Item(4).Value = Ligne.Substring(11)
-            If InStr(Ligne, "@IP") <> 0 Then
-                If Ligne.Substring(4) = "" Then
-                    N = -1
-                Else
-                    DataGridView2.Rows.Item(N).Cells.Item(5).Value = Ligne.Substring(5)
-                End If
-            End If
-            If InStr(Ligne, "MSR") <> 0 Then DataGridView2.Rows.Item(N).Cells.Item(6).Value = Ligne.Substring(5)
-            If InStr(Ligne, "DHCP") <> 0 And InStr(Ligne, "@") = 0 Then DataGridView2.Rows.Item(N).Cells.Item(7).Value = Ligne.Substring(6)
-            If InStr(Ligne, "@DHCP") <> 0 Then DataGridView2.Rows.Item(N).Cells.Item(8).Value = Ligne.Substring(7)
-            If InStr(Ligne, "@DNS") <> 0 Then DataGridView2.Rows.Item(N).Cells.Item(9).Value = Ligne.Substring(6) : N = -1
+        DataGridView2.Rows.Add(Serveur_Reseau.Item(1)) : N = N + 1
+        DataGridView2.Rows.Item(N).Cells.Item(1).Value = Serveur_Reseau.Item(2)
+        DataGridView2.Rows.Item(N).Cells.Item(2).Value = Serveur_Reseau.Item(3)
+        DataGridView2.Rows.Item(N).Cells.Item(3).Value = Serveur_Reseau.Item(4)
+        DataGridView2.Rows.Item(N).Cells.Item(4).Value = Serveur_Reseau.Item(5)
+        DataGridView2.Rows.Item(N).Cells.Item(5).Value = Serveur_Reseau.Item(6)
 
-            If Ligne = "[UTILISATEURS]" Then Exit Do
-        Loop Until Ligne Is Nothing
+        DataGridView2.Rows.Item(N).Cells.Item(6).Value = Serveur_Reseau.Item(7)
+        DataGridView2.Rows.Item(N).Cells.Item(7).Value = Serveur_Reseau.Item(8)
+        DataGridView2.Rows.Item(N).Cells.Item(8).Value = Serveur_Reseau.Item(9)
+        DataGridView2.Rows.Item(N).Cells.Item(9).Value = Serveur_Reseau.Item(10)
 
-        ListBox1.Items.Clear()
-        ListBox2.Items.Clear()
-        ListBox3.Items.Clear()
-        ListBox4.Items.Clear()
-
-        Do
-
-            If Ligne <> "" And Ligne <> "[GROUPES]" Then ListBox1.Items.Add(Ligne)
-        Loop While Not Ligne = "[GROUPES]"
-
-        Do
-
-            If Ligne <> "" And Ligne <> "[STRATEGIE]" Then ListBox2.Items.Add(Ligne)
-        Loop While Not Ligne = "[STRATEGIE]"
-
-        Do
-            If Ligne = "[STRATEGIE]" Then
-
-
-                If InStr(Ligne, "Expiration") > 0 Then TextBox25.Text = Ligne.Substring(InStr(Ligne, "="))
-
-                If InStr(Ligne, "MDPVieMin") > 0 Then TextBox24.Text = Ligne.Substring(InStr(Ligne, "="))
-
-                If InStr(Ligne, "MDPVieMax") > 0 Then TextBox23.Text = Ligne.Substring(InStr(Ligne, "="))
-
-                If InStr(Ligne, "MDPLongueur") > 0 Then TextBox22.Text = Ligne.Substring(InStr(Ligne, "="))
-
-                If InStr(Ligne, "MDPAnterieur") > 0 Then TextBox21.Text = Ligne.Substring(InStr(Ligne, "="))
-
-                If InStr(Ligne, "SeuilVerrou") > 0 Then TextBox20.Text = Ligne.Substring(InStr(Ligne, "="))
-
-                If InStr(Ligne, "DureeVerrou") > 0 Then TextBox19.Text = Ligne.Substring(InStr(Ligne, "="))
-
-                If InStr(Ligne, "FenObsVerrou") > 0 Then TextBox18.Text = Ligne.Substring(InStr(Ligne, "="))
-
-                If InStr(Ligne, "RolePoste") > 0 Then TextBox26.Text = Ligne.Substring(InStr(Ligne, "="))
-
-
-
-                Exit Do
-            End If
-        Loop Until Ligne Is Nothing
-
-        Do
-
-            If Ligne <> "" And Ligne <> "[PILOTES]" Then ListBox3.Items.Add(Ligne)
-        Loop While Not Ligne = "[PILOTES]"
-
-        Do
-
-            If Ligne <> "" And Ligne <> "[SERVICES]" Then ListBox4.Items.Add(Ligne)
-        Loop While Not Ligne = "[SERVICES]"
-
-        DataGridView3.Rows.Clear()
-        Do
-            If Ligne = "[SERVICES]" Then
-
-                Do While Not Ligne = "[MAJ]"
-                    Nom = Fichier.ReadLine
-                    If Nom = "[MAJ]" Then Exit Do
-                    Description = Fichier.ReadLine
-                    If Description = "[MAJ]" Then Exit Do
-                    Statut = Fichier.ReadLine
-                    If Statut = "[MAJ]" Then Exit Do
-                    Etat = Fichier.ReadLine
-                    If Etat = "[MAJ]" Then Exit Do
-                    CodeSortie = Fichier.ReadLine
-                    If CodeSortie = "[MAJ]" Then Exit Do
-                    DataGridView3.Rows.Add(Nom.Substring(4), Description.Substring(12), Statut.Substring(7), Etat.Substring(8), CodeSortie.Substring(11))
-
-                Loop
-                Exit Do
-            End If
-        Loop Until Ligne Is Nothing
-
-
-
-        Do
-            Data = Fichier.ReadLine
-            If Data = "" Then Exit Do
-            Do
-                X = X + 1
-                ColData(X) = Data.Substring(0, InStr(Data, "  "))
-                Data = LTrim(Data.Substring(Len(ColData(X))))
-            Loop While Not Len(Data) = 0
-            DataGridView4.Rows.Add(ColData(1), ColData(2), ColData(3), ColData(4), ColData(5), ColData(6))
-            X = 0
-        Loop
-        connect.Close()
         Exit Sub
 GestErr:
         MsgBox("Le fichier Decimal donnée du serveur est incorrect. Merci Decimal le vérifier." & vbCrLf & ComboBox2.Text)
         connect.Close()
+        ' Récupère l'intégralité des données contenue dans la base <Nom du serveur>_Services dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
+        connect.Open()
+        cmd.Connection = connect
+        cmd.CommandText = "SELECT * FROM " & ComboBox1.Text & "_Services WHERE POSTE_NomPoste LIKE '" & ComboBox1.Text & "_" & Format(CDate(ComboBox2.Text), "ddMMyyyy") & "%'"
+        Serveur_Services = cmd.ExecuteReader()
+        If Serveur_Services.Read = False Then Exit Sub
+
+
+        connect.Close()
+        ' Récupère l'intégralité des données contenue dans la base <Nom du serveur>_MAJ dont le champ POSTE_NomPoste commence par <Nom du serveur>_<Date selectionnée>
+        connect.Open()
+        cmd.Connection = connect
+        cmd.CommandText = "SELECT * FROM " & ComboBox1.Text & "_MAJ WHERE POSTE_NomPoste LIKE '" & ComboBox1.Text & "_" & Format(CDate(ComboBox2.Text), "ddMMyyyy") & "%'"
+        Serveur_MAJ = cmd.ExecuteReader()
+        If Serveur_MAJ.Read = False Then Exit Sub
+
+        connect.Close()
+
     End Sub
     Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
         ' En fonction de l'option demandé charge les contrôle prédéfinit dans le fihcier ConfCompar.ini
@@ -615,6 +553,7 @@ GestErr:
             MsgBox(ex.Message)
         End Try
     End Sub
+
     Private Sub Principale_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         End
     End Sub
@@ -630,25 +569,7 @@ GestErr:
         Return connect
     End Function
 
-    Public Sub Charge_Alarme()
-        Dim connect As New OleDbConnection(ChaineDeConnexion)
-        Dim cmd As New OleDbCommand
-        DataGridView6.Rows.Clear()
-        Try ' Connexion à la base de données
-            connect.Open()
-            cmd.Connection = connect
 
-            ' vérifie si l'alarme existe
-            cmd.CommandText = "SELECT ID, Descritpion, Jours, Heure, Niveau FROM Alarme"
-            Dim Res As OleDbDataReader = cmd.ExecuteReader()
-            While Res.Read()
-                DataGridView6.Rows.Add(Res.Item(0).ToString, Res.Item(1).ToString, Res.Item(2).ToString, Res.Item(3).ToString, Res.Item(4).ToString)
-            End While
-            connect.Close()
-        Catch ex As Exception
-            MsgBox("Une erreur s'est produite pendant le chargement de la base Alarme : " & vbCrLf & ex.Message)
-        End Try
-    End Sub
     Public Sub Collect()
         Dim NetSql As New SQL, Ligne As String, Ena(10) As String, Ret As String, RequeteQ As OleDb.OleDbDataReader
         Dim ServeurLst As New StreamReader("C:\varsoft\chksys\.enable_win.lst")
@@ -692,6 +613,21 @@ GestErr:
         S = Val(DateDiff(DateInterval.Second, Debut, Now)) - (M * 60)
         NsLabel38.Value1 = "Base chargée en " & M & ":" & S & " minutes."
         Invoke(New MethodInvoker(Sub() NsProgressBar1.Visible = False))
+    End Sub
+
+    Private Sub DataGridView6_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView6.CellEnter
+        For Each row As DataGridViewRow In DataGridView6.Rows
+            If row.Cells(6).Value = "Ping" Then
+
+                DataGridView6.Item(5, row.Index).Style.BackColor = Color.DarkOrange
+            End If
+        Next
+    End Sub
+
+    Private Sub Principale_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
+        Me.Height = 563
+        Me.Width = 1184
+
     End Sub
 End Class
 

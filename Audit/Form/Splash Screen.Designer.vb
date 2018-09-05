@@ -62,7 +62,7 @@ Partial Class Form3
         'Timer2
         '
         Me.Timer2.Enabled = True
-        Me.Timer2.Interval = 2000
+        Me.Timer2.Interval = 500
         '
         'Form3
         '

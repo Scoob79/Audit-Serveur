@@ -34,3 +34,6 @@ D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.vbprojAssemblyRefe
 D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\SnmpSharpNet.dll
 D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\SnmpSharpNet.pdb
 D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\SnmpSharpNet.xml
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\WindowsApplication1.Form1.resources
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Interop.GlgoleLib.dll
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Interop.Win32_TPMLib.dll

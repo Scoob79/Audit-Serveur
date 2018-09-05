@@ -56,27 +56,14 @@ Public Class Principale
     Const WinServeur = 11
     Const WinXP = 12
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'TODO: cette ligne de code charge les données dans la table 'BDDDataSet.Alarme'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-        Me.AlarmeTableAdapter.Fill(Me.BDDDataSet.Alarme)
-        'TODO: cette ligne de code charge les données dans la table 'BDDDataSet.ServeurLst'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-        Me.ServeurLstTableAdapter.Fill(Me.BDDDataSet.ServeurLst)
-        'TODO: cette ligne de code charge les données dans la table 'Database1DataSet.Table'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-        Dim Config As New StreamReader("c:\temp\ConfCompar.ini"), Ligne As String
 
         Dim ThreadCollect As New System.Threading.Thread(AddressOf Collect)
         ThreadCollect.Priority = Threading.ThreadPriority.Highest
         ThreadCollect.IsBackground = True
         ThreadCollect.Start() ' Démarrer le nouveau thread.
 
-        DGV = DataGridView6.DataSource
-
-        On Error Resume Next
-        DateTimePicker1.Value = Today.AddDays(-1)
+        Recaharge_Requete()
         ComboBox2.Items.Clear()
-        Do
-            Ligne = Config.ReadLine
-            If InStr(Ligne, "{") > 0 Then ComboBox3.Items.Add(Ligne.Substring(0, InStr(Ligne, "{") - 1))
-        Loop Until Ligne Is Nothing
 
         Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Size.Width) / 2
         Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Size.Height) / 2
@@ -97,7 +84,6 @@ Public Class Principale
         DataGridView5.Refresh()
         Do
             Nom = Serveur.ReadLine
-            Hier = DateTimePicker1.Value
             Section = ComboBox3.Text.Substring(0, InStr(ComboBox3.Text, "\") - 1)
             Cle = ComboBox3.Text.Substring(InStr(ComboBox3.Text, "\"))
 
@@ -306,16 +292,7 @@ Public Class Principale
                     connect.Close()
                 End Try
 
-                DGV = DataGridView6.DataSource
-                DataGridView6.DataSource = DGV
-                If Not Trouvé Then ' Si l'alarme n'existe pas on l'ajoute
-                    Invoke(New MethodInvoker(Sub() DataGridView6.Rows.Add(N, "Le serveur " & Ligne & " n'est pas en ligne.", Format(Now, "dd/MM/yyyy"), Format(Now, "hh:mm"), "Critique")))
-                Else
-                    Invoke(New MethodInvoker(Sub() DataGridView6.Rows(N - 1).Cells(3).Value = Nowdate))
-                    Invoke(New MethodInvoker(Sub() DataGridView6.Rows(N - 1).Cells(4).Value = Nowheure))
-                End If
-                DGV = DataGridView6.DataSource
-                Invoke(New MethodInvoker(Sub() DataGridView6.Refresh()))
+                Recaharge_Alarme()
                 connect.Close()
             Catch ex As SyntaxErrorException
                 MsgBox(ex.Message)
@@ -484,54 +461,28 @@ GestErr:
 
     End Sub
     Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
-        ' En fonction de l'option demandé charge les contrôle prédéfinit dans le fihcier ConfCompar.ini
-        Dim Fichier As New StreamReader("c:\temp\ConfCompar.ini"), Ligne As String, Instruction As String
-        NsTabControl2.TabPages(1).Controls.Remove(labele1)
-        NsTabControl2.TabPages(1).Controls.Remove(text1)
-        NsTabControl2.TabPages(1).Controls.Remove(bouton1)
-        NsTabControl2.TabPages(1).Controls.Remove(RadBt1)
-        NsTabControl2.TabPages(1).Controls.Remove(RadBt2)
-        NsTabControl2.TabPages(1).Controls.Remove(RadBt3)
+        Dim connect As New OleDbConnection(ChaineDeConnexion)
+        Dim cmd As New OleDbCommand, Res As OleDbDataReader
 
-        Do
-            Ligne = Fichier.ReadLine()
+        If ComboBox3.Text = "Ajouter une nouvelle requête" Then
+            GroupBox1.Visible = True
+            NsTextBox5.Text = ""
+        Else
+            Try
+                connect.Open()
+                cmd.Connection = connect
+                ComboBox2.Items.Clear()
+                cmd.CommandText = "SELECT RequeteSQL FROM Requete WHERE NomSQL LIKE '" & ComboBox3.Text.Substring(0, InStr(ComboBox3.Text, " | ") - 1) & "'"
+                Res = cmd.ExecuteReader()
+                If Res.Read Then NsTextBox5.Text = Res.Item(0)
+                connect.Close()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                connect.Close()
+            End Try
 
-            If Ligne <> "" Then
-                If InStr(Ligne, "{") = 0 Or InStr(Ligne, "{") = 0 Or InStr(Ligne, "{") = 0 Then MsgBox("Erreur dans le fichier de configuration.", vbExclamation) : End
-            End If
+        End If
 
-            Do
-                If InStr(Ligne, ComboBox3.Text) > 0 Then
-                    Instruction = Ligne.Substring(InStr(Ligne, "{"))
-                    Champ = Instruction.Substring(0, InStr(Instruction, "|") - 1)
-                    Todo = Instruction.Substring(InStr(Instruction, "|"))
-                    Todo = Todo.Substring(0, Len(Todo) - 1)
-                End If
-                Ligne = Fichier.ReadLine()
-            Loop Until Ligne Is Nothing
-
-            If Champ = "text" Then
-                NsTabControl2.TabPages(1).Controls.Add(text1)
-                NsTabControl2.TabPages(1).Controls.Add(labele1)
-                NsTabControl2.TabPages(1).Controls.Add(bouton1)
-                NsTabControl2.TabPages(1).Controls.Add(RadBt1)
-                NsTabControl2.TabPages(1).Controls.Add(RadBt2)
-                NsTabControl2.TabPages(1).Controls.Add(RadBt3)
-                labele1.Location = New Drawing.Point(340, 22)
-                labele1.Text = "Recherche"
-                text1.Location = New Drawing.Point(400, 20)
-                text1.Width = 250
-                bouton1.Location = New Drawing.Point(780, 20)
-                bouton1.Height = 20
-                bouton1.Text = "Lancer !!!"
-                RadBt1.Location = New Drawing.Point(660, 20) : RadBt1.Text = "<" : RadBt1.Width = 30
-                RadBt2.Location = New Drawing.Point(700, 20) : RadBt2.Text = "=" : RadBt2.Width = 30 : RadBt2.Checked = True
-                RadBt3.Location = New Drawing.Point(740, 20) : RadBt3.Text = ">" : RadBt3.Width = 30
-                AddHandler bouton1.Click, AddressOf Exec
-                Exit Do
-
-            End If
-        Loop Until Ligne Is Nothing
     End Sub
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
@@ -563,6 +514,27 @@ GestErr:
         connect.Open()
         Return connect
     End Function
+
+    Private Sub NsButton5_Click(sender As Object, e As EventArgs) Handles NsButton5.Click
+        GroupBox1.Visible = False
+        NsTextBox2.Text = ""
+        NsTextBox3.Text = ""
+        NsTextBox4.Text = ""
+
+    End Sub
+
+    Private Sub NsButton4_Click(sender As Object, e As EventArgs) Handles NsButton4.Click
+        Dim NetSql As New SQL
+
+        If NsTextBox2.Text = "" Or NsTextBox3.Text = "" Or NsTextBox4.Text = "" Then
+            MsgBox("Tous les champs sont obligatoire.", vbCritical)
+            Exit Sub
+        End If
+
+        NetSql.Requete(ChaineDeConnexion, "INSERT INTO Requete (NomSQL, description, RequeteSQL) VALUES ('" & NsTextBox2.Text & "', '" & NsTextBox3.Text & "', '" & NsTextBox4.Text & "')")
+        Recaharge_Requete()
+    End Sub
+
     Public Overloads Function Close()
         Dim connect As New OleDbConnection(ChaineDeConnexion)
         connect.Close()
@@ -629,5 +601,56 @@ GestErr:
         Me.Width = 1184
 
     End Sub
-End Class
 
+    Private Sub Recaharge_Alarme()
+        Dim connetionString As String
+        Dim connection As OleDbConnection
+        Dim cmd As New OleDbCommand
+        Dim oledbAdapter As OleDbDataAdapter
+        Dim ds As New DataSet
+        Dim i As Integer
+        connetionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Users\u165147\source\repos\Audit\Audit\BDD\BDD.mdb;"
+        connection = New OleDbConnection(connetionString)
+        Try
+            Dim UpdateCommand = New OleDbCommand("select * from Alarme")
+            connection.Open()
+            oledbAdapter = New OleDbDataAdapter(UpdateCommand)
+            oledbAdapter.SelectCommand.Connection = connection
+            oledbAdapter.Fill(ds)
+            oledbAdapter.Dispose()
+            connection.Close()
+            Invoke(New MethodInvoker(Sub() DataGridView6.DataSource = ds.Tables(0)))
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub Recaharge_Requete()
+        Dim connetionString As String
+        Dim connection As OleDbConnection
+        Dim cmd As New OleDbCommand
+        Dim oledbAdapter As OleDbDataAdapter
+        Dim ds As New DataSet
+        Dim i As Integer
+        connetionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Users\u165147\source\repos\Audit\Audit\BDD\BDD.mdb;"
+        connection = New OleDbConnection(connetionString)
+        ComboBox3.Items.Clear()
+        Try
+            Dim UpdateCommand = New OleDbCommand("select * from Requete")
+            connection.Open()
+            oledbAdapter = New OleDbDataAdapter(UpdateCommand)
+            oledbAdapter.SelectCommand.Connection = connection
+            oledbAdapter.Fill(ds)
+            oledbAdapter.Dispose()
+            connection.Close()
+            N = 0
+            Do Until ds.Tables(0).Rows(N).Item(0) Is Nothing
+                If ds.Tables(0).Rows(N).Item(0) = "Ajouter une nouvelle requête" Then ComboBox3.Items.Add(ds.Tables(0).Rows(N).Item(0)) : N += 1
+                ComboBox3.Items.Add(ds.Tables(0).Rows(N).Item(0) & " | " & ds.Tables(0).Rows(N).Item(1) & " | " & ds.Tables(0).Rows(N).Item(2))
+                N += 1
+            Loop
+        Catch ex As Exception
+            'MsgBox("Une erreur s'est produite dans le module Recharge_Requete : " & ex.Message)
+        End Try
+    End Sub
+End Class

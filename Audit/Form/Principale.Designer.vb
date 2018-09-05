@@ -151,14 +151,29 @@ Partial Class Principale
         Me.ServeurLstBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.NsLabel33 = New WindowsApplication1.NSLabel()
         Me.TabPage18 = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.NsButton5 = New WindowsApplication1.NSButton()
+        Me.NsButton4 = New WindowsApplication1.NSButton()
+        Me.NsTextBox4 = New WindowsApplication1.NSTextBox()
+        Me.NsTextBox3 = New WindowsApplication1.NSTextBox()
+        Me.NsTextBox2 = New WindowsApplication1.NSTextBox()
+        Me.NsLabel41 = New WindowsApplication1.NSLabel()
+        Me.NsLabel40 = New WindowsApplication1.NSLabel()
+        Me.NsLabel32 = New WindowsApplication1.NSLabel()
         Me.ComboBox3 = New WindowsApplication1.NSComboBox()
+        Me.RequeteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridView5 = New System.Windows.Forms.DataGridView()
         Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.NsLabel32 = New WindowsApplication1.NSLabel()
         Me.NsLabel31 = New WindowsApplication1.NSLabel()
         Me.TabPage19 = New System.Windows.Forms.TabPage()
         Me.DataGridView6 = New System.Windows.Forms.DataGridView()
+        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ServeurDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescritpionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JoursDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HeureDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NiveauDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ActionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AlarmeBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.AlarmeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AlarmeTableAdapter = New WindowsApplication1.BDDDataSetTableAdapters.AlarmeTableAdapter()
@@ -171,13 +186,9 @@ Partial Class Principale
         Me.NsLabel39 = New WindowsApplication1.NSLabel()
         Me.NsLabel36 = New WindowsApplication1.NSLabel()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ServeurDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescritpionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JoursDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HeureDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NiveauDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ActionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RequeteTableAdapter = New WindowsApplication1.BDDDataSetTableAdapters.RequeteTableAdapter()
+        Me.NsLabel42 = New WindowsApplication1.NSLabel()
+        Me.NsTextBox5 = New WindowsApplication1.NSTextBox()
         CType(Me.BDDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BDDDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ServeurLstBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,6 +215,8 @@ Partial Class Principale
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ServeurLstBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage18.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.RequeteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage19.SuspendLayout()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -406,7 +419,7 @@ Partial Class Principale
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(688, 18)
+        Me.PictureBox1.Location = New System.Drawing.Point(682, 41)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(193, 182)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1550,10 +1563,11 @@ Partial Class Principale
         'TabPage18
         '
         Me.TabPage18.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage18.Controls.Add(Me.NsTextBox5)
+        Me.TabPage18.Controls.Add(Me.NsLabel42)
+        Me.TabPage18.Controls.Add(Me.GroupBox1)
         Me.TabPage18.Controls.Add(Me.ComboBox3)
         Me.TabPage18.Controls.Add(Me.DataGridView5)
-        Me.TabPage18.Controls.Add(Me.DateTimePicker1)
-        Me.TabPage18.Controls.Add(Me.NsLabel32)
         Me.TabPage18.Controls.Add(Me.NsLabel31)
         Me.TabPage18.Location = New System.Drawing.Point(119, 4)
         Me.TabPage18.Name = "TabPage18"
@@ -1561,6 +1575,111 @@ Partial Class Principale
         Me.TabPage18.Size = New System.Drawing.Size(1044, 454)
         Me.TabPage18.TabIndex = 1
         Me.TabPage18.Text = "Comparaison"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.NsButton5)
+        Me.GroupBox1.Controls.Add(Me.NsButton4)
+        Me.GroupBox1.Controls.Add(Me.NsTextBox4)
+        Me.GroupBox1.Controls.Add(Me.NsTextBox3)
+        Me.GroupBox1.Controls.Add(Me.NsTextBox2)
+        Me.GroupBox1.Controls.Add(Me.NsLabel41)
+        Me.GroupBox1.Controls.Add(Me.NsLabel40)
+        Me.GroupBox1.Controls.Add(Me.NsLabel32)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.SandyBrown
+        Me.GroupBox1.Location = New System.Drawing.Point(230, 92)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(589, 254)
+        Me.GroupBox1.TabIndex = 13
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Ajout d'une requête"
+        Me.GroupBox1.Visible = False
+        '
+        'NsButton5
+        '
+        Me.NsButton5.Location = New System.Drawing.Point(508, 221)
+        Me.NsButton5.Name = "NsButton5"
+        Me.NsButton5.Size = New System.Drawing.Size(75, 23)
+        Me.NsButton5.TabIndex = 7
+        Me.NsButton5.Text = "   Annuler"
+        '
+        'NsButton4
+        '
+        Me.NsButton4.Location = New System.Drawing.Point(427, 221)
+        Me.NsButton4.Name = "NsButton4"
+        Me.NsButton4.Size = New System.Drawing.Size(75, 23)
+        Me.NsButton4.TabIndex = 6
+        Me.NsButton4.Text = "    Valider"
+        '
+        'NsTextBox4
+        '
+        Me.NsTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox4.Location = New System.Drawing.Point(153, 135)
+        Me.NsTextBox4.MaxLength = 32767
+        Me.NsTextBox4.Multiline = False
+        Me.NsTextBox4.Name = "NsTextBox4"
+        Me.NsTextBox4.ReadOnly = False
+        Me.NsTextBox4.Size = New System.Drawing.Size(430, 80)
+        Me.NsTextBox4.TabIndex = 5
+        Me.NsTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox4.UseSystemPasswordChar = False
+        '
+        'NsTextBox3
+        '
+        Me.NsTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox3.Location = New System.Drawing.Point(153, 49)
+        Me.NsTextBox3.MaxLength = 32767
+        Me.NsTextBox3.Multiline = False
+        Me.NsTextBox3.Name = "NsTextBox3"
+        Me.NsTextBox3.ReadOnly = False
+        Me.NsTextBox3.Size = New System.Drawing.Size(430, 80)
+        Me.NsTextBox3.TabIndex = 4
+        Me.NsTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox3.UseSystemPasswordChar = False
+        '
+        'NsTextBox2
+        '
+        Me.NsTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox2.Location = New System.Drawing.Point(153, 20)
+        Me.NsTextBox2.MaxLength = 32767
+        Me.NsTextBox2.Multiline = False
+        Me.NsTextBox2.Name = "NsTextBox2"
+        Me.NsTextBox2.ReadOnly = False
+        Me.NsTextBox2.Size = New System.Drawing.Size(430, 23)
+        Me.NsTextBox2.TabIndex = 3
+        Me.NsTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox2.UseSystemPasswordChar = False
+        '
+        'NsLabel41
+        '
+        Me.NsLabel41.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel41.Location = New System.Drawing.Point(7, 126)
+        Me.NsLabel41.Name = "NsLabel41"
+        Me.NsLabel41.Size = New System.Drawing.Size(140, 23)
+        Me.NsLabel41.TabIndex = 2
+        Me.NsLabel41.Value1 = "Requête"
+        Me.NsLabel41.Value2 = ""
+        '
+        'NsLabel40
+        '
+        Me.NsLabel40.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel40.Location = New System.Drawing.Point(7, 49)
+        Me.NsLabel40.Name = "NsLabel40"
+        Me.NsLabel40.Size = New System.Drawing.Size(140, 23)
+        Me.NsLabel40.TabIndex = 1
+        Me.NsLabel40.Value1 = "Description"
+        Me.NsLabel40.Value2 = ""
+        '
+        'NsLabel32
+        '
+        Me.NsLabel32.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel32.Location = New System.Drawing.Point(7, 20)
+        Me.NsLabel32.Name = "NsLabel32"
+        Me.NsLabel32.Size = New System.Drawing.Size(140, 23)
+        Me.NsLabel32.TabIndex = 0
+        Me.NsLabel32.Value1 = "Nom de la requête"
+        Me.NsLabel32.Value2 = ""
         '
         'ComboBox3
         '
@@ -1571,8 +1690,13 @@ Partial Class Principale
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Location = New System.Drawing.Point(191, 12)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(235, 21)
+        Me.ComboBox3.Size = New System.Drawing.Size(847, 21)
         Me.ComboBox3.TabIndex = 2
+        '
+        'RequeteBindingSource
+        '
+        Me.RequeteBindingSource.DataMember = "Requete"
+        Me.RequeteBindingSource.DataSource = Me.BDDDataSet
         '
         'DataGridView5
         '
@@ -1582,10 +1706,10 @@ Partial Class Principale
         Me.DataGridView5.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column12})
-        Me.DataGridView5.Location = New System.Drawing.Point(13, 70)
+        Me.DataGridView5.Location = New System.Drawing.Point(13, 65)
         Me.DataGridView5.Name = "DataGridView5"
         Me.DataGridView5.ReadOnly = True
-        Me.DataGridView5.Size = New System.Drawing.Size(1025, 378)
+        Me.DataGridView5.Size = New System.Drawing.Size(1025, 383)
         Me.DataGridView5.TabIndex = 12
         '
         'Column12
@@ -1593,26 +1717,6 @@ Partial Class Principale
         Me.Column12.HeaderText = "Champ"
         Me.Column12.Name = "Column12"
         Me.Column12.ReadOnly = True
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.DateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(191, 39)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(235, 20)
-        Me.DateTimePicker1.TabIndex = 13
-        '
-        'NsLabel32
-        '
-        Me.NsLabel32.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.NsLabel32.Location = New System.Drawing.Point(12, 41)
-        Me.NsLabel32.Name = "NsLabel32"
-        Me.NsLabel32.Size = New System.Drawing.Size(168, 23)
-        Me.NsLabel32.TabIndex = 1
-        Me.NsLabel32.Text = "NsLabel32"
-        Me.NsLabel32.Value1 = "Elément de comparaison"
-        Me.NsLabel32.Value2 = ""
         '
         'NsLabel31
         '
@@ -1622,7 +1726,7 @@ Partial Class Principale
         Me.NsLabel31.Size = New System.Drawing.Size(168, 23)
         Me.NsLabel31.TabIndex = 0
         Me.NsLabel31.Text = "NsLabel31"
-        Me.NsLabel31.Value1 = "Elément de comparaison"
+        Me.NsLabel31.Value1 = "Sélectionner votre requête"
         Me.NsLabel31.Value2 = ""
         '
         'TabPage19
@@ -1648,6 +1752,50 @@ Partial Class Principale
         Me.DataGridView6.Name = "DataGridView6"
         Me.DataGridView6.Size = New System.Drawing.Size(1032, 445)
         Me.DataGridView6.TabIndex = 0
+        '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.IDDataGridViewTextBoxColumn.Visible = False
+        '
+        'ServeurDataGridViewTextBoxColumn
+        '
+        Me.ServeurDataGridViewTextBoxColumn.DataPropertyName = "Serveur"
+        Me.ServeurDataGridViewTextBoxColumn.HeaderText = "Serveur"
+        Me.ServeurDataGridViewTextBoxColumn.Name = "ServeurDataGridViewTextBoxColumn"
+        '
+        'DescritpionDataGridViewTextBoxColumn
+        '
+        Me.DescritpionDataGridViewTextBoxColumn.DataPropertyName = "Descritpion"
+        Me.DescritpionDataGridViewTextBoxColumn.HeaderText = "Descritpion"
+        Me.DescritpionDataGridViewTextBoxColumn.Name = "DescritpionDataGridViewTextBoxColumn"
+        Me.DescritpionDataGridViewTextBoxColumn.Width = 400
+        '
+        'JoursDataGridViewTextBoxColumn
+        '
+        Me.JoursDataGridViewTextBoxColumn.DataPropertyName = "Jours"
+        Me.JoursDataGridViewTextBoxColumn.HeaderText = "Jours"
+        Me.JoursDataGridViewTextBoxColumn.Name = "JoursDataGridViewTextBoxColumn"
+        '
+        'HeureDataGridViewTextBoxColumn
+        '
+        Me.HeureDataGridViewTextBoxColumn.DataPropertyName = "Heure"
+        Me.HeureDataGridViewTextBoxColumn.HeaderText = "Heure"
+        Me.HeureDataGridViewTextBoxColumn.Name = "HeureDataGridViewTextBoxColumn"
+        '
+        'NiveauDataGridViewTextBoxColumn
+        '
+        Me.NiveauDataGridViewTextBoxColumn.DataPropertyName = "Niveau"
+        Me.NiveauDataGridViewTextBoxColumn.HeaderText = "Niveau"
+        Me.NiveauDataGridViewTextBoxColumn.Name = "NiveauDataGridViewTextBoxColumn"
+        '
+        'ActionDataGridViewTextBoxColumn
+        '
+        Me.ActionDataGridViewTextBoxColumn.DataPropertyName = "Action"
+        Me.ActionDataGridViewTextBoxColumn.HeaderText = "Action"
+        Me.ActionDataGridViewTextBoxColumn.Name = "ActionDataGridViewTextBoxColumn"
         '
         'AlarmeBindingSource1
         '
@@ -1764,47 +1912,33 @@ Partial Class Principale
         Me.NsLabel36.Value1 = "Surveillance"
         Me.NsLabel36.Value2 = ""
         '
-        'IDDataGridViewTextBoxColumn
+        'RequeteTableAdapter
         '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.RequeteTableAdapter.ClearBeforeFill = True
         '
-        'ServeurDataGridViewTextBoxColumn
+        'NsLabel42
         '
-        Me.ServeurDataGridViewTextBoxColumn.DataPropertyName = "Serveur"
-        Me.ServeurDataGridViewTextBoxColumn.HeaderText = "Serveur"
-        Me.ServeurDataGridViewTextBoxColumn.Name = "ServeurDataGridViewTextBoxColumn"
+        Me.NsLabel42.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.NsLabel42.Location = New System.Drawing.Point(12, 36)
+        Me.NsLabel42.Name = "NsLabel42"
+        Me.NsLabel42.Size = New System.Drawing.Size(168, 23)
+        Me.NsLabel42.TabIndex = 14
+        Me.NsLabel42.Text = "NsLabel42"
+        Me.NsLabel42.Value1 = "Adaptation votre requête"
+        Me.NsLabel42.Value2 = ""
         '
-        'DescritpionDataGridViewTextBoxColumn
+        'NsTextBox5
         '
-        Me.DescritpionDataGridViewTextBoxColumn.DataPropertyName = "Descritpion"
-        Me.DescritpionDataGridViewTextBoxColumn.HeaderText = "Descritpion"
-        Me.DescritpionDataGridViewTextBoxColumn.Name = "DescritpionDataGridViewTextBoxColumn"
-        '
-        'JoursDataGridViewTextBoxColumn
-        '
-        Me.JoursDataGridViewTextBoxColumn.DataPropertyName = "Jours"
-        Me.JoursDataGridViewTextBoxColumn.HeaderText = "Jours"
-        Me.JoursDataGridViewTextBoxColumn.Name = "JoursDataGridViewTextBoxColumn"
-        '
-        'HeureDataGridViewTextBoxColumn
-        '
-        Me.HeureDataGridViewTextBoxColumn.DataPropertyName = "Heure"
-        Me.HeureDataGridViewTextBoxColumn.HeaderText = "Heure"
-        Me.HeureDataGridViewTextBoxColumn.Name = "HeureDataGridViewTextBoxColumn"
-        '
-        'NiveauDataGridViewTextBoxColumn
-        '
-        Me.NiveauDataGridViewTextBoxColumn.DataPropertyName = "Niveau"
-        Me.NiveauDataGridViewTextBoxColumn.HeaderText = "Niveau"
-        Me.NiveauDataGridViewTextBoxColumn.Name = "NiveauDataGridViewTextBoxColumn"
-        '
-        'ActionDataGridViewTextBoxColumn
-        '
-        Me.ActionDataGridViewTextBoxColumn.DataPropertyName = "Action"
-        Me.ActionDataGridViewTextBoxColumn.HeaderText = "Action"
-        Me.ActionDataGridViewTextBoxColumn.Name = "ActionDataGridViewTextBoxColumn"
+        Me.NsTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NsTextBox5.Location = New System.Drawing.Point(191, 36)
+        Me.NsTextBox5.MaxLength = 32767
+        Me.NsTextBox5.Multiline = False
+        Me.NsTextBox5.Name = "NsTextBox5"
+        Me.NsTextBox5.ReadOnly = False
+        Me.NsTextBox5.Size = New System.Drawing.Size(847, 23)
+        Me.NsTextBox5.TabIndex = 15
+        Me.NsTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.NsTextBox5.UseSystemPasswordChar = False
         '
         'Principale
         '
@@ -1849,6 +1983,8 @@ Partial Class Principale
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ServeurLstBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage18.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.RequeteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage19.ResumeLayout(False)
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1864,7 +2000,6 @@ Partial Class Principale
     Friend WithEvents Column8 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column9 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column10 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents DataGridView5 As System.Windows.Forms.DataGridView
     Friend WithEvents Column12 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
@@ -1974,7 +2109,6 @@ Partial Class Principale
     Friend WithEvents NsLabel33 As NSLabel
     Friend WithEvents TabPage18 As TabPage
     Friend WithEvents ComboBox3 As NSComboBox
-    Friend WithEvents NsLabel32 As NSLabel
     Friend WithEvents NsLabel31 As NSLabel
     Friend WithEvents TabPage19 As TabPage
     Friend WithEvents NsButton1 As NSButton
@@ -2013,4 +2147,17 @@ Partial Class Principale
     Friend WithEvents HeureDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NiveauDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ActionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents NsButton5 As NSButton
+    Friend WithEvents NsButton4 As NSButton
+    Friend WithEvents NsTextBox4 As NSTextBox
+    Friend WithEvents NsTextBox3 As NSTextBox
+    Friend WithEvents NsTextBox2 As NSTextBox
+    Friend WithEvents NsLabel41 As NSLabel
+    Friend WithEvents NsLabel40 As NSLabel
+    Friend WithEvents NsLabel32 As NSLabel
+    Friend WithEvents RequeteBindingSource As BindingSource
+    Friend WithEvents RequeteTableAdapter As BDDDataSetTableAdapters.RequeteTableAdapter
+    Friend WithEvents NsTextBox5 As NSTextBox
+    Friend WithEvents NsLabel42 As NSLabel
 End Class

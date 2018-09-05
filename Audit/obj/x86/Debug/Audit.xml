@@ -27,6 +27,11 @@ Audit
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApplication1.My.Resources.Resources.images">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApplication1.My.Resources.Resources.logo">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
@@ -67,6 +72,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:WindowsApplication1.BDDDataSet.RequeteDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:WindowsApplication1.BDDDataSet.AlarmeRow">
 <summary>
 Represents strongly named DataRow class.
@@ -93,6 +103,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:WindowsApplication1.BDDDataSet.ServeurLstRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSet.RequeteRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -127,6 +142,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:WindowsApplication1.BDDDataSet.RequeteRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:WindowsApplication1.BDDDataSetTableAdapters.AlarmeTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -153,6 +173,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:WindowsApplication1.BDDDataSetTableAdapters.ServeurLstTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:WindowsApplication1.BDDDataSetTableAdapters.RequeteTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

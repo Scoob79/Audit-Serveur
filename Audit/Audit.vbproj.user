@@ -9,6 +9,7 @@
     <ErrorReportUrlHistory />
     <FallbackCulture>fr-FR</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup>
     <ReferencePath>D:\Users\u165147\Downloads\</ReferencePath>

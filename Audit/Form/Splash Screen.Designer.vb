@@ -36,7 +36,7 @@ Partial Class Form3
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label4.ForeColor = System.Drawing.Color.Coral
         Me.Label4.Location = New System.Drawing.Point(16, 40)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(459, 114)
@@ -62,7 +62,7 @@ Partial Class Form3
         'Timer2
         '
         Me.Timer2.Enabled = True
-        Me.Timer2.Interval = 500
+        Me.Timer2.Interval = 2000
         '
         'Form3
         '

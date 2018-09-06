@@ -27,12 +27,22 @@ Audit
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:WindowsApplication1.My.Resources.Resources.check">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:WindowsApplication1.My.Resources.Resources.images">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:WindowsApplication1.My.Resources.Resources.logo">
+<summary>
+  Recherche une ressource localisée de type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:WindowsApplication1.My.Resources.Resources.wrong">
 <summary>
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>

@@ -56,6 +56,10 @@ Public Class Principale
     Const WinServeur = 11
     Const WinXP = 12
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'TODO: cette ligne de code charge les données dans la table 'BDDDataSet.Alarme'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+        Me.AlarmeTableAdapter.Fill(Me.BDDDataSet.Alarme)
+        'TODO: cette ligne de code charge les données dans la table 'BDDDataSet.ServeurLst'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+        Me.ServeurLstTableAdapter.Fill(Me.BDDDataSet.ServeurLst)
 
         Dim ThreadCollect As New System.Threading.Thread(AddressOf Collect)
         ThreadCollect.Priority = Threading.ThreadPriority.Highest
@@ -329,7 +333,7 @@ Public Class Principale
 
         Dim connect As New OleDbConnection(ChaineDeConnexion)
         Dim cmd As New OleDbCommand, Res As OleDbDataReader, Serveur As OleDbDataReader, Serveur_HDD As OleDbDataReader, Serveur_Reseau As OleDbDataReader, Serveur_Services As OleDbDataReader
-        Dim Serveur_MAJ As OleDbDataReader
+        Dim Serveur_MAJ As OleDbDataReader, NomPoste As String
         ' Connexion à la base de données
 
         connect.Open()
@@ -342,6 +346,7 @@ Public Class Principale
         ' ========================================== POSTE ==========================================
         If Serveur.Read = False Then Exit Sub
         TextBox1.Text = Serveur.Item(0)
+        NomPoste = Serveur.Item(0)
         TextBox2.Text = Serveur.Item(1)
         TextBox3.Text = Serveur.Item(2)
         TextBox4.Text = Serveur.Item(3)
@@ -436,6 +441,21 @@ Public Class Principale
         DataGridView2.Rows.Item(N).Cells.Item(7).Value = Serveur_Reseau.Item(8)
         DataGridView2.Rows.Item(N).Cells.Item(8).Value = Serveur_Reseau.Item(9)
         DataGridView2.Rows.Item(N).Cells.Item(9).Value = Serveur_Reseau.Item(10)
+
+        connect.Close()
+
+        ' ========================================== GESTION DE L'AFFICHAGE DE L'ETAT DANS L'ONGLET POSTE ========================================== 
+
+        connect.Open()
+        cmd.Connection = connect
+        cmd.CommandText = "SELECT Jours FROM Alarme WHERE Serveur='" & NomPoste.Substring(0, InStr(NomPoste, "_") - 1) & "'"
+        Serveur_HDD = cmd.ExecuteReader()
+        If Serveur_HDD.Read = False Then
+            PictureBox2.Image = My.Resources.wrong
+        Else
+            PictureBox2.Image = My.Resources.check
+        End If
+
 
         Exit Sub
 GestErr:

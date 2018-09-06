@@ -89,6 +89,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Glg.NetCE">
+      <HintPath>C:\Program Files\GlgCE.3.7_x64\lib\Glg.NetCE.dll</HintPath>
+    </Reference>
     <Reference Include="SnmpSharpNet, Version=0.9.4.0, Culture=neutral, PublicKeyToken=b2181aa3b9571feb, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -264,6 +267,8 @@
     <Content Include="BDD\BDD.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\wrong.png" />
+    <None Include="Resources\check.png" />
     <None Include="Resources\images.png" />
   </ItemGroup>
   <ItemGroup>

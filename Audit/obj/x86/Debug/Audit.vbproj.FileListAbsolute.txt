@@ -31,8 +31,8 @@ D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.pdb
 D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\BDD\BDD.mdb
 D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.vbproj.ResolveComReference.cache
 D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Audit.vbprojAssemblyReference.cache
-D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\SnmpSharpNet.pdb
-D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\SnmpSharpNet.xml
 D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Interop.GlgoleLib.dll
 D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Interop.Win32_TPMLib.dll
 D:\Users\u165147\source\repos\Audit\Audit\bin\Debug\Glg.NetCE.dll
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Interop.AccWizObjects.dll
+D:\Users\u165147\source\repos\Audit\Audit\obj\x86\Debug\Interop.MDACVer.dll

@@ -561,15 +561,19 @@ GestErr:
         Return connect
     End Function
 
+    Private Sub NsLabel42_Click(sender As Object, e As EventArgs) Handles NsLabel42.Click
+
+    End Sub
 
     Public Sub Collect()
         Dim NetSql As New SQL, Ligne As String, Ena(10) As String, Ret As String, RequeteQ As OleDb.OleDbDataReader
         Dim ServeurLst As New StreamReader("C:\varsoft\chksys\.enable_win.lst")
         Dim connect As New OleDbConnection(ChaineDeConnexion)
-        Dim cmd As New OleDbCommand, Debut As Date, M As Integer, S As Integer
+        Dim cmd As New OleDbCommand, Debut As Date, M As Integer, S As Integer, Res As String
         Debut = Now
         NsProgressBar1.Maximum = 1
         NsLabel38.Value1 = "Récupération de la liste des serveurs"
+
         Do
             Ligne = ServeurLst.ReadLine
             If Ligne IsNot Nothing Then
@@ -585,7 +589,7 @@ GestErr:
         Loop Until Ligne Is Nothing
         NsProgressBar1.Maximum -= 1
         NsLabel38.Value1 = "Chargement de la base. Merci de patienter avant de vous servir de la comparaison"
-
+        NsProgressBar1.Maximum = 240
         Try
             connect.Open()
             cmd.Connection = connect
@@ -605,6 +609,8 @@ GestErr:
         S = Val(DateDiff(DateInterval.Second, Debut, Now)) - (M * 60)
         NsLabel38.Value1 = "Base chargée en " & M & ":" & S & " minutes."
         Invoke(New MethodInvoker(Sub() NsProgressBar1.Visible = False))
+        Res = NetSql.CompactAndRepair(Application.StartupPath & "\BDD\BDD.mdb", Application.StartupPath)
+
     End Sub
 
     Private Sub DataGridView6_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView6.CellEnter

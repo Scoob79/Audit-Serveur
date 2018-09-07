@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Data.OleDb
+Imports Microsoft.Office.Interop.Access.Dao
 
 Public Class SQL
     Public Const ChaineDeConnexion As String = "Provider=microsoft.jet.oledb.4.0;Data Source=D:\Users\u165147\source\repos\Audit\Audit\BDD\BDD.mdb"
@@ -41,7 +42,7 @@ Public Class SQL
         Dim Model As String, Manufacturier As String, Modèle As String, TypeProc As String, NomProc As String, DescProc As String, VitesseACT As String
         Dim VitesseMAX As String, Taille As String, N As String, MAC As String, IP(20) As String, Utilisateurs As String, Groupes As String, Logiciels As String
         Dim Pilotes As String, service(5) As String, MAJ(10) As String, Retour As String, Ret As String, ADDIP As String, CléServeur As String, Tableau(500) As String
-        Dim services As String
+        Dim services As String, Res As String, MAJLigne(10) As String
 
         ' Création de la table dans la base
 
@@ -273,7 +274,6 @@ Public Class SQL
         Requete(ChaineDeConnexion, "UPDATE Serveur SET Pilotes='" & Pilotes & "' WHERE POSTE_NomPoste='" & CléServeur & "'")
 
         N = 0
-        Retour = Requete(ChaineDeConnexion, "CREATE TABLE " & Replace(NomPoste, "-", "_") & "_SERVICES (SERVICES_Nom VARCHAR(255) PRIMARY KEY,SERVICES_Description LONGTEXT,SERVICES_Statut VARCHAR(15),SERVICES_Etat VARCHAR(15),SERVICES_code VARCHAR(10))")
         Do
             If Ligne = "[SERVICES]" Then
                 Ligne = Fichier.ReadLine
@@ -295,11 +295,11 @@ Public Class SQL
                     service(4) = Etat.Substring(8)
                     service(5) = CodeSortie.Substring(11)
                     Ligne = Fichier.ReadLine
-                    Ret = Requete(ChaineDeConnexion, "INSERT INTO " & Replace(NomPoste, "-", "_") & "_SERVICES (SERVICES_Nom, SERVICES_Description, SERVICES_Statut, SERVICES_Etat, SERVICES_code) values ('" &
-                            service(1) & "', '" & service(2) & "', '" & service(3) & "', '" & service(4) & "', '" & service(5) & "')")
+                    Ret = Requete(ChaineDeConnexion, "INSERT INTO SERVEUR_SERVICES (SERVICES_Poste,SERVICES_Nom, SERVICES_Description, SERVICES_Statut, SERVICES_Etat, SERVICES_code) values ('" &
+                            NomPoste & "_" & service(1) & "', '" & service(1) & "', '" & service(2) & "', '" & service(3) & "', '" & service(4) & "', '" & service(5) & "')")
                     If Ret <> "" Then
-                        Ret = Requete(ChaineDeConnexion, "UPDATE " & Replace(NomPoste, "-", "_") & "_SERVICES SET SERVICES_Nom='" &
-                            service(1) & "', SERVICES_Description='" & service(2) & "', SERVICES_Statut='" & service(3) & "', SERVICES_Etat='" & service(4) & "', SERVICES_code='" & service(5) & "' WHERE SERVICES_Nom='" & service(1) & "';")
+                        Ret = Requete(ChaineDeConnexion, "UPDATE SERVEUR_SERVICES SET SERVICES_Nom='" &
+                            service(1) & "', SERVICES_Description='" & service(2) & "', SERVICES_Statut='" & service(3) & "', SERVICES_Etat='" & service(4) & "', SERVICES_code='" & service(5) & "' WHERE SERVICES_Poste='" & NomPoste & "_" & service(1) & "';")
                     End If
                 Loop
                 Exit Do
@@ -309,28 +309,76 @@ Public Class SQL
         ' Création du fichier schéma pour l'importation du fichier texte dans la base
         Dim Schema As New StreamWriter("c:\temp\Schema.ini")
         Schema.WriteLine("[import.txt]")
-        Schema.WriteLine("Format = FixedLength")
-        Schema.WriteLine("ColNameHeader = False")
-        Schema.WriteLine("Col1 = 'MAJ_Nom' Text Width 47")
-        Schema.WriteLine("Col2 = 'MAJ_Poste' Text Width 7")
-        Schema.WriteLine("Col3 = 'MAJ_Descrption' Text Width 30")
-        Schema.WriteLine("Col4 = 'MAJ_ID' Text Width 24")
-        Schema.WriteLine("Col5 = 'MAJ_InstallPar' Text Width 24")
-        Schema.WriteLine("Col6 = 'MAJ_Date' Text Width 13")
+        Schema.WriteLine("Format = Delimited(;)")
+        Schema.WriteLine("ColNameHeader = True")
         Schema.Close()
 
         Ligne = Fichier.ReadLine
         Ligne = Fichier.ReadLine
         Ligne = Fichier.ReadLine
-        Ligne = Fichier.ReadLine
+        Dim Import As New StreamWriter("c:\temp\import.txt")
+        Import.WriteLine("MAJ_Nom;MAJ_Poste;MAJ_Descrption;MAJ_ID;MAJ_InstallPar;MAJ_Date")
         Do
             Ligne = Fichier.ReadLine
-            If Ligne <> "" And Ligne <> "" Then N += 1 : services = services & Ligne & vbCrLf
-        Loop While Not Ligne = ""
-        Dim Import As New StreamWriter("c:\temp\import.txt")
-        Import.WriteLine(services)
+            If Ligne = "" Then Exit Do
+            ' Recompilation au format CSV du fichier import.txt
+            If Ligne <> "" Then
+                MAJLigne(2) = ""
+                Do
+                    N += 1
+                    MAJLigne(1) = Ligne.Substring(0, InStr(Ligne, "  ") - 1) ' Récupère le premier groupe de mot de ligne
+                    MAJLigne(2) = MAJLigne(2) & ";" & MAJLigne(1) ' Ajoute le premier groupe à la chaine finale en y ajoutant un ;
+                    Ligne = LTrim(Ligne.Substring(InStr(Ligne, "  ") - 1)) ' Supprime les espaces entre le début de la chaine et le groupe suivant
+                Loop While InStr(Ligne, " ") > 0
+                Import.WriteLine(MAJLigne(2).Substring(1)) ' Inscrit la chaine finale en supprimant le premier caratère puisque c'est un ;
+            End If
+        Loop
         Import.Close()
-        Requete(ChaineDeConnexion, "DROP TABLE " & Replace(NomPoste, "-", "_") & "_MAJ")
-        Requete(ChaineDeConnexion, "SELECT * INTO " & Replace(NomPoste, "-", "_") & "_MAJ FROM [Text;DATABASE=c:\temp;].[import.txt];")
+
+        Res = Requete(ChaineDeConnexion, "SELECT * INTO TEMP_MAJ FROM [Text;DATABASE=c:\temp;].[import.txt]") ' Importation du fichier import.txt dans la base de données en créant la table TEMP_MAJ
+        If Res <> "" Then
+            MsgBox("Une erreur c'est produite dans la base de données lors de l'ajout des MAJ : " & vbCrLf & Res)
+            Res = Requete(ChaineDeConnexion, "DROP TABLE TEMP_MAJ") 'Suppression de la table TEMP_MAJ
+        End If
+        Res = Requete(ChaineDeConnexion, "DELETE FROM Serveur_MAJ WHERE MAJ_Poste='" & NomPoste & "';") 'Suppression de toutes les entrées dans la table Serveur_MAJ concernat ce serveur
+        If Res <> "" Then MsgBox("Une erreur c'est produite dans la base de données lors de l'ajout des MAJ : " & vbCrLf & Res)
+        Res = Requete(ChaineDeConnexion, "insert into Serveur_MAJ select * from TEMP_MAJ;") 'Copie des données entre table TEMP_MAJ et Serveur_MAJ
+        If Res <> "" Then MsgBox("Une erreur c'est produite dans la base de données lors de l'ajout des MAJ : " & vbCrLf & Res)
+        Res = Requete(ChaineDeConnexion, "DROP TABLE TEMP_MAJ") 'Suppression de la table TEMP_MAJ
+        If Res <> "" Then MsgBox("Une erreur c'est produite dans la base de données lors de l'ajout des MAJ : " & vbCrLf & Res)
     End Sub
+    Public Function CompactAndRepair(ByVal dbPath As String, ByVal tmpFolder As String) As Boolean
+        'Declaration
+        Dim oParams() As Object
+        Dim oJRO As Object = Activator.CreateInstance(Type.GetTypeFromProgID("JRO.JetEngine"))
+        Dim strLdbPath As String
+
+        'Checked that database exist
+        If Not File.Exists(dbPath) Then
+            'File not found
+            Return False
+        End If
+
+        'Checked that database is not open
+        strLdbPath = Mid(dbPath, 1, Len(dbPath) - 3) & "ldb"
+        If File.Exists(strLdbPath) Then
+            'Database is open
+            Return False
+        End If
+
+        'Compact and repair
+        Try
+            oParams = New Object() {"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & dbPath & ";Jet OLEDB:Engine Type=5", "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & tmpFolder & "~tempdb.mdb;Jet OLEDB:Engine Type=5"}
+            oJRO.GetType().InvokeMember("CompactDatabase", Reflection.BindingFlags.InvokeMethod, Nothing, oJRO, oParams)
+            File.Delete(dbPath)
+            File.Move(tmpFolder & "~tempdb.mdb", dbPath)
+
+            Runtime.InteropServices.Marshal.ReleaseComObject(oJRO)
+            oJRO = Nothing
+            Return True
+
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 End Class

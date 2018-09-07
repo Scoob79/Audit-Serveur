@@ -184,6 +184,14 @@ Partial Class Principale
         Me.NsLabel36 = New WindowsApplication1.NSLabel()
         Me.ServeurLstTableAdapter = New WindowsApplication1.BDDDataSetTableAdapters.ServeurLstTableAdapter()
         Me.AlarmeTableAdapter = New WindowsApplication1.BDDDataSetTableAdapters.AlarmeTableAdapter()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.DataGridView7 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.AjouterUneNoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.BDDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NsTabControl2.SuspendLayout()
         Me.TabPage17.SuspendLayout()
@@ -215,6 +223,9 @@ Partial Class Principale
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlarmeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NsTheme1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -331,13 +342,14 @@ Partial Class Principale
         Me.NsTabControl1.Controls.Add(Me.TabPage14)
         Me.NsTabControl1.Controls.Add(Me.TabPage15)
         Me.NsTabControl1.Controls.Add(Me.TabPage16)
+        Me.NsTabControl1.Controls.Add(Me.TabPage1)
         Me.NsTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
         Me.NsTabControl1.ItemSize = New System.Drawing.Size(28, 115)
         Me.NsTabControl1.Location = New System.Drawing.Point(12, 41)
         Me.NsTabControl1.Multiline = True
         Me.NsTabControl1.Name = "NsTabControl1"
         Me.NsTabControl1.SelectedIndex = 0
-        Me.NsTabControl1.Size = New System.Drawing.Size(1015, 373)
+        Me.NsTabControl1.Size = New System.Drawing.Size(1015, 407)
         Me.NsTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed
         Me.NsTabControl1.TabIndex = 4
         '
@@ -367,7 +379,7 @@ Partial Class Principale
         Me.TabPage4.Location = New System.Drawing.Point(119, 4)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage4.Size = New System.Drawing.Size(892, 399)
         Me.TabPage4.TabIndex = 0
         Me.TabPage4.Text = "POSTE"
         '
@@ -618,7 +630,7 @@ Partial Class Principale
         Me.TabPage5.Location = New System.Drawing.Point(119, 4)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage5.Size = New System.Drawing.Size(892, 399)
         Me.TabPage5.TabIndex = 1
         Me.TabPage5.Text = "CARTE-MERE"
         '
@@ -709,7 +721,7 @@ Partial Class Principale
         Me.TabPage6.Controls.Add(Me.NsLabel16)
         Me.TabPage6.Location = New System.Drawing.Point(119, 4)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage6.Size = New System.Drawing.Size(892, 399)
         Me.TabPage6.TabIndex = 2
         Me.TabPage6.Text = "PROCESSEUR"
         '
@@ -840,7 +852,7 @@ Partial Class Principale
         Me.TabPage7.Controls.Add(Me.NsLabel17)
         Me.TabPage7.Location = New System.Drawing.Point(119, 4)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage7.Size = New System.Drawing.Size(892, 399)
         Me.TabPage7.TabIndex = 3
         Me.TabPage7.Text = "MEMOIRE"
         '
@@ -874,7 +886,7 @@ Partial Class Principale
         Me.TabPage8.Controls.Add(Me.DataGridView1)
         Me.TabPage8.Location = New System.Drawing.Point(119, 4)
         Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage8.Size = New System.Drawing.Size(892, 399)
         Me.TabPage8.TabIndex = 4
         Me.TabPage8.Text = "HDD"
         '
@@ -943,7 +955,7 @@ Partial Class Principale
         Me.TabPage9.Controls.Add(Me.DataGridView2)
         Me.TabPage9.Location = New System.Drawing.Point(119, 4)
         Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage9.Size = New System.Drawing.Size(892, 399)
         Me.TabPage9.TabIndex = 5
         Me.TabPage9.Text = "RESEAU"
         '
@@ -1027,7 +1039,7 @@ Partial Class Principale
         Me.TabPage10.Controls.Add(Me.NsLabel18)
         Me.TabPage10.Location = New System.Drawing.Point(119, 4)
         Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage10.Size = New System.Drawing.Size(892, 399)
         Me.TabPage10.TabIndex = 6
         Me.TabPage10.Text = "UTILISATEURS"
         '
@@ -1059,7 +1071,7 @@ Partial Class Principale
         Me.TabPage11.Controls.Add(Me.NsLabel19)
         Me.TabPage11.Location = New System.Drawing.Point(119, 4)
         Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage11.Size = New System.Drawing.Size(892, 399)
         Me.TabPage11.TabIndex = 7
         Me.TabPage11.Text = "GROUPES"
         '
@@ -1107,7 +1119,7 @@ Partial Class Principale
         Me.TabPage12.Controls.Add(Me.NsLabel27)
         Me.TabPage12.Location = New System.Drawing.Point(119, 4)
         Me.TabPage12.Name = "TabPage12"
-        Me.TabPage12.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage12.Size = New System.Drawing.Size(892, 399)
         Me.TabPage12.TabIndex = 8
         Me.TabPage12.Text = "STRATEGIE"
         '
@@ -1334,7 +1346,7 @@ Partial Class Principale
         Me.TabPage13.Controls.Add(Me.NsLabel29)
         Me.TabPage13.Location = New System.Drawing.Point(119, 4)
         Me.TabPage13.Name = "TabPage13"
-        Me.TabPage13.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage13.Size = New System.Drawing.Size(892, 399)
         Me.TabPage13.TabIndex = 9
         Me.TabPage13.Text = "LOGICIELS"
         '
@@ -1366,7 +1378,7 @@ Partial Class Principale
         Me.TabPage14.Controls.Add(Me.NsLabel30)
         Me.TabPage14.Location = New System.Drawing.Point(119, 4)
         Me.TabPage14.Name = "TabPage14"
-        Me.TabPage14.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage14.Size = New System.Drawing.Size(892, 399)
         Me.TabPage14.TabIndex = 10
         Me.TabPage14.Text = "PILOTES"
         '
@@ -1397,7 +1409,7 @@ Partial Class Principale
         Me.TabPage15.Controls.Add(Me.DataGridView3)
         Me.TabPage15.Location = New System.Drawing.Point(119, 4)
         Me.TabPage15.Name = "TabPage15"
-        Me.TabPage15.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage15.Size = New System.Drawing.Size(892, 399)
         Me.TabPage15.TabIndex = 11
         Me.TabPage15.Text = "SERVICES"
         '
@@ -1452,7 +1464,7 @@ Partial Class Principale
         Me.TabPage16.Controls.Add(Me.DataGridView4)
         Me.TabPage16.Location = New System.Drawing.Point(119, 4)
         Me.TabPage16.Name = "TabPage16"
-        Me.TabPage16.Size = New System.Drawing.Size(892, 365)
+        Me.TabPage16.Size = New System.Drawing.Size(892, 399)
         Me.TabPage16.TabIndex = 12
         Me.TabPage16.Text = "MAJ"
         '
@@ -1568,12 +1580,12 @@ Partial Class Principale
         'NsTextBox5
         '
         Me.NsTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.NsTextBox5.Location = New System.Drawing.Point(191, 36)
+        Me.NsTextBox5.Location = New System.Drawing.Point(200, 36)
         Me.NsTextBox5.MaxLength = 32767
         Me.NsTextBox5.Multiline = False
         Me.NsTextBox5.Name = "NsTextBox5"
         Me.NsTextBox5.ReadOnly = False
-        Me.NsTextBox5.Size = New System.Drawing.Size(847, 23)
+        Me.NsTextBox5.Size = New System.Drawing.Size(838, 23)
         Me.NsTextBox5.TabIndex = 15
         Me.NsTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.NsTextBox5.UseSystemPasswordChar = False
@@ -1583,10 +1595,10 @@ Partial Class Principale
         Me.NsLabel42.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.NsLabel42.Location = New System.Drawing.Point(12, 36)
         Me.NsLabel42.Name = "NsLabel42"
-        Me.NsLabel42.Size = New System.Drawing.Size(168, 23)
+        Me.NsLabel42.Size = New System.Drawing.Size(182, 23)
         Me.NsLabel42.TabIndex = 14
         Me.NsLabel42.Text = "NsLabel42"
-        Me.NsLabel42.Value1 = "Adaptation votre requête"
+        Me.NsLabel42.Value1 = "Adaptation de votre requête"
         Me.NsLabel42.Value2 = ""
         '
         'GroupBox1
@@ -1701,9 +1713,9 @@ Partial Class Principale
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.ForeColor = System.Drawing.Color.White
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(191, 12)
+        Me.ComboBox3.Location = New System.Drawing.Point(200, 12)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(847, 21)
+        Me.ComboBox3.Size = New System.Drawing.Size(838, 21)
         Me.ComboBox3.TabIndex = 2
         '
         'DataGridView5
@@ -1917,6 +1929,68 @@ Partial Class Principale
         '
         Me.AlarmeTableAdapter.ClearBeforeFill = True
         '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.DataGridView7)
+        Me.TabPage1.Location = New System.Drawing.Point(119, 4)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(892, 399)
+        Me.TabPage1.TabIndex = 13
+        Me.TabPage1.Text = "Notes "
+        '
+        'DataGridView7
+        '
+        Me.DataGridView7.AllowUserToAddRows = False
+        Me.DataGridView7.AllowUserToDeleteRows = False
+        Me.DataGridView7.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView7.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15})
+        Me.DataGridView7.Location = New System.Drawing.Point(3, 6)
+        Me.DataGridView7.Name = "DataGridView7"
+        Me.DataGridView7.ReadOnly = True
+        Me.DataGridView7.Size = New System.Drawing.Size(886, 387)
+        Me.DataGridView7.TabIndex = 5
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Auteur"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.DataGridViewTextBoxColumn12.Width = 200
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Note"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 450
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Date"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.HeaderText = "Heure"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.ReadOnly = True
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AjouterUneNoteToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 48)
+        '
+        'AjouterUneNoteToolStripMenuItem
+        '
+        Me.AjouterUneNoteToolStripMenuItem.Name = "AjouterUneNoteToolStripMenuItem"
+        Me.AjouterUneNoteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AjouterUneNoteToolStripMenuItem.Text = "Ajouter une note"
+        '
         'Principale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1965,6 +2039,9 @@ Partial Class Principale
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlarmeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NsTheme1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2128,4 +2205,12 @@ Partial Class Principale
     Friend WithEvents HeureDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NiveauDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ActionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents DataGridView7 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents AjouterUneNoteToolStripMenuItem As ToolStripMenuItem
 End Class

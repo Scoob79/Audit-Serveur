@@ -272,6 +272,15 @@
     <None Include="Resources\images.png" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AccWizObjects">
+      <Guid>{5B87B6F0-17C8-11D0-AD41-00A0C90DC8D9}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="ADODB">
       <Guid>{00000205-0000-0010-8000-00AA006D2EA4}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -285,6 +294,15 @@
       <Guid>{5135569B-3873-11CF-BA3F-94DE505063C0}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MDACVer">
+      <Guid>{54AF9343-1923-11D3-9CA4-00C04F72C514}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>50</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
@@ -311,6 +329,15 @@
     <COMReference Include="Microsoft.Office.Interop.Access.Dao">
       <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
       <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
